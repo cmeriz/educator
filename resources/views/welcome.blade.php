@@ -1,4 +1,10 @@
-<!DOCTYPE html>
+<x-app-layout>
+    <x-slot name="header">
+        {{ __('Bienvenido, ' . explode(' ', Auth::user()->name)[0]) }}
+    </x-slot>
+</x-app-layout>
+
+{{-- <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
@@ -129,4 +135,4 @@
             </div>
         </div>
     </body>
-</html>
+</html> --}}

@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAQ,gMAAwL;;ACAhM,IAAI;EACA,SAAS,EAAE,IAAI;EACf,gBAAgB,ECYA,OAAO;EDXvB,WAAW,EDDA,OAAO;;;;AGFtB,eAAe;EACX,WAAW,EAAE,OAAO;EACpB,OAAO,EAAE,qBAAqB;EAC9B,gBAAgB,EDDZ,OAAO",
+"sources": ["../scss/base/_fonts.scss","../scss/base/_reset.scss","../scss/abstracts/_colors.scss","../scss/layout/_main.scss"],
+"names": [],
+"file": "style.css"
+}

@@ -58,4 +58,21 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+
+    // Pensum Relationship 1:n
+    public function pensums(){
+        return $this->hasMany('App\Models\Pensum');
+    }
+
+    // Courses Relationship 1:n
+    public function courses(){
+        return $this->hasMany('App\Models\Course');
+    }
+
+    // Events Relationship 1:n
+    public function events(){
+        return $this->hasMany('App\Models\Event');
+    }
+
 }

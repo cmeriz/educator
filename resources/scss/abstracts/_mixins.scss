@@ -1,0 +1,65 @@
+// Media Queries
+
+@mixin xxs-size{
+    @media screen and (min-width: 20rem) {      // 320px
+        @content;
+    }
+}
+
+@mixin xs-size{
+    @media screen and (min-width: 30rem) {      // 480px
+        @content;
+    }
+}
+
+@mixin sm-size{
+    @media screen and (min-width: 40rem) {      // 640px
+        @content;
+    }
+}
+
+@mixin md-size{
+    @media screen and (min-width: 48rem) {      // 768px
+        @content;
+    }
+}
+
+@mixin ml-size{
+    @media screen and (min-width: 56rem) {      // 896px
+        @content;
+    }
+}
+
+@mixin lg-size{
+    @media screen and (min-width: 64rem) {      // 1024px
+        @content;
+    }
+}
+
+@mixin xl-size{
+    @media screen and (min-width: 80rem) {      // 1280px
+        @content;
+    }
+}
+
+@mixin xxl-size{
+    @media screen and (min-width: 96rem) {      // 1536px
+        @content;
+    }
+}
+
+// 20rem        -> 320px     ->      xxs-size
+// 30rem        -> 480px     ->       xs-size
+// 40rem        -> 640px     ->       sm-size
+// 48rem        -> 768px     ->       md-size
+// 56rem        -> 896px     ->       ml-size
+// 64rem        -> 1024px    ->       lg-size
+// 80rem        -> 1280px    ->       xl-size
+// 96rem        -> 1536px    ->      xxl-size
+
+
+@mixin custom-size($value){
+    @media screen and (min-width: $value) {
+        @content;
+    }
+}
