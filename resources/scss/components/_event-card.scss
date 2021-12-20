@@ -1,0 +1,40 @@
+.event-card{
+
+    color: $white;
+
+    &--primary{
+        @extend .event-card;
+        background-color: $primary-color-500;
+    }
+
+    &--secondary{
+        @extend .event-card;
+        background-color: $secondary-color-500;
+    }
+
+    &--red{
+        @extend .event-card;
+        background-color: $red-color-500;
+    }
+
+    &--orange{
+        @extend .event-card;
+        background-color: $orange-color-500;
+    }
+
+    &--blue{
+        @extend .event-card;
+        background-color: $blue-color-500;
+    }
+
+    &--purple{
+        @extend .event-card;
+        background-color: $purple-color-500;
+    }
+
+    &--pink{
+        @extend .event-card;
+        background-color: $pink-color-500;
+    }
+
+}

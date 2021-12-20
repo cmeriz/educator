@@ -9,6 +9,18 @@ module.exports = {
     ],
 
     theme: {
+
+        screens: {
+			'xxs': '20rem',
+			'xs': '30rem',
+			'sm': '40rem',
+			'md': '48rem',
+			'ml': '56rem',
+			'lg': '64rem',
+			'xl': '80rem',
+			'2xl': '96rem',
+		},
+
         extend: {
             fontFamily: {
                 sans: ['Nunito', ...defaultTheme.fontFamily.sans],

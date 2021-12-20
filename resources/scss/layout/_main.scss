@@ -1,5 +1,11 @@
 .main-container{
-    margin-left: -3.8rem;
-    padding: 2rem 2rem 2rem 5.8rem;
+    margin-left: auto;
+    
     background-color: $white;
+
+    @include md-size{
+        margin-left: -3.8rem;
+        padding: 2rem 2rem 2rem 5.8rem;
+    }
+
 }

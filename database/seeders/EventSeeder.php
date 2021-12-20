@@ -15,43 +15,43 @@ class EventSeeder extends Seeder
     public function run()
     {
         Event::create([
-            'day' => 1,
-            'start' => '10:00:00',
-            'end' => '12:00:00',
+            'day' => 'monday',
+            'start' => '21:00:00',
+            'end' => '22:00:00',
             'user_id' => 1,
             'course_id' => 1,
         ]);
 
         Event::create([
-            'day' => 2,
-            'start' => '10:00:00',
-            'end' => '12:00:00',
+            'day' => 'monday',
+            'start' => '13:00:00',
+            'end' => '14:00:00',
             'user_id' => 1,
-            'course_id' => 1,
+            'course_id' => 2,
         ]);
         
         Event::create([
-            'day' => 3,
-            'start' => '10:00:00',
-            'end' => '12:00:00',
+            'day' => 'monday',
+            'start' => '15:00:00',
+            'end' => '16:00:00',
             'user_id' => 1,
-            'course_id' => 2,
+            'course_id' => 3,
         ]);
 
         Event::create([
-            'day' => 4,
-            'start' => '10:00:00',
-            'end' => '12:00:00',
+            'day' => 'tuesday',
+            'start' => '07:00:00',
+            'end' => '08:00:00',
             'user_id' => 1,
-            'course_id' => 2,
+            'course_id' => 4,
         ]);
 
         Event::create([
-            'day' => 5,
-            'start' => '10:00:00',
-            'end' => '12:00:00',
+            'day' => 'tuesday',
+            'start' => '19:00:00',
+            'end' => '20:00:00',
             'user_id' => 1,
-            'course_id' => 2,
+            'course_id' => 5,
         ]);
 
     }

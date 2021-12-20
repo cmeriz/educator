@@ -16,8 +16,8 @@
         <!-- Scripts -->
         <script src="{{ mix('js/app.js') }}" defer></script>
     </head>
-    <body>
-        <div class="font-sans text-gray-900 antialiased">
+    <body class="flex items-center">
+        <div class="guest mx-auto grid grid-cols-2 items-stretch overflow-hidden w-full">
             {{ $slot }}
         </div>
     </body>

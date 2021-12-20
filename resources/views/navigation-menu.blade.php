@@ -103,9 +103,6 @@
         </ul>  
     </div>
 
-    {{-- Responsive Navigation Menu --}}
-    <div class="nav-mobile"></div>
-
 </nav>
 
 {{-- <nav x-data="{ open: false }" class="bg-white border-b border-gray-100">

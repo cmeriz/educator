@@ -1,0 +1,137 @@
+.course-card{
+
+    &--primary{
+        background-color: $primary-color-200;
+        color: $primary-color-700;
+
+        &:hover{
+            background-color: $primary-color-300;
+            color: $primary-color-800;
+        }
+
+        .course-card__progressbar{
+            background-color: $primary-color-100;
+        }
+
+        .progress{
+            background-color: $primary-color-700;
+        }
+
+    }
+
+    &--secondary{
+        background-color: $secondary-color-200;
+        color: $secondary-color-700;
+
+        &:hover{
+            background-color: $secondary-color-300;
+            color: $secondary-color-800;
+        }
+
+        .course-card__progressbar{
+            background-color: $secondary-color-100;
+        }
+
+        .progress{
+            background-color: $secondary-color-700;
+        }
+
+    }
+
+    &--red{
+        background-color: $red-color-200;
+        color: $red-color-700;
+
+        &:hover{
+            background-color: $red-color-300;
+            color: $red-color-800;
+        }
+
+        .course-card__progressbar{
+            background-color: $red-color-100;
+        }
+
+        .progress{
+            background-color: $red-color-700;
+        }
+
+
+    }
+
+    &--orange{
+        background-color: $orange-color-200;
+        color: $orange-color-700;
+
+        &:hover{
+            background-color: $orange-color-300;
+            color: $orange-color-800;
+        }
+
+        .course-card__progressbar{
+            background-color: $orange-color-100;
+        }
+
+        .progress{
+            background-color: $orange-color-700;
+        }
+
+    }
+
+    &--blue{
+        background-color: $blue-color-200;
+        color: $blue-color-700;
+
+        &:hover{
+            background-color: $blue-color-300;
+            color: $blue-color-800;
+        }
+
+        .course-card__progressbar{
+            background-color: $blue-color-100;
+        }
+
+        .progress{
+            background-color: $blue-color-700;
+        }
+
+    }
+
+    &--purple{
+        background-color: $purple-color-200;
+        color: $purple-color-700;
+
+        &:hover{
+            background-color: $purple-color-300;
+            color: $purple-color-800;
+        }
+
+        .course-card__progressbar{
+            background-color: $purple-color-100;
+        }
+
+        .progress{
+            background-color: $purple-color-700;
+        }
+
+    }
+
+    &--pink{
+        background-color: $pink-color-200;
+        color: $pink-color-700;
+
+        &:hover{
+            background-color: $pink-color-300;
+            color: $pink-color-800;
+        }
+
+        .course-card__progressbar{
+            background-color: $pink-color-100;
+        }
+
+        .progress{
+            background-color: $pink-color-700;
+        }
+
+    }
+
+}

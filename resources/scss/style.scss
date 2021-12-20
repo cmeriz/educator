@@ -9,8 +9,11 @@
 
 // Layout
 @import 'layout/main';
-
+@import 'layout/guest';
 
 // Components
+@import 'components/course-card';
+@import 'components/event-card';
+@import 'components/button';
 
 // Pages

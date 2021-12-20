@@ -26,42 +26,42 @@ class PensumSeeder extends Seeder
 
         Pensum::create([
             'name' => 'Sistemas Operativos',
-            'user_id' => 2,
+            'user_id' => 1,
         ]);
 
         Pensum::create([
             'name' => 'Programación de Sistemas',
-            'user_id' => 2,
+            'user_id' => 1,
         ]);
 
         Pensum::create([
             'name' => 'Arquitectura del Computador',
-            'user_id' => 3,
+            'user_id' => 1,
         ]);
 
         Pensum::create([
             'name' => 'Microcontroladores 1',
-            'user_id' => 3,
+            'user_id' => 1,
         ]);
 
         Pensum::create([
             'name' => 'Matemáticas Discretas',
-            'user_id' => 4,
+            'user_id' => 1,
         ]);
 
         Pensum::create([
             'name' => 'Algebra Lineal',
-            'user_id' => 4,
+            'user_id' => 1,
         ]);
 
         Pensum::create([
             'name' => 'Cálculo Integral',
-            'user_id' => 5,
+            'user_id' => 1,
         ]);
 
         Pensum::create([
             'name' => 'Metodología de la Investigación',
-            'user_id' => 5,
+            'user_id' => 1,
         ]);
     }
 }

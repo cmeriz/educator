@@ -1,16 +1,278 @@
 @import url("https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+/* line 1, ../scss/abstracts/_helpers.scss */
+.card-shadow {
+  box-shadow: 0px -1px 14px -1px rgba(148, 163, 184, 0.3);
+  -webkit-box-shadow: 0px -1px 14px -1px rgba(148, 163, 184, 0.3);
+  -moz-box-shadow: 0px -1px 14px -1px rgba(148, 163, 184, 0.3);
+}
+
 /* line 1, ../scss/base/_reset.scss */
 html {
   font-size: 1rem;
-  background-color: #58cea7;
   font-family: "Saira";
+}
+
+/* line 6, ../scss/base/_reset.scss */
+body {
+  background-color: #58cea7;
+}
+
+/* line 10, ../scss/base/_reset.scss */
+p {
+  line-height: 2em;
 }
 
 /* line 1, ../scss/layout/_main.scss */
 .main-container {
-  margin-left: -3.8rem;
-  padding: 2rem 2rem 2rem 5.8rem;
+  margin-left: auto;
   background-color: #FFFFFF;
+}
+@media screen and (min-width: 48rem) {
+  /* line 1, ../scss/layout/_main.scss */
+  .main-container {
+    margin-left: -3.8rem;
+    padding: 2rem 2rem 2rem 5.8rem;
+  }
+}
+
+/* line 1, ../scss/layout/_guest.scss */
+.guest {
+  min-height: 100vh;
+}
+/* line 5, ../scss/layout/_guest.scss */
+.guest__welcome, .guest__authentication, .guest__illustration {
+  display: flex;
+  align-items: center;
+}
+/* line 9, ../scss/layout/_guest.scss */
+.guest__welcome > div, .guest__authentication > div, .guest__illustration > div {
+  text-align: center;
+  width: 100%;
+}
+@media screen and (min-width: 64rem) {
+  /* line 9, ../scss/layout/_guest.scss */
+  .guest__welcome > div, .guest__authentication > div, .guest__illustration > div {
+    text-align: start;
+    max-width: 48rem;
+  }
+}
+/* line 21, ../scss/layout/_guest.scss */
+.guest__welcome {
+  display: none;
+  background-color: #10b981;
+}
+@media screen and (min-width: 64rem) {
+  /* line 21, ../scss/layout/_guest.scss */
+  .guest__welcome {
+    display: flex;
+  }
+}
+/* line 32, ../scss/layout/_guest.scss */
+.guest__authentication {
+  background-color: #FFFFFF;
+}
+/* line 36, ../scss/layout/_guest.scss */
+.guest__illustration {
+  display: none;
+  background-color: #FFFFFF;
+}
+/* line 39, ../scss/layout/_guest.scss */
+.guest__illustration svg {
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+}
+@media screen and (min-width: 64rem) {
+  /* line 36, ../scss/layout/_guest.scss */
+  .guest__illustration {
+    display: flex;
+  }
+}
+
+/* line 3, ../scss/components/_course-card.scss */
+.course-card--primary {
+  background-color: #c3eee0;
+  color: #0c8b61;
+}
+/* line 7, ../scss/components/_course-card.scss */
+.course-card--primary:hover {
+  background-color: #9fe3cd;
+  color: #0a6f4d;
+}
+/* line 12, ../scss/components/_course-card.scss */
+.course-card--primary .course-card__progressbar {
+  background-color: #e7f8f2;
+}
+/* line 16, ../scss/components/_course-card.scss */
+.course-card--primary .progress {
+  background-color: #0c8b61;
+}
+/* line 22, ../scss/components/_course-card.scss */
+.course-card--secondary {
+  background-color: #cccccc;
+  color: #272727;
+}
+/* line 26, ../scss/components/_course-card.scss */
+.course-card--secondary:hover {
+  background-color: #aeaeae;
+  color: #1f1f1f;
+}
+/* line 31, ../scss/components/_course-card.scss */
+.course-card--secondary .course-card__progressbar {
+  background-color: #ebebeb;
+}
+/* line 35, ../scss/components/_course-card.scss */
+.course-card--secondary .progress {
+  background-color: #272727;
+}
+/* line 41, ../scss/components/_course-card.scss */
+.course-card--red {
+  background-color: #fecaca;
+  color: #b91c1c;
+}
+/* line 45, ../scss/components/_course-card.scss */
+.course-card--red:hover {
+  background-color: #fca5a5;
+  color: #991b1b;
+}
+/* line 50, ../scss/components/_course-card.scss */
+.course-card--red .course-card__progressbar {
+  background-color: #fee2e2;
+}
+/* line 54, ../scss/components/_course-card.scss */
+.course-card--red .progress {
+  background-color: #b91c1c;
+}
+/* line 61, ../scss/components/_course-card.scss */
+.course-card--orange {
+  background-color: #fed7aa;
+  color: #c2410c;
+}
+/* line 65, ../scss/components/_course-card.scss */
+.course-card--orange:hover {
+  background-color: #fdba74;
+  color: #9a3412;
+}
+/* line 70, ../scss/components/_course-card.scss */
+.course-card--orange .course-card__progressbar {
+  background-color: #ffedd5;
+}
+/* line 74, ../scss/components/_course-card.scss */
+.course-card--orange .progress {
+  background-color: #c2410c;
+}
+/* line 80, ../scss/components/_course-card.scss */
+.course-card--blue {
+  background-color: #bfdbfe;
+  color: #1d4ed8;
+}
+/* line 84, ../scss/components/_course-card.scss */
+.course-card--blue:hover {
+  background-color: #93c5fd;
+  color: #1e40af;
+}
+/* line 89, ../scss/components/_course-card.scss */
+.course-card--blue .course-card__progressbar {
+  background-color: #dbeafe;
+}
+/* line 93, ../scss/components/_course-card.scss */
+.course-card--blue .progress {
+  background-color: #1d4ed8;
+}
+/* line 99, ../scss/components/_course-card.scss */
+.course-card--purple {
+  background-color: #e9d5ff;
+  color: #7e22ce;
+}
+/* line 103, ../scss/components/_course-card.scss */
+.course-card--purple:hover {
+  background-color: #d8b4fe;
+  color: #6b21a8;
+}
+/* line 108, ../scss/components/_course-card.scss */
+.course-card--purple .course-card__progressbar {
+  background-color: #f3e8ff;
+}
+/* line 112, ../scss/components/_course-card.scss */
+.course-card--purple .progress {
+  background-color: #7e22ce;
+}
+/* line 118, ../scss/components/_course-card.scss */
+.course-card--pink {
+  background-color: #fbcfe8;
+  color: #be185d;
+}
+/* line 122, ../scss/components/_course-card.scss */
+.course-card--pink:hover {
+  background-color: #f9a8d4;
+  color: #9d174d;
+}
+/* line 127, ../scss/components/_course-card.scss */
+.course-card--pink .course-card__progressbar {
+  background-color: #fce7f3;
+}
+/* line 131, ../scss/components/_course-card.scss */
+.course-card--pink .progress {
+  background-color: #be185d;
+}
+
+/* line 1, ../scss/components/_event-card.scss */
+.event-card, .event-card--primary, .event-card--secondary, .event-card--red, .event-card--orange, .event-card--blue, .event-card--purple, .event-card--pink {
+  color: #FFFFFF;
+}
+/* line 5, ../scss/components/_event-card.scss */
+.event-card--primary {
+  background-color: #10b981;
+}
+/* line 10, ../scss/components/_event-card.scss */
+.event-card--secondary {
+  background-color: #343434;
+}
+/* line 15, ../scss/components/_event-card.scss */
+.event-card--red {
+  background-color: #ef4444;
+}
+/* line 20, ../scss/components/_event-card.scss */
+.event-card--orange {
+  background-color: #f97316;
+}
+/* line 25, ../scss/components/_event-card.scss */
+.event-card--blue {
+  background-color: #3b82f6;
+}
+/* line 30, ../scss/components/_event-card.scss */
+.event-card--purple {
+  background-color: #a855f7;
+}
+/* line 35, ../scss/components/_event-card.scss */
+.event-card--pink {
+  background-color: #ec4899;
+}
+
+/* line 1, ../scss/components/_button.scss */
+.btn, .btn--primary, .btn--primary-outlined, .btn--white {
+  padding: .5em 1.5em;
+  border-radius: .4em;
+  font-weight: 600;
+  transition: transform .3s ease, background-color .3s ease;
+}
+/* line 7, ../scss/components/_button.scss */
+.btn--primary, .btn--primary-outlined {
+  background-color: #10b981;
+  color: #FFFFFF;
+}
+/* line 12, ../scss/components/_button.scss */
+.btn--primary-outlined {
+  border: 1px solid #FFFFFF;
+}
+/* line 19, ../scss/components/_button.scss */
+.btn--white {
+  background-color: #FFFFFF;
+  color: #10b981;
+}
+/* line 26, ../scss/components/_button.scss */
+.btn:hover, .btn--primary:hover, .btn--primary-outlined:hover, .btn--white:hover {
+  transform: scale(1.05);
 }
 
 /*# sourceMappingURL=style.css.map */

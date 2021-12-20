@@ -1,0 +1,31 @@
+.btn{
+    padding: .5em 1.5em;
+    border-radius: .4em;
+    font-weight: 600;
+    transition: transform .3s ease, background-color .3s ease;
+
+    &--primary{
+        @extend .btn;
+        background-color: $primary-color-500;
+        color: $white;
+
+        &-outlined{
+            @extend .btn--primary;
+            border: 1px solid $white;
+        }
+
+    }
+
+    &--white{
+        @extend .btn;
+        background-color: $white;
+        color: $primary-color-500;
+    }
+
+
+    &:hover{
+        transform: scale(1.05);
+    }
+
+
+}

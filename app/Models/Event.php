@@ -9,14 +9,8 @@ class Event extends Model
 {
     use HasFactory;
 
-    const days = [
-        'monday' => 1,
-        'tuesday' => 2,
-        'wednesday' => 3,
-        'thursday' => 4,
-        'friday' => 5,
-        'saturday' => 6,
-        'sunday' => 7
+    const DAYS = [
+        'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'
     ];
 
     // Reverse User Relationship 1:n

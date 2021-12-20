@@ -17,10 +17,8 @@ class CreateEventsTable extends Migration
 
         Schema::create('events', function (Blueprint $table) {
 
-            $days = array_values(Event::days);
-
             $table->id();
-            $table->enum('day', $days)->default($days[0]);
+            $table->enum('day', Event::DAYS)->default(Event::DAYS[0]);
             $table->time('start', 0);
             $table->time('end', 0);
 

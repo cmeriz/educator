@@ -16,61 +16,71 @@ class CourseSeeder extends Seeder
     {
         Course::create([
             'name' => 'Fundamentos de Programación',
+            'color' => 'primary',
             'user_id' => 1,
             'pensum_id' => 1,
         ]);
 
         Course::create([
             'name' => 'Estructura de Datos',
+            'color' => 'blue',
             'user_id' => 1,
             'pensum_id' => 2,
         ]);
 
         Course::create([
             'name' => 'Sistemas Operativos',
-            'user_id' => 2,
+            'color' => 'red',
+            'user_id' => 1,
             'pensum_id' => 3,
         ]);
 
         Course::create([
             'name' => 'Programación de Sistemas',
-            'user_id' => 2,
+            'color' => 'blue',
+            'user_id' => 1,
             'pensum_id' => 4,
         ]);
 
         Course::create([
             'name' => 'Arquitectura del Computador',
-            'user_id' => 3,
+            'color' => 'orange',
+            'user_id' => 1,
             'pensum_id' => 5,
         ]);
 
         Course::create([
             'name' => 'Microcontroladores 1',
-            'user_id' => 3,
+            'color' => 'purple',
+            'user_id' => 1,
             'pensum_id' => 6,
         ]);
 
         Course::create([
             'name' => 'Matemáticas Discretas',
-            'user_id' => 4,
+            'color' => 'pink',
+            'user_id' => 1,
             'pensum_id' => 7,
         ]);
 
         Course::create([
             'name' => 'Algebra Lineal',
-            'user_id' => 4,
+            'color' => 'primary',
+            'user_id' => 1,
             'pensum_id' => 8,
         ]);
 
         Course::create([
             'name' => 'Cálculo Integral',
-            'user_id' => 5,
+            'color' => 'blue',
+            'user_id' => 1,
             'pensum_id' => 9,
         ]);
 
         Course::create([
             'name' => 'Metodología de la Investigación',
-            'user_id' => 5,
+            'color' => 'red',
+            'user_id' => 1,
             'pensum_id' => 10,
         ]);
 

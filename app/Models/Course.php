@@ -9,6 +9,10 @@ class Course extends Model
 {
     use HasFactory;
 
+    const COLORS = [
+        'primary', 'secondary', 'red', 'orange', 'blue', 'purple', 'pink'
+    ];
+
     // Reverse User Relationship 1:n
     public function user(){
         return $this->belongsTo('App\Models\User');

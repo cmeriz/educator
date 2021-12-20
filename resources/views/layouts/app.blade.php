@@ -15,73 +15,91 @@
     <script src="{{ mix('js/app.js') }}" defer></script>
 
 </head>
-<body class="py-8">
+<body class="md:py-8">
     
-    <div class="container flex items-stretch mx-auto">
+    <div class="md:container flex items-stretch w-full md:w-auto mx-auto">
         
-        <div class="navigation-container flex items-stretch z-10">
+        <div class="navigation-container hidden md:flex items-stretch z-10">
             @livewire('navigation-menu')
         </div>
 
-        <div class="main-container w-full rounded-lg">
+        <div class="main-container w-full md:rounded-lg">
 
-            <header class="main-header flex justify-between items-center text">
-                @if (isset($header))
-                <h1 class="text-2xl font-medium">
-                    {{ $header }}
-                </h1>
-                
-                @endif
+            <header class="main-header flex flex-wrap justify-between items-center text-secondary-500 md:mb-8">
 
-                <x-jet-dropdown align="right" width="48">
-                    <x-slot name="trigger">
-                        @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
-                            <button class="flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300 transition">
-                                <img class="h-10 w-10 rounded-full object-cover" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
-                            </button>
-                        @else
-                            <span class="inline-flex rounded-md">
-                                <button type="button" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition">
-                                    {{ Auth::user()->name }}
-
-                                    <svg class="ml-2 -mr-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                                    </svg>
+                <div class="flex justify-between py-2 px-4 md:p-0 bg-primary-500 md:bg-transparent w-full md:w-auto">
+                    <a class="logo-mobile block md:hidden text-white" href="{{ route('home') }}">
+                        <x-jet-application-mark/>
+                    </a>
+            
+                    <x-jet-dropdown align="right" width="48">
+                        <x-slot name="trigger">
+                            @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
+                                <button class="flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300 transition">
+                                    <img class="h-10 w-10 rounded-full object-cover" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
                                 </button>
-                            </span>
-                        @endif
-                    </x-slot>
+                            @else
+                                <span class="inline-flex rounded-md">
+                                    <button type="button" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition">
+                                        {{ Auth::user()->name }}
 
-                    <x-slot name="content">
-                        <!-- Account Management -->
-                        <div class="block px-4 py-2 text-xs text-gray-400">
-                            Administra tu cuenta
-                        </div>
+                                        <svg class="ml-2 -mr-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                        </svg>
+                                    </button>
+                                </span>
+                            @endif
+                        </x-slot>
 
-                        <x-jet-dropdown-link href="{{ route('profile.show') }}">
-                            Mi perfil
-                        </x-jet-dropdown-link>
+                        <x-slot name="content">
 
-                        @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
-                            <x-jet-dropdown-link href="{{ route('api-tokens.index') }}">
-                                {{ __('API Tokens') }}
+                            <x-jet-dropdown-link href="{{ route('home') }}">
+                                Inicio
                             </x-jet-dropdown-link>
-                        @endif
 
-                        <div class="border-t border-gray-100"></div>
-
-                        <!-- Authentication -->
-                        <form method="POST" action="{{ route('logout') }}">
-                            @csrf
-
-                            <x-jet-dropdown-link href="{{ route('logout') }}"
-                                    onclick="event.preventDefault();
-                                            this.closest('form').submit();">
-                                Salir
+                            <x-jet-dropdown-link href="{{ route('home') }}">
+                                Cursos
                             </x-jet-dropdown-link>
-                        </form>
-                    </x-slot>
-                </x-jet-dropdown>
+
+                            <x-jet-dropdown-link href="{{ route('home') }}">
+                                Horarios
+                            </x-jet-dropdown-link>
+
+                            <x-jet-dropdown-link href="{{ route('home') }}">
+                                Pensums
+                            </x-jet-dropdown-link>
+
+                            <x-jet-dropdown-link href="{{ route('profile.show') }}">
+                                Mi perfil
+                            </x-jet-dropdown-link>
+
+                            @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
+                                <x-jet-dropdown-link href="{{ route('api-tokens.index') }}">
+                                    {{ __('API Tokens') }}
+                                </x-jet-dropdown-link>
+                            @endif
+
+                            <div class="border-t border-gray-100"></div>
+
+                            <!-- Authentication -->
+                            <form method="POST" action="{{ route('logout') }}">
+                                @csrf
+
+                                <x-jet-dropdown-link href="{{ route('logout') }}"
+                                        onclick="event.preventDefault();
+                                                this.closest('form').submit();">
+                                    Salir
+                                </x-jet-dropdown-link>
+                            </form>
+                        </x-slot>
+                    </x-jet-dropdown>
+                </div>
+
+                @if (isset($header))
+                <h1 class="text-2xl w-full md:w-auto mx-8 md:mx-0 mt-12 md:mt-0 font-medium md:order-first">
+                    {{ $header }}
+                </h1>                
+                @endif
 
             </header>
             
