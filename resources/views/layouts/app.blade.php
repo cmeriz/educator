@@ -13,6 +13,7 @@
 
     <!-- Scripts -->
     <script src="{{ mix('js/app.js') }}" defer></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </head>
 <body class="md:py-8">
@@ -23,7 +24,7 @@
             @livewire('navigation-menu')
         </div>
 
-        <div class="main-container w-full md:rounded-lg">
+        <div class="main-container flex flex-col w-full md:rounded-lg">
 
             <header class="main-header flex flex-wrap justify-between items-center text-secondary-500 md:mb-8">
 
@@ -103,7 +104,7 @@
 
             </header>
             
-            <main class="main-content">
+            <main class="main-content flex flex-1">
                 {{ $slot }}
             </main>
             
@@ -112,6 +113,18 @@
     </div>
 
     @livewireScripts
+
+    <script>
+        Livewire.on('alert', function(icon, message){
+            Swal.fire({
+                position: 'center',
+                icon: icon,
+                title: message,
+                showConfirmButton: false,
+                timer: 1500
+            })
+        });
+    </script>
 
 </body>
 </html>

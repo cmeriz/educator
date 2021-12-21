@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\CourseController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PensumController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,6 +17,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', HomeController::class)->name('home');
+
+Route::get('courses', [CourseController::class, 'index'])->name('courses.index');
+
+Route::get('pensums', [PensumController::class, 'index'])->name('pensums.index');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');

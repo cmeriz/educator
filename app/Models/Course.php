@@ -7,6 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Course extends Model
 {
+
+    protected $guarded = ['id'];
+
     use HasFactory;
 
     const COLORS = [

@@ -11,7 +11,7 @@
                 de clases para estar siempre al día. ¡Accede con una cuenta de prueba o regístrate!
             </p>
             <div class="flex gap-4 justify-center lg:justify-start flex-wrap">
-                <x-button tag="button" class="btn--primary-outlined">
+                <x-button tag="button" class="btn--white-outlined">
                     Cuenta de prueba
                 </x-button>
                 <x-button tag="anchor" href="{{ route('register') }}" class="btn--white">

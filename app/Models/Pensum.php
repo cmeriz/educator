@@ -7,6 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Pensum extends Model
 {
+
+    protected $guarded = ['id'];
+
     use HasFactory;
 
     // Reverse User Relationship 1:n

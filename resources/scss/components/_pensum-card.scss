@@ -1,0 +1,7 @@
+.pensum-card{
+    &:hover{
+        background-color: $primary-color-50;
+        color: $primary-color-900;
+        transform: scale(1.05);
+    }
+}
