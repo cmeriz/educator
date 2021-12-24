@@ -35,7 +35,6 @@ class PensumCreate extends Component
         ]);
 
         $this->reset(['name', 'open']);
-
         $this->emitTo('pensums.pensums-index', 'render');
         $this->emit('alert', 'success', '¡El pensum fue creado exitosamente!');
 

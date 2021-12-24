@@ -7,7 +7,7 @@
     </div>
     <div class="pensums-index__grid grid grid-cols-6 gap-8">
         @foreach ($pensums as $pensum)
-            <x-pensum-card id="{{ $pensum->id }}" name="{{ $pensum->name }}" class="col-span-6 sm:col-span-3 xl:col-span-2" />
+            <x-pensum-card :pensum="$pensum" class="col-span-6 sm:col-span-3 xl:col-span-2" />
         @endforeach
     </div>
 

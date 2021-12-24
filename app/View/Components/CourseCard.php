@@ -8,17 +8,17 @@ use Illuminate\View\Component;
 class CourseCard extends Component
 {
 
-    public $name, $color, $class;
+    public $course;
+    public $class;
 
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($name, $color, $class)
+    public function __construct(Course $course, $class)
     {
-        $this->name = $name;
-        $this->color = $color;
+        $this->course = $course;
         $this->class = $class;
     }
 

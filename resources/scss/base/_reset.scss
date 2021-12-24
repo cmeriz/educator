@@ -4,7 +4,13 @@ html{
 }
 
 body{
-    background-color: $primary-color-400;
+    background-color: $white;
+
+    @include md-size{
+        background-color: $primary-color-400;
+    }
+
+    
 }
 
 p{

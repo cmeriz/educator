@@ -3,24 +3,25 @@
 namespace App\View\Components;
 
 use App\Models\Course;
+use App\Models\Lesson;
+use App\Models\Pensum;
 use Illuminate\View\Component;
 
 class PensumCard extends Component
 {
 
-    public $id, $name, $courses_count, $lessons_count, $class;
+    public $pensum, $courses_count, $lessons_count, $class;
 
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($id, $name, $class = '')
+    public function __construct(Pensum $pensum, $class = '')
     {
-        $this->id = $id;
-        $this->name = $name;
-        $this->courses_count = Course::where('pensum_id', $id)->count();
-        $this->lessons_count = 0;
+        $this->pensum = $pensum;
+        $this->courses_count = Course::where('pensum_id', $this->pensum->id)->count();
+        $this->lessons_count = Lesson::where('pensum_id', $this->pensum->id)->count();
         $this->class = $class;
     }
 

@@ -12,7 +12,10 @@ class CoursesIndex extends Component
 
     public $search;
 
-    protected $listeners = ['render'];
+    protected $listeners = [
+        'deleteCourse' => 'destroy',
+        'render'
+    ];
 
     public function render()
     {
@@ -25,6 +28,14 @@ class CoursesIndex extends Component
 
     public function updatingSearch(){
         $this->resetPage();
+    }
+
+    public function destroy(Course $course){
+        $course->delete();
+
+        $this->emitSelf('render');
+        $this->emit('alert', 'success', '¡El curso fue eliminado exitosamente!');
+
     }
 
 }

@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateLessonsTable extends Migration
 {
+
     /**
      * Run the migrations.
      *
@@ -16,7 +17,7 @@ class CreateLessonsTable extends Migration
         Schema::create('lessons', function (Blueprint $table) {
             $table->id();
 
-            $table->string('name');
+            $table->string('title');
 
             // Foreign Fields
             $table->unsignedBigInteger('pensum_id');

@@ -1,7 +1,6 @@
 <div class="text-secondary-500">
-
-    <x-button x-data class="btn--icon--primary" @click="setTimeout(() => document.querySelector('#input-name').focus(), 400);" wire:click="$set('open', true)">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <x-button class="btn--icon--primary" wire:click="$set('open', true)">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
         </svg>
     </x-button>
@@ -9,15 +8,15 @@
     <x-jet-dialog-modal wire:model="open">
 
         <x-slot name="title">
-            Crear nuevo pensum
+            Crear nueva lección
         </x-slot>      
 
         <x-slot name="content">
             <div class="mb-4">
-                <x-jet-label value="Nombre:"/>
-                <x-jet-input @keyup.enter="document.querySelector('#button-submit').click()" id="input-name" wire:model="name" type="text" class="w-full" placeholder="Nombre del pensum"/>
+                <x-jet-label value="Título:"/>
+                <x-jet-input wire:model="title" type="text" class="w-full" placeholder="Título de la lección"/>
 
-                <x-jet-input-error for="name" />
+                <x-jet-input-error for="title" />
 
             </div>
         </x-slot>
@@ -27,8 +26,8 @@
                 <x-button tag="button" class="btn--primary-outlined" wire:click="$set('open', false)">
                     Cancelar
                 </x-button>
-                <x-button id="button-submit" tag="button" class="btn--primary" wire:click="save" >
-                    Crear pensum
+                <x-button tag="button" class="btn--primary" wire:click="save" >
+                    Crear lección
                 </x-button>
             </div>
         </x-slot>

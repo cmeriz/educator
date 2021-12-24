@@ -28,7 +28,6 @@ class CourseCreate extends Component
 
     public function render()
     {
-
         $pensums = Pensum::where('user_id', auth()->user()->id)->get();
 
         return view('livewire.courses.course-create', compact('pensums'));

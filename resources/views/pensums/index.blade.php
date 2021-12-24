@@ -3,6 +3,8 @@
         Mis Pensums
     </x-slot>
 
-    @livewire('pensums.pensums-index')
+
+    @livewire('pensums.pensums-index', [], key('pensums-index'))
+
 
 </x-app-layout>

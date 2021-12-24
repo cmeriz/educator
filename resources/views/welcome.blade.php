@@ -9,7 +9,7 @@
             <div class="grid grid-cols-2 gap-8">
                 @foreach ($courses as $course)
                 
-                    <x-course-card name="{{ $course->name }}" color="{{ $course->color }}" class="col-span-2 md:col-span-1 ml:col-span-2 xl:col-span-1" />
+                    <x-course-card :course="$course" class="col-span-2 md:col-span-1 ml:col-span-2 xl:col-span-1" />
 
                 @endforeach
             </div>

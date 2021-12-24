@@ -3,6 +3,8 @@
     border-radius: .4em;
     font-weight: 600;
     transition: transform .3s ease, background-color .3s ease;
+    font-style: normal;
+    cursor: pointer;
 
     &--primary{
         @extend .btn;
@@ -32,16 +34,29 @@
 
     }
 
+    &--gray{
+        @extend .btn;
+        background-color: $white;
+        color: $secondary-color-300;
+
+        &-outlined{
+            @extend .btn;
+            background-color: transparent;
+            color: $secondary-color-400;
+            border: 1px solid $secondary-color-300;
+        }
+
+    }
+
+
 
     &:hover{
         transform: scale(1.05);
     }
 
-    &--primary-icon{
-        color: $white;
+    &--icon{
         width: 2.5em;
         height: 2.5em;
-        background-color: $primary-color-500;
         border-radius: 100%;
         transition: transform .3s ease, background-color .3s ease;
 
@@ -49,7 +64,35 @@
             transform: scale(1.05);
         }
 
+        svg{
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        &--primary{
+            @extend .btn--icon;
+            color: $white;
+            background-color: $primary-color-500;
+        }
+
+        &--danger{
+            @extend .btn--icon;
+            color: $red-color-500;
+            background-color: $red-color-100;
+        }
+
+        &--blue{
+            @extend .btn--icon;
+            color: $blue-color-500;
+            background-color: $blue-color-100;
+        }
+
     }
 
+    &--danger{
+        @extend .btn;
+        background-color: $red-color-500;
+        color: $white;
+    }
 
 }
