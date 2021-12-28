@@ -5,36 +5,74 @@
     &--primary{
         @extend .event-card;
         background-color: $primary-color-500;
+
+        button{
+            background-color: $primary-color-400;
+        }
     }
 
     &--secondary{
         @extend .event-card;
         background-color: $secondary-color-500;
+
+        button{
+            background-color: $secondary-color-400;
+        }
     }
 
     &--red{
         @extend .event-card;
         background-color: $red-color-500;
+
+        button{
+            background-color: $red-color-400;
+        }
     }
 
     &--orange{
         @extend .event-card;
         background-color: $orange-color-500;
+
+        button{
+            background-color: $orange-color-400;
+        }
     }
 
     &--blue{
         @extend .event-card;
         background-color: $blue-color-500;
+
+        button{
+            background-color: $blue-color-400;
+        }
     }
 
     &--purple{
         @extend .event-card;
         background-color: $purple-color-500;
+
+        button{
+            background-color: $purple-color-400;
+        }
     }
 
     &--pink{
         @extend .event-card;
         background-color: $pink-color-500;
+
+        button{
+            background-color: $pink-color-400;
+        }
+
+    }
+
+    &.not-active{
+        color: $secondary-color-400;
+        background-color: $secondary-color-50;
+
+        button{
+            background-color: $secondary-color-100;
+        }
     }
 
 }

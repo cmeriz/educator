@@ -1,0 +1,16 @@
+.events-index{
+
+    table{
+        width: 120rem;
+
+        th, td{
+            padding-right: 2rem;
+
+            &:last-of-type{
+                padding-right: 0;
+            }
+
+        }
+
+    }
+}

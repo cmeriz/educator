@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\EventController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PensumController;
 use Illuminate\Support\Facades\Route;
@@ -23,6 +24,8 @@ Route::get('courses/{course}', [CourseController::class, 'show'])->name('courses
 
 Route::get('pensums', [PensumController::class, 'index'])->name('pensums.index');
 Route::get('pensums/{pensum}', [PensumController::class, 'show'])->name('pensums.show');
+
+Route::get('events', [EventController::class, 'index'])->name('events.index');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');

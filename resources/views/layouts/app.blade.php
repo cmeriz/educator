@@ -104,7 +104,7 @@
 
             </header>
             
-            <main class="main-content flex flex-1">
+            <main class="main-content grid flex-1">
                 {{ $slot }}
             </main>
             

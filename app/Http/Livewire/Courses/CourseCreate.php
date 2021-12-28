@@ -45,7 +45,6 @@ class CourseCreate extends Component
         ]);
 
         $this->reset(['open', 'name', 'color', 'pensum']);
-
         $this->emitTo('courses.courses-index', 'render');
         $this->emit('alert', 'success', '¡El curso fue creado exitosamente!');
 

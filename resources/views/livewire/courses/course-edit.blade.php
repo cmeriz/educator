@@ -8,8 +8,7 @@
     <x-button id="open-modal" class="bg-white hover:scale-105 transition-all p-2 rounded-lg" 
         wire:click="$set('open', true)" 
         @click="
-            openColor = false;
-            openPensum = false;
+            openColor = openPensum = false;
             selectedPensum = '{{ $pensum_name }}';
             document.querySelector('#input-color-{{ $color . '-' . $course_id }}').click();
             setTimeout(() => document.querySelector('#input-name-{{ $course_id }}').focus(), 400);

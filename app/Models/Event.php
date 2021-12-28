@@ -9,6 +9,8 @@ class Event extends Model
 {
     use HasFactory;
 
+    protected $guarded = ['id'];
+
     const DAYS = [
         'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'
     ];

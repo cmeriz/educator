@@ -2,24 +2,24 @@
 
 namespace App\View\Components;
 
+use App\Models\Event;
 use Illuminate\View\Component;
 
 class EventCard extends Component
 {
 
-    public $name, $start, $end, $color;
+    public $event, $class, $controls;
 
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($name, $start, $end, $color)
+    public function __construct(Event $event, $class = '', $controls = false)
     {
-        $this->name = $name;
-        $this->start = $start;
-        $this->end = $end;
-        $this->color = $color;
+        $this->event = $event;
+        $this->class = $class;
+        $this->controls = $controls;
     }
 
     /**

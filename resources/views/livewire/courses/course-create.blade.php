@@ -10,12 +10,9 @@
     <x-button id="open-modal" class="btn--icon--primary" 
         wire:click="$set('open', true)" 
         @click="
-            openColor = false;
+            openColor = filledColor = openPensum = filledPensum = false;
             selectedColor = 'Selecciona un color';
-            filledColor = false
-            openPensum = false;
             selectedPensum = 'Selecciona un pensum';
-            filledPensum = false;
             setTimeout(() => document.querySelector('#input-name').focus(), 400);
     ">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">

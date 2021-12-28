@@ -21,7 +21,7 @@
             </span>
         </div>
     </a>
-    
+
     <div class="pensum-card__buttons flex justify-end gap-2 mt-2">
 
         {{-- Edit Button --}}

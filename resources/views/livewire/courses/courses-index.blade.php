@@ -6,7 +6,7 @@
     <div class="courses-index__grid grid grid-cols-6 gap-8">
 
         @foreach ($courses as $course)
-            <x-course-card :course="$course" class="col-span-6 sm:col-span-3 xl:col-span-2" />
+            <x-course-card :course="$course" class="col-span-6 sm:col-span-3 xl:col-span-2" controls="true"/>
         @endforeach
     </div>
 
