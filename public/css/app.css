@@ -667,9 +667,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   position: absolute;
 }.relative{
   position: relative;
-}.sticky{
-  position: -webkit-sticky;
-  position: sticky;
 }.inset-0{
   top: 0px;
   right: 0px;
@@ -956,8 +953,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   overflow-y: hidden;
 }.overflow-x-scroll{
   overflow-x: scroll;
-}.overflow-y-scroll{
-  overflow-y: scroll;
 }.truncate{
   overflow: hidden;
   text-overflow: ellipsis;
@@ -1185,10 +1180,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-top: 6rem;
 }.pb-14{
   padding-bottom: 3.5rem;
-}.pt-8{
-  padding-top: 2rem;
 }.pb-8{
   padding-bottom: 2rem;
+}.pt-8{
+  padding-top: 2rem;
 }.text-left{
   text-align: left;
 }.text-center{
@@ -1621,10 +1616,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-repeat: no-repeat;
   background-size: 20px;
   background-position: 98% center;
-}/* line 3, ../scss/components/_pensum-card.scss */.pensum-card:hover {
-  box-shadow: 0px -1px 14px -1px rgba(148, 163, 184, 0.7);
-  -webkit-box-shadow: 0px -1px 14px -1px rgba(148, 163, 184, 0.7);
-  -moz-box-shadow: 0px -1px 14px -1px rgba(148, 163, 184, 0.7);
 }/* line 3, ../scss/views/_events.scss */.events-index table {
   width: 120rem;
 }/* line 6, ../scss/views/_events.scss */.events-index table th, .events-index table td {

@@ -389,13 +389,6 @@ p {
   background-position: 98% center;
 }
 
-/* line 3, ../scss/components/_pensum-card.scss */
-.pensum-card:hover {
-  box-shadow: 0px -1px 14px -1px rgba(148, 163, 184, 0.7);
-  -webkit-box-shadow: 0px -1px 14px -1px rgba(148, 163, 184, 0.7);
-  -moz-box-shadow: 0px -1px 14px -1px rgba(148, 163, 184, 0.7);
-}
-
 /* line 3, ../scss/views/_events.scss */
 .events-index table {
   width: 120rem;

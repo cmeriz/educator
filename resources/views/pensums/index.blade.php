@@ -6,5 +6,4 @@
 
     @livewire('pensums.pensums-index', [], key('pensums-index'))
 
-
 </x-app-layout>

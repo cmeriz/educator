@@ -1,4 +1,4 @@
-<article class="pensum-card flex flex-col bg-white text-secondary-500 p-6 card-shadow rounded-lg overflow-hidden transition-all {{ $class }}">
+<article {{ $attributes }} class="pensum-card flex flex-col bg-white text-secondary-500 p-6 card-shadow rounded-lg overflow-hidden hover:scale-105 transition-all {{ $class }}">
 
     <a href="{{ route('pensums.show', $pensum ) }}" class="flex flex-col gap-2">
         <h1 class="font-medium">{{ $pensum->name }}</h1>
@@ -24,8 +24,11 @@
 
     <div class="pensum-card__buttons flex justify-end gap-2 mt-2">
 
-        {{-- Edit Button --}}
-        @livewire('pensums.pensum-edit', ['pensum' => $pensum], key('pensum-edit' . $pensum->id))
+        <x-button wire:click="$emit('pensumEdit', {{ $pensum }})" x-on:click="setTimeout(() => document.querySelector('#input-edit-name').focus(), 400);" class="bg-blue-100 text-blue-500 hover:scale-105 transition-all p-2 rounded-lg self-end">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+            </svg>
+        </x-button>
 
         {{-- Delete Button --}}
         <button wire:click="$emit('modelDeleteAttempt', {{ $pensum->id }}, 'pensumDelete', '¿Borrar pensum?')" class="bg-red-100 text-red-500 hover:scale-105 transition-all p-2 rounded-lg self-end">
