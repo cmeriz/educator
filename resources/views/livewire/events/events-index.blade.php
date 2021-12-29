@@ -2,7 +2,7 @@
     x-data="{day: (new Date().toLocaleDateString('en-US', {weekday: 'long'})).toLowerCase()}"
     class="events-index relative grid flex-col text-secondary-500 gap-8 p-8 md:card-shadow w-full md:rounded-lg">
     
-    @livewire('events.event-create')
+    @livewire('events.event-create', [], key('event-create'))
 
     <div class="grid overflow-x-scroll pb-8">
         <table>
@@ -59,6 +59,7 @@
 
         </table>
     </div>
-    
+
+    @livewire('events.event-edit', [], key('event-edit'))
 
 </div>

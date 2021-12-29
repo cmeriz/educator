@@ -1,4 +1,4 @@
-<article class="course-card--{{ $course->color }} flex flex-col relative p-6 transition-all rounded-lg shadow-lg {{ $class }}
+<article class="course-card--{{ $course->color }} flex flex-col relative p-6 hover:scale-105 transition-all rounded-lg shadow-lg {{ $class }}
                 " >
     <a href="{{ route('courses.show', $course) }}" class="flex flex-col gap-3 flex-1">
         <div class="course-card__name-students flex flex-col ml:flex-row sm:justify-between items-start ml:items-center ml:gap-8">
@@ -27,21 +27,23 @@
 
         <div class="flex gap-2 self-end mt-2">
             {{-- Edit Button --}}
-            @livewire('courses.course-edit', [
-                'course_id' => $course->id,
-                'name' => $course->name,
-                'color' => $course->color,
-                'pensum_id' => $course->pensum->id,
-            ], key('course-edit' . $course->id))
+            <x-button class="bg-white hover:scale-105 transition-all p-2 rounded-lg" 
+                wire:click="$emit('courseEdit', {{ $course }})" 
+                x-on:click="
+                    setTimeout(() => document.querySelector('#input-name').focus(), 400);
+                ">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                </svg>
+            </x-button>
 
             {{-- Delete Button --}}
 
-            
-                <button wire:click="$emit('modelDeleteAttempt', {{ $course->id }}, 'deleteCourse', '¿Borrar curso?')" class=" bg-white hover:scale-105 transition-all p-2 rounded-lg">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                    </svg>
-                </button>
+            <button wire:click="$emit('modelDeleteAttempt', {{ $course->id }}, 'deleteCourse', '¿Borrar curso?')" class=" bg-white hover:scale-105 transition-all p-2 rounded-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                </svg>
+            </button>
             
         </div>
 

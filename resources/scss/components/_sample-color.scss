@@ -1,0 +1,59 @@
+.sample{
+    border: 1px solid;
+    &-primary{
+        @extend .sample;
+        &--200{
+            @extend .sample-primary;
+            border-color: $primary-color-300;
+            background-color: $primary-color-200;
+        }
+    }
+    &-secondary{
+        @extend .sample;
+        &--200{
+            @extend .sample-secondary;
+            border-color: $secondary-color-300;
+            background-color: $secondary-color-200;
+        }
+    }
+    &-red{
+        @extend .sample;
+        &--200{
+            @extend .sample-red;
+            border-color: $red-color-300;
+            background-color: $red-color-200;
+        }
+    }
+    &-orange{
+        @extend .sample;
+        &--200{
+            @extend .sample-orange;
+            border-color: $orange-color-300;
+            background-color: $orange-color-200;
+        }
+    }
+    &-blue{
+        @extend .sample;
+        &--200{
+            @extend .sample-blue;
+            border-color: $blue-color-300;
+            background-color: $blue-color-200;
+        }
+    }
+    &-purple{
+        @extend .sample;
+        &--200{
+            @extend .sample-purple;
+            border-color: $purple-color-300;
+            background-color: $purple-color-200;
+        }
+    }
+    &-pink{
+        @extend .sample;
+        &--200{
+            @extend .sample-pink;
+            border-color: $pink-color-300;
+            background-color: $pink-color-200;
+        }
+    }
+}

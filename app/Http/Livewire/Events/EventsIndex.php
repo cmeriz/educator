@@ -10,6 +10,7 @@ class EventsIndex extends Component
 
     protected $listeners = [
         'render',
+        'eventDelete' => 'destroy',
     ];
 
     public function render()
@@ -26,4 +27,13 @@ class EventsIndex extends Component
 
         return view('livewire.events.events-index', compact('eventsByDay'));
     }
+
+    public function destroy(Event $event){
+        $event->delete();
+
+        $this->emit('alert', 'success', '¡El evento fue eliminado exitosamente!');
+        $this->emitSelf('render');
+    
+    }
+
 }

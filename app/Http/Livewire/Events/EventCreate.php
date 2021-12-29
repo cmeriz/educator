@@ -10,13 +10,24 @@ class EventCreate extends Component
 {
 
     public $open = false;
-    public $course_id, $day, $start, $end;
+    public $course_id = null;
+    public $day = null;
+    public $start, $end;
 
     protected $rules = [
         'day' => 'required',
         'start' => 'required|before:end',
         'end' => 'required|after:start',
         'course_id' => 'required',
+    ];
+
+    protected $messages = [
+        'day.required' => 'Este campo es obligatorio',
+        'start.required' => 'Este campo es obligatorio',
+        'start.before' => 'La hora de inicio debe ser menor a la hora de fin',
+        'end.required' => 'Este campo es obligatorio',
+        'end.after' => 'La hora de fin debe ser mayor a la hora de inicio',
+        'course_id.required' => 'Este campo es obligatorio',
     ];
 
     public function render()

@@ -9,7 +9,7 @@ use Livewire\Component;
 class CourseEdit extends Component
 {
 
-    public $course_id, $name, $color, $pensum_name, $pensum_id;
+    public $course, $name, $color, $pensum_id;
     public $open = false;
 
     protected $rules = [
@@ -19,18 +19,18 @@ class CourseEdit extends Component
     ];
 
     protected $messages = [
-        'course.name.required' => 'Este campo es obligatorio',
-        'course.name.max' => 'Este campo no puede tener más de 50 caracteres',
-        'course.color.required' => 'Este campo es obligatorio',
-        'course.pensum.required' => 'Este campo es obligatorio',
+        'name.required' => 'Este campo es obligatorio',
+        'name.max' => 'Este campo no puede tener más de 50 caracteres',
+        'color.required' => 'Este campo es obligatorio',
+        'pensum_id.required' => 'Este campo es obligatorio',
     ];
 
-    public function mount($course_id, $name, $color, $pensum_id){
-        $this->course_id = $course_id;
-        $this->name = $name;
-        $this->color = $color;
-        $this->pensum_id = $pensum_id;
-        $this->pensum_name = Pensum::find($this->pensum_id)->name;
+    protected $listeners = [
+        'courseEdit' => 'editing',
+    ];
+
+    public function mount(){
+        $this->course = new Course();
     }
 
     public function render()
@@ -40,21 +40,28 @@ class CourseEdit extends Component
         return view('livewire.courses.course-edit', compact('pensums'));
     }
 
+    public function editing(Course $course){
+        $this->course = $course;
+        $this->name = $this->course->name;
+        $this->color = $this->course->color;
+        $this->pensum_id = $this->course->pensum_id;
+        $this->open = true;
+    }
+
     public function update(){
 
         $this->validate();
 
-        $course = Course::find($this->course_id);
-        $course->name = $this->name;
-        $course->color = $this->color;
-        $course->pensum_id = $this->pensum_id;
+        $this->course->name = $this->name;
+        $this->course->color = $this->color;
+        $this->course->pensum_id = $this->pensum_id;
 
-        $course->save();
+        $this->course->save();
 
-        $this->reset(['open']);
+        $this->reset(['open', 'course', 'name', 'color', 'pensum_id']);
 
         $this->emitTo('courses.courses-index', 'render');
-        $this->emit('alert', 'success', '¡El curso fue creado exitosamente!');
+        $this->emit('alert', 'success', '¡El curso fue actualizado exitosamente!');
 
     }
 }

@@ -10,20 +10,20 @@ class CourseCreate extends Component
 {
     public $name;
     public $open = false;
-    public $color;
-    public $pensum;
+    public $color = null;
+    public $pensum_id = null;
 
     protected $rules = [
         'name' => 'required|max:50',
         'color' => 'required',
-        'pensum' => 'required',
+        'pensum_id' => 'required',
     ];
 
     protected $messages = [
         'name.required' => 'Este campo es obligatorio',
         'name.max' => 'Este campo no puede tener más de 50 caracteres',
         'color.required' => 'Este campo es obligatorio',
-        'pensum.required' => 'Este campo es obligatorio',
+        'pensum_id.required' => 'Este campo es obligatorio',
     ];
 
     public function render()
@@ -41,10 +41,10 @@ class CourseCreate extends Component
             'name' => $this->name,
             'color' => $this->color,
             'user_id' => auth()->user()->id,
-            'pensum_id' => $this->pensum,
+            'pensum_id' => $this->pensum_id,
         ]);
 
-        $this->reset(['open', 'name', 'color', 'pensum']);
+        $this->reset(['open', 'name', 'color', 'pensum_id']);
         $this->emitTo('courses.courses-index', 'render');
         $this->emit('alert', 'success', '¡El curso fue creado exitosamente!');
 

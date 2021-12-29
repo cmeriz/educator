@@ -1,13 +1,7 @@
 .course-card{
 
-    &:hover{       
-        box-shadow: 0px -1px 14px -1px rgba(148,163,184,.7);
-        -webkit-box-shadow: 0px -1px 14px -1px rgba(148,163,184,.7);
-        -moz-box-shadow: 0px -1px 14px -1px rgba(148,163,184,.7);
-    }
-
     &--primary{
-        @extend .course-card;
+        //@extend .course-card;
         background-color: $primary-color-200;
         color: $primary-color-700;
 
@@ -27,7 +21,7 @@
     }
 
     &--secondary{
-        @extend .course-card;
+        //@extend .course-card;
         background-color: $secondary-color-200;
         color: $secondary-color-700;
 
@@ -47,7 +41,7 @@
     }
 
     &--red{
-        @extend .course-card;
+        //@extend .course-card;
         background-color: $red-color-200;
         color: $red-color-700;
 
@@ -68,7 +62,7 @@
     }
 
     &--orange{
-        @extend .course-card;
+        //@extend .course-card;
         background-color: $orange-color-200;
         color: $orange-color-700;
 
@@ -88,7 +82,7 @@
     }
 
     &--blue{
-        @extend .course-card;
+        //@extend .course-card;
         background-color: $blue-color-200;
         color: $blue-color-700;
 
@@ -108,7 +102,7 @@
     }
 
     &--purple{
-        @extend .course-card;
+        //@extend .course-card;
         background-color: $purple-color-200;
         color: $purple-color-700;
 
@@ -128,7 +122,7 @@
     }
 
     &--pink{
-        @extend .course-card;
+        //@extend .course-card;
         background-color: $pink-color-200;
         color: $pink-color-700;
 

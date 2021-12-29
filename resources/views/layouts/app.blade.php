@@ -125,7 +125,7 @@
             })
         });
 
-        Livewire.on('modelDeleteAttempt', function($model, $event, $title = '¿Estas seguro?', $text = 'Esta acción no puede ser anulada.'){
+        Livewire.on('modelDeleteAttempt', function($object, $event, $title = '¿Estas seguro?', $text = 'Esta acción no puede ser anulada.'){
             Swal.fire({
                 title: $title,
                 text: $text,
@@ -143,7 +143,7 @@
 
             }).then((result) => {
                     if (result.isConfirmed) {
-                        Livewire.emit($event, $model);
+                        Livewire.emit($event, $object);
                     }
             });
         });

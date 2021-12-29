@@ -33,8 +33,8 @@ class CoursesIndex extends Component
     public function destroy(Course $course){
         $course->delete();
 
-        $this->emitSelf('render');
         $this->emit('alert', 'success', '¡El curso fue eliminado exitosamente!');
+        $this->emitSelf('render');
 
     }
 
