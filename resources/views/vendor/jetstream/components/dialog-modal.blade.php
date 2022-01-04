@@ -2,7 +2,7 @@
 
 <x-jet-modal :id="$id" :maxWidth="$maxWidth" {{ $attributes }}>
     <div class="px-6 py-4">
-        <div class="text-xl font-semibold">
+        <div class="text-2xl font-bold mb-6">
             {{ $title }}
         </div>
 

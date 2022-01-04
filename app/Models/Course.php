@@ -31,11 +31,6 @@ class Course extends Model
         return $this->hasMany('App\Models\Event');
     }
 
-    // Weightings Relationship 1:n
-    public function weightings(){
-        return $this->hasMany('App\Models\Weighting');
-    }
-
     // Activities Relationship 1:n
     public function activities(){
         return $this->hasMany('App\Models\Activity');

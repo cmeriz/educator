@@ -9,6 +9,8 @@ class Grade extends Model
 {
     use HasFactory;
 
+    protected $guarded = ['id'];
+
     // Reverse Student Relationship 1:n
     public function student(){
         return $this->belongsTo('App\Models\Student');

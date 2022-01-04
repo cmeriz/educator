@@ -17,6 +17,11 @@ class CourseSeeder extends Seeder
         Course::create([
             'name' => 'Fundamentos de Programación',
             'color' => 'primary',
+            'homeworks_weight' => 40,
+            'lessons_weight' => 30,
+            'exams_weight' => 30,
+            'min_grade' => 7,
+            'min_attendance' => 70,
             'user_id' => 1,
             'pensum_id' => 1,
         ]);
@@ -24,6 +29,11 @@ class CourseSeeder extends Seeder
         Course::create([
             'name' => 'Estructura de Datos',
             'color' => 'blue',
+            'homeworks_weight' => 40,
+            'lessons_weight' => 30,
+            'exams_weight' => 30,
+            'min_grade' => 7,
+            'min_attendance' => 70,
             'user_id' => 1,
             'pensum_id' => 2,
         ]);
@@ -31,6 +41,11 @@ class CourseSeeder extends Seeder
         Course::create([
             'name' => 'Sistemas Operativos',
             'color' => 'red',
+            'homeworks_weight' => 40,
+            'lessons_weight' => 30,
+            'exams_weight' => 30,
+            'min_grade' => 7,
+            'min_attendance' => 70,
             'user_id' => 1,
             'pensum_id' => 3,
         ]);
@@ -38,6 +53,11 @@ class CourseSeeder extends Seeder
         Course::create([
             'name' => 'Programación de Sistemas',
             'color' => 'blue',
+            'homeworks_weight' => 40,
+            'lessons_weight' => 30,
+            'exams_weight' => 30,
+            'min_grade' => 7,
+            'min_attendance' => 70,
             'user_id' => 1,
             'pensum_id' => 4,
         ]);
@@ -45,6 +65,11 @@ class CourseSeeder extends Seeder
         Course::create([
             'name' => 'Arquitectura del Computador',
             'color' => 'orange',
+            'homeworks_weight' => 40,
+            'lessons_weight' => 30,
+            'exams_weight' => 30,
+            'min_grade' => 7,
+            'min_attendance' => 70,
             'user_id' => 1,
             'pensum_id' => 5,
         ]);
@@ -52,6 +77,11 @@ class CourseSeeder extends Seeder
         Course::create([
             'name' => 'Microcontroladores 1',
             'color' => 'purple',
+            'homeworks_weight' => 40,
+            'lessons_weight' => 30,
+            'exams_weight' => 30,
+            'min_grade' => 7,
+            'min_attendance' => 70,
             'user_id' => 1,
             'pensum_id' => 6,
         ]);
@@ -59,6 +89,11 @@ class CourseSeeder extends Seeder
         Course::create([
             'name' => 'Matemáticas Discretas',
             'color' => 'pink',
+            'homeworks_weight' => 40,
+            'lessons_weight' => 30,
+            'exams_weight' => 30,
+            'min_grade' => 7,
+            'min_attendance' => 70,
             'user_id' => 1,
             'pensum_id' => 7,
         ]);
@@ -66,6 +101,11 @@ class CourseSeeder extends Seeder
         Course::create([
             'name' => 'Algebra Lineal',
             'color' => 'primary',
+            'homeworks_weight' => 40,
+            'lessons_weight' => 30,
+            'exams_weight' => 30,
+            'min_grade' => 7,
+            'min_attendance' => 70,
             'user_id' => 1,
             'pensum_id' => 8,
         ]);
@@ -73,6 +113,11 @@ class CourseSeeder extends Seeder
         Course::create([
             'name' => 'Cálculo Integral',
             'color' => 'blue',
+            'homeworks_weight' => 40,
+            'lessons_weight' => 30,
+            'exams_weight' => 30,
+            'min_grade' => 7,
+            'min_attendance' => 70,
             'user_id' => 1,
             'pensum_id' => 9,
         ]);
@@ -80,6 +125,11 @@ class CourseSeeder extends Seeder
         Course::create([
             'name' => 'Metodología de la Investigación',
             'color' => 'red',
+            'homeworks_weight' => 40,
+            'lessons_weight' => 30,
+            'exams_weight' => 30,
+            'min_grade' => 7,
+            'min_attendance' => 70,
             'user_id' => 1,
             'pensum_id' => 10,
         ]);

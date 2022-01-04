@@ -7,5 +7,5 @@
 
         @endforeach
     </div>
-    <x-button tag="anchor" class="btn--primary inline-block ml-auto mr-0">Ver horario</x-button>
+    <x-button tag="anchor" href="{{ route('events.index') }}" class="btn--primary inline-block ml-auto mr-0">Ver horario</x-button>
 </div>

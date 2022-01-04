@@ -11,8 +11,16 @@ class CourseController extends Controller
         return view('courses.index');
     }
 
-    public function show(Course $course){
-        return view('courses.show', compact('course'));
+    public function grades(Course $course){
+        return view('courses.grades', compact('course'));
+    }
+
+    public function attendances(Course $course){
+        return view('courses.attendances', compact('course'));
+    }
+
+    public function pensum(Course $course){
+        return view('courses.pensum', compact('course'));
     }
 
 }

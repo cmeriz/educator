@@ -294,7 +294,7 @@ p {
 
 /* line 1, ../scss/components/_button.scss */
 .btn, .btn--primary, .btn--primary-outlined, .btn--white, .btn--white-outlined, .btn--gray, .btn--gray-outlined, .btn--danger {
-  padding: .5em 1.5em;
+  padding: .7em 1.5em;
   border-radius: .4em;
   font-weight: 600;
   transition: transform .3s ease, background-color .3s ease;
@@ -423,6 +423,52 @@ p {
   background-color: #fbcfe8;
 }
 
+/* line 1, ../scss/components/_tab.scss */
+.tab, .tab--primary {
+  padding: .7em 1.5em;
+  border-radius: .4em;
+  font-weight: 500;
+  transition: transform .3s ease, color .3s ease;
+  background-color: transparent;
+  color: #aeaeae;
+  font-style: normal;
+  cursor: pointer;
+}
+/* line 14, ../scss/components/_tab.scss */
+.tab--primary.active {
+  background-color: #e7f8f2;
+  color: #0c8b61;
+}
+/* line 18, ../scss/components/_tab.scss */
+.tab--primary.active:hover {
+  transform: none;
+}
+/* line 24, ../scss/components/_tab.scss */
+.tab--primary:hover {
+  color: #0c8b61;
+  transform: scale(1.05);
+}
+
+/* line 1, ../scss/components/_badge.scss */
+.badge, .badge--primary, .badge--red {
+  display: inline-block;
+  padding: .2em .7em;
+  text-transform: uppercase;
+  font-size: .625rem;
+  font-weight: 600;
+  border-radius: .5em;
+}
+/* line 9, ../scss/components/_badge.scss */
+.badge--primary {
+  background-color: #e7f8f2;
+  color: #0c8b61;
+}
+/* line 15, ../scss/components/_badge.scss */
+.badge--red {
+  background-color: #fee2e2;
+  color: #b91c1c;
+}
+
 /* line 3, ../scss/views/_events.scss */
 .events-index table {
   width: 120rem;
@@ -434,6 +480,11 @@ p {
 /* line 9, ../scss/views/_events.scss */
 .events-index table th:last-of-type, .events-index table td:last-of-type {
   padding-right: 0;
+}
+
+/* line 5, ../scss/views/_grades.scss */
+.grades-index__table th, .grades-index__table td {
+  padding: 1rem 1.2rem;
 }
 
 /*# sourceMappingURL=style.css.map */

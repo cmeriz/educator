@@ -16,7 +16,7 @@ class CreateGradesTable extends Migration
         Schema::create('grades', function (Blueprint $table) {
             $table->id();
 
-            $table->decimal('value', 3, 2);
+            $table->decimal('value', 4, 2);
 
             // Foreign Fields
             $table->unsignedBigInteger('activity_id');

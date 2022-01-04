@@ -16,8 +16,6 @@ class CreateActivitiesTable extends Migration
         Schema::create('activities', function (Blueprint $table) {
             $table->id();
 
-            $table->string('name');
-
             // Foreign Fields
             $table->unsignedBigInteger('activity_type_id')->nullable();
             $table->foreign('activity_type_id')->references('id')->on('activity_types')->onDelete('set null');

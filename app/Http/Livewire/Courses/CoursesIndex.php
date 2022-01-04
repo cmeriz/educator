@@ -19,7 +19,8 @@ class CoursesIndex extends Component
 
     public function render()
     {
-        $courses = Course::where('name', 'LIKE', '%' . $this->search . '%')
+        $courses = Course::where('user_id', auth()->user()->id)
+                          ->where('name', 'LIKE', '%' . $this->search . '%')
                           ->latest()
                           ->paginate(6);
 

@@ -20,7 +20,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', HomeController::class)->name('home');
 
 Route::get('courses', [CourseController::class, 'index'])->name('courses.index');
-Route::get('courses/{course}', [CourseController::class, 'show'])->name('courses.show');
+Route::get('courses/{course}/grades', [CourseController::class, 'grades'])->name('courses.grades');
+Route::get('courses/{course}/attendances', [CourseController::class, 'attendances'])->name('courses.attendances');
+Route::get('courses/{course}/pensum', [CourseController::class, 'pensum'])->name('courses.pensum');
 
 Route::get('pensums', [PensumController::class, 'index'])->name('pensums.index');
 Route::get('pensums/{pensum}', [PensumController::class, 'show'])->name('pensums.show');

@@ -20,6 +20,11 @@ class CreateCoursesTable extends Migration
 
             $table->string('name');
             $table->enum('color', Course::COLORS)->default(Course::COLORS[0]);
+            $table->integer('homeworks_weight');
+            $table->integer('lessons_weight');
+            $table->integer('exams_weight');
+            $table->integer('min_grade');
+            $table->integer('min_attendance');
 
             // Foreign Fields
             $table->unsignedBigInteger('user_id');

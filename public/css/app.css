@@ -682,6 +682,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   top: 2rem;
 }.top-0{
   top: 0px;
+}.top-full{
+  top: 100%;
 }.z-0{
   z-index: 0;
 }.z-50{
@@ -694,6 +696,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   grid-column: span 2 / span 2;
 }.col-span-12{
   grid-column: span 12 / span 12;
+}.col-span-3{
+  grid-column: span 3 / span 3;
 }.m-1{
   margin: 0.25rem;
 }.mx-auto{
@@ -841,10 +845,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 2.5rem;
 }.w-20{
   width: 5rem;
+}.w-72{
+  width: 18rem;
 }.w-9\/12{
   width: 75%;
 }.min-w-0{
   min-width: 0px;
+}.min-w-full{
+  min-width: 100%;
 }.max-w-screen-xl{
   max-width: 80rem;
 }.max-w-7xl{
@@ -895,6 +903,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }.grid-cols-12{
   grid-template-columns: repeat(12, minmax(0, 1fr));
+}.grid-cols-3{
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }.flex-col{
   flex-direction: column;
 }.flex-wrap{
@@ -919,12 +929,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   gap: 1rem;
 }.gap-1{
   gap: 0.25rem;
+}.gap-8{
+  gap: 2rem;
 }.gap-3{
   gap: 0.75rem;
 }.gap-2{
   gap: 0.5rem;
-}.gap-8{
-  gap: 2rem;
 }.space-x-8 > :not([hidden]) ~ :not([hidden]){
   --tw-space-x-reverse: 0;
   margin-right: calc(2rem * var(--tw-space-x-reverse));
@@ -989,6 +999,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-top-width: 1px;
 }.border-b{
   border-bottom-width: 1px;
+}.border-l{
+  border-left-width: 1px;
 }.border-r{
   border-right-width: 1px;
 }.border-gray-300{
@@ -1008,6 +1020,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }.border-secondary-100{
   --tw-border-opacity: 1;
   border-color: rgb(235 235 235 / var(--tw-border-opacity));
+}.border-primary-100{
+  --tw-border-opacity: 1;
+  border-color: rgb(231 248 242 / var(--tw-border-opacity));
 }.border-gray-400{
   --tw-border-opacity: 1;
   border-color: rgb(156 163 175 / var(--tw-border-opacity));
@@ -1059,6 +1074,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 }.bg-blue-100{
   --tw-bg-opacity: 1;
   background-color: rgb(219 234 254 / var(--tw-bg-opacity));
+}.bg-primary-100{
+  --tw-bg-opacity: 1;
+  background-color: rgb(231 248 242 / var(--tw-bg-opacity));
+}.bg-primary-50{
+  --tw-bg-opacity: 1;
+  background-color: rgb(243 252 249 / var(--tw-bg-opacity));
 }.bg-opacity-25{
   --tw-bg-opacity: 0.25;
 }.bg-cover{
@@ -1273,6 +1294,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }.text-blue-500{
   --tw-text-opacity: 1;
   color: rgb(59 130 246 / var(--tw-text-opacity));
+}.text-primary-700{
+  --tw-text-opacity: 1;
+  color: rgb(12 139 97 / var(--tw-text-opacity));
 }.text-gray-200{
   --tw-text-opacity: 1;
   color: rgb(229 231 235 / var(--tw-text-opacity));
@@ -1532,7 +1556,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 }/* line 73, ../scss/components/_event-card.scss */.event-card.not-active button, .not-active.event-card--primary button, .not-active.event-card--secondary button, .not-active.event-card--red button, .not-active.event-card--orange button, .not-active.event-card--blue button, .not-active.event-card--purple button, .not-active.event-card--pink button {
   background-color: #ebebeb;
 }/* line 1, ../scss/components/_button.scss */.btn, .btn--primary, .btn--primary-outlined, .btn--white, .btn--white-outlined, .btn--gray, .btn--gray-outlined, .btn--danger {
-  padding: .5em 1.5em;
+  padding: .7em 1.5em;
   border-radius: .4em;
   font-weight: 600;
   transition: transform .3s ease, background-color .3s ease;
@@ -1611,12 +1635,44 @@ Ensure the default browser behavior of the `hidden` attribute.
 }/* line 53, ../scss/components/_sample-color.scss */.sample-pink--200 {
   border-color: #f9a8d4;
   background-color: #fbcfe8;
+}/* line 1, ../scss/components/_tab.scss */.tab, .tab--primary {
+  padding: .7em 1.5em;
+  border-radius: .4em;
+  font-weight: 500;
+  transition: transform .3s ease, color .3s ease;
+  background-color: transparent;
+  color: #aeaeae;
+  font-style: normal;
+  cursor: pointer;
+}/* line 14, ../scss/components/_tab.scss */.tab--primary.active {
+  background-color: #e7f8f2;
+  color: #0c8b61;
+}/* line 18, ../scss/components/_tab.scss */.tab--primary.active:hover {
+  transform: none;
+}/* line 24, ../scss/components/_tab.scss */.tab--primary:hover {
+  color: #0c8b61;
+  transform: scale(1.05);
+}/* line 1, ../scss/components/_badge.scss */.badge, .badge--primary, .badge--red {
+  display: inline-block;
+  padding: .2em .7em;
+  text-transform: uppercase;
+  font-size: .625rem;
+  font-weight: 600;
+  border-radius: .5em;
+}/* line 9, ../scss/components/_badge.scss */.badge--primary {
+  background-color: #e7f8f2;
+  color: #0c8b61;
+}/* line 15, ../scss/components/_badge.scss */.badge--red {
+  background-color: #fee2e2;
+  color: #b91c1c;
 }/* line 3, ../scss/views/_events.scss */.events-index table {
   width: 120rem;
 }/* line 6, ../scss/views/_events.scss */.events-index table th, .events-index table td {
   padding-right: 2rem;
 }/* line 9, ../scss/views/_events.scss */.events-index table th:last-of-type, .events-index table td:last-of-type {
   padding-right: 0;
+}/* line 5, ../scss/views/_grades.scss */.grades-index__table th, .grades-index__table td {
+  padding: 1rem 1.2rem;
 }.placeholder\:text-secondary-300::-moz-placeholder{
   --tw-text-opacity: 1;
   color: rgb(174 174 174 / var(--tw-text-opacity));
@@ -1651,6 +1707,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }.hover\:bg-gray-50:hover{
   --tw-bg-opacity: 1;
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
+}.hover\:bg-secondary-100:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(235 235 235 / var(--tw-bg-opacity));
 }.hover\:text-gray-500:hover{
   --tw-text-opacity: 1;
   color: rgb(107 114 128 / var(--tw-text-opacity));
@@ -1715,6 +1774,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }.focus\:bg-gray-50:focus{
   --tw-bg-opacity: 1;
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
+}.focus\:bg-secondary-100:focus{
+  --tw-bg-opacity: 1;
+  background-color: rgb(235 235 235 / var(--tw-bg-opacity));
 }.focus\:text-gray-700:focus{
   --tw-text-opacity: 1;
   color: rgb(55 65 81 / var(--tw-text-opacity));

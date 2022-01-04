@@ -1,6 +1,6 @@
 <article class="course-card--{{ $course->color }} flex flex-col relative p-6 hover:scale-105 transition-all rounded-lg shadow-lg {{ $class }}
                 " >
-    <a href="{{ route('courses.show', $course) }}" class="flex flex-col gap-3 flex-1">
+    <a href="{{ route('courses.grades', $course) }}" class="flex flex-col gap-3 flex-1">
         <div class="course-card__name-students flex flex-col ml:flex-row sm:justify-between items-start ml:items-center ml:gap-8">
             <h1 class="font-semibold">
                 {{ $course->name }}

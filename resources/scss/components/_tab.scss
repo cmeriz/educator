@@ -1,0 +1,31 @@
+.tab{
+    padding: .7em 1.5em;
+    border-radius: .4em;
+    font-weight: 500;
+    transition: transform .3s ease, color .3s ease;
+    background-color: transparent;
+    color: $secondary-color-300;
+    font-style: normal;
+    cursor: pointer;
+
+    &--primary{
+        @extend .tab;
+        
+        &.active{
+            background-color: $primary-color-100;
+            color: $primary-color-700;
+            
+            &:hover{
+                transform: none;
+            }
+
+        }
+
+        &:hover{
+            color: $primary-color-700;
+            transform: scale(1.05);
+        }
+
+    }
+
+}

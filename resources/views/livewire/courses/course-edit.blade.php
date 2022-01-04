@@ -42,6 +42,63 @@
                 </select>
 
                 <x-jet-input-error for="pensum_id" />
+
+                <x-jet-label value="Funcionamiento" class="font-bold mb-4 uppercase"/>
+
+                <div class="grid grid-cols-3 gap-4">
+
+                    <div>
+                        <x-jet-label value="Deberes:"/>
+                        <div class="flex items-center gap-2">
+                            <input wire:model="homeworks_weight" type="number" min="0" max="100" step="10" placeholder="Porcentaje" class="border-secondary-100 text-secondary-500 focus:border-secondary-100 bg-secondary-50 placeholder:text-secondary-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50 rounded-lg w-full"/>
+                            <span>%</span>
+                        </div>
+                        
+                        <x-jet-input-error for="homeworks_weight" />
+                    </div>
+
+                    <div>
+                        <x-jet-label value="Lecciones:"/>
+                        <div class="flex items-center gap-2">
+                            <input wire:model="lessons_weight" type="number" min="0" max="100" step="10" placeholder="Porcentaje" class="border-secondary-100 text-secondary-500 focus:border-secondary-100 bg-secondary-50 placeholder:text-secondary-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50 rounded-lg w-full"/>
+                            <span>%</span>
+                        </div>
+                        
+                        <x-jet-input-error for="lessons_weight" />
+                    </div>
+
+                    <div>
+                        <x-jet-label value="Exámenes:"/>
+                        <div class="flex items-center gap-2">
+                            <input wire:model="exams_weight" type="number" min="0" max="100" step="10" placeholder="Porcentaje" class="border-secondary-100 text-secondary-500 focus:border-secondary-100 bg-secondary-50 placeholder:text-secondary-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50 rounded-lg w-full"/>
+                            <span>%</span>
+                        </div>
+                        
+                        <x-jet-input-error for="exams_weight" />
+                    </div>
+
+                    <x-jet-input-error for="weightings" class="col-span-3"/>
+
+                    <div>
+                        <x-jet-label value="Calificación para aprobar:"/>
+                        <div class="flex items-center gap-2">
+                            <input wire:model="min_grade" type="number" min="0" max="10" placeholder="Porcentaje" class="border-secondary-100 text-secondary-500 focus:border-secondary-100 bg-secondary-50 placeholder:text-secondary-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50 rounded-lg w-full"/>
+                            <span>pts.</span>
+                        </div>
+                        <x-jet-input-error for="min_grade" />
+                    </div>
+                    
+                    <div>
+                        <x-jet-label value="Asistencia para aprobar:"/>
+                        <div class="flex items-center gap-2">
+                            <input wire:model="min_attendance" type="number" min="0" max="100" step="10" placeholder="Porcentaje" class="border-secondary-100 text-secondary-500 focus:border-secondary-100 bg-secondary-50 placeholder:text-secondary-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50 rounded-lg w-full"/>
+                            <span>%</span>
+                        </div>
+                        <x-jet-input-error for="min_attendance" />                       
+                    </div>
+
+                </div>
+
             </div>
         </x-slot>
 

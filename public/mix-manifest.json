@@ -1,4 +1,6 @@
 {
     "/js/app.js": "/js/app.js",
+    "/js/default-alert.js": "/js/default-alert.js",
+    "/js/model-delete-attempt.js": "/js/model-delete-attempt.js",
     "/css/app.css": "/css/app.css"
 }

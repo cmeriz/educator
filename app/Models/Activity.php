@@ -9,6 +9,8 @@ class Activity extends Model
 {
     use HasFactory;
 
+    protected $guarded = ['id'];
+
     // Reverse Activity Type Relationship 1:n
     public function activityType(){
         return $this->belongsTo('App\Models\ActivityType');

@@ -9,6 +9,10 @@ class ActivityType extends Model
 {
     use HasFactory;
 
+    const HOMEWORK = 1;
+    const LESSON = 2;
+    const EXAM = 3;
+
     // Weightings Relationship 1:n
     public function weightings(){
         return $this->hasMany('App\Models\Weighting');

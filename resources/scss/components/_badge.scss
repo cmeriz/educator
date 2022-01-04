@@ -1,0 +1,21 @@
+.badge{
+    display: inline-block;
+    padding: .2em .7em;
+    text-transform: uppercase;
+    font-size: .625rem;
+    font-weight: 600;
+    border-radius: .5em;
+
+    &--primary{
+        @extend .badge;
+        background-color: $primary-color-100;
+        color: $primary-color-700;
+    }
+
+    &--red{
+        @extend .badge;
+        background-color: $red-color-100;
+        color: $red-color-700;
+    }
+
+}
