@@ -11,6 +11,11 @@ class Student extends Model
 
     protected $guarded = ['id'];
 
+    // Fullname Computed Property
+    public function getFullnameAttribute(){
+        return $this->lastname . ' ' . $this->firstname;
+    }
+
     // Reverse Course Relationship 1:n
     public function course(){
         return $this->belongsTo('App\Models\Course');

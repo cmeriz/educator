@@ -2,8 +2,30 @@
 
     &__table{
 
+        th{
+            min-height: 2rem;
+        }
+
         th, td{
             padding: 1rem 1.2rem;
+        }
+
+        .activity-header{
+
+            &__delete{
+                display: none;
+            }
+
+            &:hover{
+                .activity-header__number{
+                    display: none;
+                }
+                .activity-header__delete{
+                    display: block;
+                }
+            }
+
+
         }
 
     }

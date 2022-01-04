@@ -16,6 +16,14 @@ class Course extends Model
         'primary', 'secondary', 'red', 'orange', 'blue', 'purple', 'pink'
     ];
 
+    // Students Amount Computed Property
+    public function getStudentsAmountAttribute(){
+
+        $students_amount = Student::where('course_id', $this->id)->count();
+        return $students_amount;
+
+    }
+
     // Reverse User Relationship 1:n
     public function user(){
         return $this->belongsTo('App\Models\User');

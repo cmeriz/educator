@@ -5,15 +5,14 @@
 
     <div class="course-grades flex flex-col gap-8 p-8 md:card-shadow w-full md:rounded-lg">
 
-        <div class="courses-grades__controls flex justify-between">
+        <div class="courses-grades__controls flex flex-col gap-4 lg:flex-row md:items-start justify-end justify-between">
             <x-courses-navigation course="{{ $course->id }}"/>
-
-            <x-button href="{{ route('courses.index') }}" tag="anchor" class="btn--primary-outlined">
+            <x-button href="{{ route('courses.index') }}" tag="anchor" class="btn--primary-outlined order-first md:order-none md:self-end">
                 Volver a cursos
             </x-button>
         </div>
 
-        @livewire('grades.grades-index', ['course_id' => $course->id])
+        @livewire('grades.grades-index', ['course' => $course])
 
     </div>
 

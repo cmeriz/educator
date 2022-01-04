@@ -690,6 +690,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   z-index: 50;
 }.z-10{
   z-index: 10;
+}.order-first{
+  order: -9999;
 }.col-span-6{
   grid-column: span 6 / span 6;
 }.col-span-2{
@@ -845,14 +847,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 2.5rem;
 }.w-20{
   width: 5rem;
-}.w-72{
-  width: 18rem;
 }.w-9\/12{
   width: 75%;
 }.min-w-0{
   min-width: 0px;
-}.min-w-full{
-  min-width: 100%;
 }.max-w-screen-xl{
   max-width: 80rem;
 }.max-w-7xl{
@@ -1526,85 +1524,100 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: #10b981;
 }/* line 9, ../scss/components/_event-card.scss */.event-card--primary button {
   background-color: #58cea7;
-}/* line 14, ../scss/components/_event-card.scss */.event-card--secondary {
+}/* line 13, ../scss/components/_event-card.scss */.event-card--primary:hover {
+  background-color: #0ea774;
+}/* line 19, ../scss/components/_event-card.scss */.event-card--secondary {
   background-color: #343434;
-}/* line 18, ../scss/components/_event-card.scss */.event-card--secondary button {
+}/* line 23, ../scss/components/_event-card.scss */.event-card--secondary button {
   background-color: #717171;
-}/* line 23, ../scss/components/_event-card.scss */.event-card--red {
+}/* line 27, ../scss/components/_event-card.scss */.event-card--secondary:hover {
+  background-color: #2f2f2f;
+}/* line 32, ../scss/components/_event-card.scss */.event-card--red {
   background-color: #ef4444;
-}/* line 27, ../scss/components/_event-card.scss */.event-card--red button {
+}/* line 36, ../scss/components/_event-card.scss */.event-card--red button {
   background-color: #f87171;
-}/* line 32, ../scss/components/_event-card.scss */.event-card--orange {
+}/* line 40, ../scss/components/_event-card.scss */.event-card--red:hover {
+  background-color: #dc2626;
+}/* line 45, ../scss/components/_event-card.scss */.event-card--orange {
   background-color: #f97316;
-}/* line 36, ../scss/components/_event-card.scss */.event-card--orange button {
+}/* line 49, ../scss/components/_event-card.scss */.event-card--orange button {
   background-color: #fb923c;
-}/* line 41, ../scss/components/_event-card.scss */.event-card--blue {
+}/* line 53, ../scss/components/_event-card.scss */.event-card--orange:hover {
+  background-color: #ea580c;
+}/* line 58, ../scss/components/_event-card.scss */.event-card--blue {
   background-color: #3b82f6;
-}/* line 45, ../scss/components/_event-card.scss */.event-card--blue button {
+}/* line 62, ../scss/components/_event-card.scss */.event-card--blue button {
   background-color: #60a5fa;
-}/* line 50, ../scss/components/_event-card.scss */.event-card--purple {
+}/* line 66, ../scss/components/_event-card.scss */.event-card--blue:hover {
+  background-color: #2563eb;
+}/* line 71, ../scss/components/_event-card.scss */.event-card--purple {
   background-color: #a855f7;
-}/* line 54, ../scss/components/_event-card.scss */.event-card--purple button {
+}/* line 75, ../scss/components/_event-card.scss */.event-card--purple button {
   background-color: #c084fc;
-}/* line 59, ../scss/components/_event-card.scss */.event-card--pink {
+}/* line 79, ../scss/components/_event-card.scss */.event-card--purple:hover {
+  background-color: #9333ea;
+}/* line 84, ../scss/components/_event-card.scss */.event-card--pink {
   background-color: #ec4899;
-}/* line 63, ../scss/components/_event-card.scss */.event-card--pink button {
+}/* line 88, ../scss/components/_event-card.scss */.event-card--pink button {
   background-color: #f472b6;
-}/* line 69, ../scss/components/_event-card.scss */.event-card.not-active, .not-active.event-card--primary, .not-active.event-card--secondary, .not-active.event-card--red, .not-active.event-card--orange, .not-active.event-card--blue, .not-active.event-card--purple, .not-active.event-card--pink {
+}/* line 92, ../scss/components/_event-card.scss */.event-card--pink:hover {
+  background-color: #db2777;
+}/* line 97, ../scss/components/_event-card.scss */.event-card.not-active, .not-active.event-card--primary, .not-active.event-card--secondary, .not-active.event-card--red, .not-active.event-card--orange, .not-active.event-card--blue, .not-active.event-card--purple, .not-active.event-card--pink {
   color: #717171;
   background-color: #f5f5f5;
-}/* line 73, ../scss/components/_event-card.scss */.event-card.not-active button, .not-active.event-card--primary button, .not-active.event-card--secondary button, .not-active.event-card--red button, .not-active.event-card--orange button, .not-active.event-card--blue button, .not-active.event-card--purple button, .not-active.event-card--pink button {
+}/* line 101, ../scss/components/_event-card.scss */.event-card.not-active button, .not-active.event-card--primary button, .not-active.event-card--secondary button, .not-active.event-card--red button, .not-active.event-card--orange button, .not-active.event-card--blue button, .not-active.event-card--purple button, .not-active.event-card--pink button {
   background-color: #ebebeb;
 }/* line 1, ../scss/components/_button.scss */.btn, .btn--primary, .btn--primary-outlined, .btn--white, .btn--white-outlined, .btn--gray, .btn--gray-outlined, .btn--danger {
   padding: .7em 1.5em;
+  text-align: center;
   border-radius: .4em;
   font-weight: 600;
   transition: transform .3s ease, background-color .3s ease;
   font-style: normal;
   cursor: pointer;
-}/* line 9, ../scss/components/_button.scss */.btn--primary {
+}/* line 10, ../scss/components/_button.scss */.btn--primary {
   background-color: #10b981;
   color: #FFFFFF;
-}/* line 14, ../scss/components/_button.scss */.btn--primary-outlined {
+}/* line 15, ../scss/components/_button.scss */.btn--primary-outlined {
   background-color: transparent;
   color: #10b981;
   border: 1px solid #10b981;
-}/* line 23, ../scss/components/_button.scss */.btn--white {
+}/* line 24, ../scss/components/_button.scss */.btn--white {
   background-color: #FFFFFF;
   color: #10b981;
-}/* line 28, ../scss/components/_button.scss */.btn--white-outlined {
+}/* line 29, ../scss/components/_button.scss */.btn--white-outlined {
   background-color: transparent;
   color: #FFFFFF;
   border: 1px solid #FFFFFF;
-}/* line 37, ../scss/components/_button.scss */.btn--gray {
+}/* line 38, ../scss/components/_button.scss */.btn--gray {
   background-color: #FFFFFF;
   color: #aeaeae;
-}/* line 42, ../scss/components/_button.scss */.btn--gray-outlined {
+}/* line 43, ../scss/components/_button.scss */.btn--gray-outlined {
   background-color: transparent;
   color: #717171;
   border: 1px solid #aeaeae;
-}/* line 53, ../scss/components/_button.scss */.btn:hover, .btn--primary:hover, .btn--primary-outlined:hover, .btn--white:hover, .btn--white-outlined:hover, .btn--gray:hover, .btn--gray-outlined:hover, .btn--danger:hover {
+}/* line 54, ../scss/components/_button.scss */.btn:hover, .btn--primary:hover, .btn--primary-outlined:hover, .btn--white:hover, .btn--white-outlined:hover, .btn--gray:hover, .btn--gray-outlined:hover, .btn--danger:hover {
   transform: scale(1.05);
-}/* line 57, ../scss/components/_button.scss */.btn--icon, .btn--icon--primary, .btn--icon--danger, .btn--icon--blue {
+}/* line 58, ../scss/components/_button.scss */.btn--icon, .btn--icon--primary, .btn--icon--danger, .btn--icon--blue {
   width: 2.5em;
   height: 2.5em;
   border-radius: 100%;
   transition: transform .3s ease, background-color .3s ease;
-}/* line 63, ../scss/components/_button.scss */.btn--icon:hover, .btn--icon--primary:hover, .btn--icon--danger:hover, .btn--icon--blue:hover {
+}/* line 64, ../scss/components/_button.scss */.btn--icon:hover, .btn--icon--primary:hover, .btn--icon--danger:hover, .btn--icon--blue:hover {
   transform: scale(1.05);
-}/* line 67, ../scss/components/_button.scss */.btn--icon svg, .btn--icon--primary svg, .btn--icon--danger svg, .btn--icon--blue svg {
+}/* line 68, ../scss/components/_button.scss */.btn--icon svg, .btn--icon--primary svg, .btn--icon--danger svg, .btn--icon--blue svg {
   margin-left: auto;
   margin-right: auto;
-}/* line 72, ../scss/components/_button.scss */.btn--icon--primary {
+}/* line 73, ../scss/components/_button.scss */.btn--icon--primary {
   color: #FFFFFF;
   background-color: #10b981;
-}/* line 78, ../scss/components/_button.scss */.btn--icon--danger {
+}/* line 79, ../scss/components/_button.scss */.btn--icon--danger {
   color: #ef4444;
   background-color: #fee2e2;
-}/* line 84, ../scss/components/_button.scss */.btn--icon--blue {
+}/* line 85, ../scss/components/_button.scss */.btn--icon--blue {
   color: #3b82f6;
   background-color: #dbeafe;
-}/* line 92, ../scss/components/_button.scss */.btn--danger {
+}/* line 93, ../scss/components/_button.scss */.btn--danger {
   background-color: #ef4444;
   color: #FFFFFF;
 }/* line 1, ../scss/components/_input-search.scss */.input-search {
@@ -1671,8 +1684,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-right: 2rem;
 }/* line 9, ../scss/views/_events.scss */.events-index table th:last-of-type, .events-index table td:last-of-type {
   padding-right: 0;
-}/* line 5, ../scss/views/_grades.scss */.grades-index__table th, .grades-index__table td {
+}/* line 5, ../scss/views/_grades.scss */.grades-index__table th {
+  min-height: 2rem;
+}/* line 9, ../scss/views/_grades.scss */.grades-index__table th, .grades-index__table td {
   padding: 1rem 1.2rem;
+}/* line 15, ../scss/views/_grades.scss */.grades-index__table .activity-header__delete {
+  display: none;
+}/* line 20, ../scss/views/_grades.scss */.grades-index__table .activity-header:hover .activity-header__number {
+  display: none;
+}/* line 23, ../scss/views/_grades.scss */.grades-index__table .activity-header:hover .activity-header__delete {
+  display: block;
 }.placeholder\:text-secondary-300::-moz-placeholder{
   --tw-text-opacity: 1;
   color: rgb(174 174 174 / var(--tw-text-opacity));
@@ -1867,7 +1888,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   }.xs\:items-center{
     align-items: center;
   }
-}@media (min-width: 40rem){.sm\:col-span-4{
+}@media (min-width: 40rem){.sm\:sticky{
+    position: -webkit-sticky;
+    position: sticky;
+  }.sm\:left-0{
+    left: 0px;
+  }.sm\:col-span-4{
     grid-column: span 4 / span 4;
   }.sm\:col-span-3{
     grid-column: span 3 / span 3;
@@ -2008,6 +2034,8 @@ Ensure the default browser behavior of the `hidden` attribute.
     }
   }.md\:order-first{
     order: -9999;
+  }.md\:order-none{
+    order: 0;
   }.md\:col-span-2{
     grid-column: span 2 / span 2;
   }.md\:col-span-1{
@@ -2019,6 +2047,8 @@ Ensure the default browser behavior of the `hidden` attribute.
     margin-top: 0px;
   }.md\:mb-8{
     margin-bottom: 2rem;
+  }.md\:inline-block{
+    display: inline-block;
   }.md\:flex{
     display: flex;
   }.md\:grid{
@@ -2033,10 +2063,14 @@ Ensure the default browser behavior of the `hidden` attribute.
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }.md\:grid-cols-2{
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }.md\:items-start{
+    align-items: flex-start;
   }.md\:gap-6{
     gap: 1.5rem;
   }.md\:gap-8{
     gap: 2rem;
+  }.md\:self-end{
+    align-self: flex-end;
   }.md\:rounded-lg{
     border-radius: 0.5rem;
   }.md\:border-t-0{
@@ -2074,10 +2108,18 @@ Ensure the default browser behavior of the `hidden` attribute.
     margin-left: auto;
   }.lg\:w-96{
     width: 24rem;
+  }.lg\:w-auto{
+    width: auto;
+  }.lg\:w-72{
+    width: 18rem;
+  }.lg\:flex-row{
+    flex-direction: row;
   }.lg\:items-start{
     align-items: flex-start;
   }.lg\:justify-start{
     justify-content: flex-start;
+  }.lg\:self-auto{
+    align-self: auto;
   }.lg\:px-8{
     padding-left: 2rem;
     padding-right: 2rem;

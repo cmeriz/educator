@@ -14,7 +14,7 @@
         [
             'name' => 'Cursos',
             'route' => route('courses.index'),
-            'isActive' => request()->routeIs('courses.index'),
+            'isActive' => request()->routeIs('courses.*'),
             'icon' =>'
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path d="M12 14l9-5-9-5-9 5 9 5z" />
@@ -62,7 +62,7 @@
     {{-- Primary Navigation Menu --}}
     <div class="nav-desktop flex flex-col items-center bg-primary-500 text-center font-medium text-sm px-8 py-8 my-8 rounded-lg">
         <!-- Logo -->
-        <a class="logo block text-white mb-10" href="{{ route('dashboard') }}">
+        <a class="logo block text-white mb-10" href="{{ route('home') }}">
             <x-jet-application-mark/>
         </a>
         <ul class="menu">

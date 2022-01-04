@@ -1,57 +1,62 @@
 <div x-data="{ open: false }" class="grades-index {{ count($students) > 0 ? 'grid' : 'flex' }} flex-col gap-4 flex-1">
 
-    <div class="flex items-center justify-between">
-        <div class="flex gap-4">
-            <x-jet-input id="input-search" type="text" wire:model="search" class="input-search w-72" placeholder="Buscar estudiante..."/>
-            <select wire:model="type_filter" class="flex-1 border-secondary-100 {{ $type_filter != 'all' ? 'text-secondary-500' : 'text-secondary-300' }} focus:border-secondary-100 bg-secondary-50 placeholder:text-secondary-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50 rounded-lg">
-                <option value="all" class="text-secondary-500 bg-white">
-                    Todas las actividades
-                </option>
-                @if (count($homeworks) > 0)
-                    <option value="homeworks" class="text-secondary-500 bg-white">
-                        Solo Deberes
-                    </option>
-                @endif
-                
-                @if (count($lessons) > 0)
-                    <option value="lessons" class="text-secondary-500 bg-white">
-                        Solo Lecciones
-                    </option>
-                @endif
+    <div class="flex flex-col lg:flex-row items-center justify-between gap-4">
 
-                @if (count($exams) > 0)
-                    <option value="exams" class="text-secondary-500 bg-white">
-                        Solo Examenes
+        @if (count($students) > 0)
+            <div class="flex flex-col lg:flex-row gap-4 w-full lg:w-auto">
+                <x-jet-input id="input-search" type="text" wire:model="search" class="input-search w-full lg:w-72" placeholder="Buscar estudiante..."/>
+                <select wire:model="type_filter" class="flex-1 border-secondary-100 {{ $type_filter != 'all' ? 'text-secondary-500' : 'text-secondary-300' }} focus:border-secondary-100 bg-secondary-50 placeholder:text-secondary-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50 rounded-lg">
+                    <option value="all" class="text-secondary-500 bg-white">
+                        Todas las actividades
                     </option>
-                @endif
-            </select>
-        </div>
+                    @if (count($homeworks) > 0)
+                        <option value="homeworks" class="text-secondary-500 bg-white">
+                            Solo Deberes
+                        </option>
+                    @endif
+                    
+                    @if (count($lessons) > 0)
+                        <option value="lessons" class="text-secondary-500 bg-white">
+                            Solo Lecciones
+                        </option>
+                    @endif
 
-        <div class="relative">
-            <button x-on:click="open = !open" x-on:click.away="open = false" class="p-2 text-secondary-500">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
-                </svg>
-            </button>
-            <div x-show="open" x-transition.opacity class="absolute top-full right-0 flex flex-col rounded-md ring-1 ring-black ring-opacity-5 py-1 bg-white shadow-lg">
-                <button wire:click="$emit('studentCreate', {{ $course_id }})" class="text-left whitespace-nowrap block px-4 py-2 leading-5 text-secondary-500 hover:bg-secondary-100 focus:outline-none focus:bg-secondary-100 transition">
-                    Añadir estudiante
-                </button>
-
-                @if (count($students) > 0)
-                    <button wire:click="createActivity(1)" class="text-left whitespace-nowrap block px-4 py-2 leading-5 text-secondary-500 hover:bg-secondary-100 focus:outline-none focus:bg-secondary-100 transition">
-                        Añadir deber
-                    </button>
-                    <button wire:click="createActivity(2)" class="text-left whitespace-nowrap block px-4 py-2 leading-5 text-secondary-500 hover:bg-secondary-100 focus:outline-none focus:bg-secondary-100 transition">
-                        Añadir lección
-                    </button>
-                    <button wire:click="createActivity(3)" class="text-left whitespace-nowrap block px-4 py-2 leading-5 text-secondary-500 hover:bg-secondary-100 focus:outline-none focus:bg-secondary-100 transition">
-                        Añadir examen
-                    </button>
-                @endif
-                
+                    @if (count($exams) > 0)
+                        <option value="exams" class="text-secondary-500 bg-white">
+                            Solo Examenes
+                        </option>
+                    @endif
+                </select>
             </div>
-        </div>
+        @endif
+            <div class="relative z-10 ml-auto mr-0 self-end lg:self-auto">
+                <button x-on:click="open = !open" x-on:click.away="open = false" class="p-2 text-secondary-500">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
+                    </svg>
+                </button>
+                <div x-show="open" x-transition.opacity class="absolute top-full right-0 flex flex-col rounded-md ring-1 ring-black ring-opacity-5 py-1 bg-white shadow-lg">
+                    <button wire:click="$emit('studentCreate', {{ $course->id }})" class="text-left whitespace-nowrap block px-4 py-2 leading-5 text-secondary-500 hover:bg-secondary-100 focus:outline-none focus:bg-secondary-100 transition">
+                        Añadir estudiante
+                    </button>
+
+                    @if (count($students) > 0)
+                        <button wire:click="createActivity(1)" class="text-left whitespace-nowrap block px-4 py-2 leading-5 text-secondary-500 hover:bg-secondary-100 focus:outline-none focus:bg-secondary-100 transition">
+                            Añadir deber
+                        </button>
+                        <button wire:click="createActivity(2)" class="text-left whitespace-nowrap block px-4 py-2 leading-5 text-secondary-500 hover:bg-secondary-100 focus:outline-none focus:bg-secondary-100 transition">
+                            Añadir lección
+                        </button>
+                        <button wire:click="createActivity(3)" class="text-left whitespace-nowrap block px-4 py-2 leading-5 text-secondary-500 hover:bg-secondary-100 focus:outline-none focus:bg-secondary-100 transition">
+                            Añadir examen
+                        </button>
+                    @endif
+                    
+                </div>
+            </div>
+
+
+        
     </div>
 
     <x-jet-input-error for="grade.value" class="mt-2" />
@@ -63,22 +68,28 @@
             <table class="grades-index__table">
                 <thead class="text-primary-700 text-xs uppercase">
                     <tr>
-                        <th></th>
+                        <th class="sm:sticky sm:left-0 bg-white"></th>
                         @if (count($homeworks) > 0 && ($type_filter == 'all' || $type_filter == 'homeworks'))
                             <th class="bg-primary-100 font-semibold" colspan="{{ count($homeworks) }}">
                                 Deberes
+                                <br>
+                                ({{ $course->homeworks_weight }}%)
                             </th>
                         @endif
                         
                         @if (count($lessons) > 0 && ($type_filter == 'all' || $type_filter == 'lessons'))
                             <th class="bg-primary-50 font-semibold" colspan="{{ count($lessons) }}">
                                 Lecciones
+                                <br>
+                                ({{ $course->lessons_weight }}%)
                             </th>
                         @endif
 
                         @if (count($exams) > 0 && ($type_filter == 'all' || $type_filter == 'exams'))
                             <th class="bg-primary-100 font-semibold" colspan="{{ count($exams) }}">
                                 Examenes
+                                <br>
+                                ({{ $course->exams_weight }}%)
                             </th>
                         @endif
 
@@ -86,14 +97,26 @@
                             <th></th>
                         @endif
                         <th></th>
+                        <th></th>
                     </tr>
                     <tr>
-                        <th class="bg-primary-50 text-left font-semibold border-t border-l border-primary-100">Nombre</th>
+                        <th class="sm:sticky sm:left-0 bg-primary-50 text-left font-semibold border-t border-l border-primary-100">
+                            Nombre
+                        </th>
                         
                         @if (count($homeworks) > 0 && ($type_filter == 'all' || $type_filter == 'homeworks'))
                             @foreach ($homeworks as $homework)
                                 <th class="border-t border-b border-primary-100 bg-primary-100">
-                                    {{ $loop->iteration }}
+                                    <div class="activity-header flex justify-center items-center">
+                                        <span class="activity-header__number h-6 w-6 flex justify-center items-center">
+                                            {{ $loop->iteration }}
+                                        </span>
+                                        <x-button wire:click="$emit('modelDeleteAttempt', {{ $homework->id }}, 'deleteActivity', '¿Borrar actividad?')" class="activity-header__delete text-red-500 w-full">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                              </svg>
+                                        </x-button>
+                                    </div>
                                 </th>
                             @endforeach
                         @endif
@@ -101,7 +124,16 @@
                         @if (count($lessons) > 0 && ($type_filter == 'all' || $type_filter == 'lessons'))
                             @foreach ($lessons as $lesson)
                                 <th class="border-t border-b border-primary-100 bg-primary-50">
-                                    {{ $loop->iteration }}
+                                    <div class="activity-header flex justify-center items-center">
+                                        <span class="activity-header__number h-6 w-6 flex justify-center items-center">
+                                            {{ $loop->iteration }}
+                                        </span>
+                                        <x-button wire:click="$emit('modelDeleteAttempt', {{ $lesson->id }}, 'deleteActivity', '¿Borrar actividad?')" class="activity-header__delete text-red-500 w-full">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                              </svg>
+                                        </x-button>
+                                    </div>
                                 </th>
                             @endforeach
                         @endif
@@ -109,7 +141,16 @@
                         @if (count($exams) > 0 && ($type_filter == 'all' || $type_filter == 'exams'))
                             @foreach ($exams as $exam)
                                 <th class="border-t border-b border-primary-100 bg-primary-100">
-                                    {{ $loop->iteration }}
+                                    <div class="activity-header flex justify-center items-center">
+                                        <span class="activity-header__number h-6 w-6 flex justify-center items-center">
+                                            {{ $loop->iteration }}
+                                        </span>
+                                        <x-button wire:click="$emit('modelDeleteAttempt', {{ $exam->id }}, 'deleteActivity', '¿Borrar actividad?')" class="activity-header__delete text-red-500 w-full">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                              </svg>
+                                        </x-button>
+                                    </div>
                                 </th>
                             @endforeach
                         @endif
@@ -119,16 +160,17 @@
                                 Promedio
                             </th>
                         @endif
-                        <th class="border-t border-r border-primary-100 font-semibold bg-primary-50">
+                        <th class="border-t border-primary-100 font-semibold bg-primary-50">
                             Estado
                         </th>
+                        <th class="border-t border-r border-primary-100 bg-primary-50"></th>
                     </tr>
                 </thead>
                 <tbody class="text-sm">
                     @foreach ($students as $student)
                         <tr class="border-l border-r border-primary-100 {{ $loop->last ? 'border-b' : '' }}">
-                            <td class="whitespace-nowrap">
-                                {{ $student->lastname }} {{ $student->firstname }}
+                            <td class="whitespace-nowrap sm:sticky sm:left-0 bg-white">
+                                {{ $student->fullname }}
                             </td>
                             
                             @if ($type_filter == 'all' || $type_filter == 'homeworks')
@@ -205,6 +247,23 @@
                                     {{ $average >= $student->course->min_grade ? 'Aprobado' : 'Reprobado' }}
                                 </x-badge>
                             </td>
+                            <td>
+                                <div class="flex gap-2">
+                                    {{-- Edit Button --}}
+                                    <x-button wire:click="$emit('studentEdit', {{ $student->id }})" class="bg-blue-100 text-blue-500 hover:scale-105 transition-all p-2 rounded-lg self-end">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                                        </svg>
+                                    </x-button>
+
+                                    {{-- Delete Button --}}
+                                    <x-button wire:click="$emit('modelDeleteAttempt', {{ $student->id }}, 'deleteStudent', '¿Borrar estudiante?')" class="bg-red-100 text-red-500 hover:scale-105 transition-all p-2 rounded-lg self-end">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                        </svg>
+                                    </x-button>
+                                </div>
+                            </td>
 
                         </tr>
                     @endforeach
@@ -215,16 +274,17 @@
 
     @else
 
-        <p>No existe ningún estudiante...</p>
+        <p>El curso está vacío... </p>
 
     @endif
 
-    @if ($students->hasPages())
+    {{-- @if ($students->hasPages())
         <div class="mt-auto">
             {{ $students->links() }}
         </div>
-    @endif
+    @endif --}}
 
-    @livewire('students.student-create', ['course_id' => $course_id])
+    @livewire('students.student-create', ['course_id' => $course->id])
+    @livewire('students.student-edit')
 
 </div>

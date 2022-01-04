@@ -234,60 +234,88 @@ p {
 .event-card--primary button {
   background-color: #58cea7;
 }
-/* line 14, ../scss/components/_event-card.scss */
+/* line 13, ../scss/components/_event-card.scss */
+.event-card--primary:hover {
+  background-color: #0ea774;
+}
+/* line 19, ../scss/components/_event-card.scss */
 .event-card--secondary {
   background-color: #343434;
 }
-/* line 18, ../scss/components/_event-card.scss */
+/* line 23, ../scss/components/_event-card.scss */
 .event-card--secondary button {
   background-color: #717171;
 }
-/* line 23, ../scss/components/_event-card.scss */
+/* line 27, ../scss/components/_event-card.scss */
+.event-card--secondary:hover {
+  background-color: #2f2f2f;
+}
+/* line 32, ../scss/components/_event-card.scss */
 .event-card--red {
   background-color: #ef4444;
 }
-/* line 27, ../scss/components/_event-card.scss */
+/* line 36, ../scss/components/_event-card.scss */
 .event-card--red button {
   background-color: #f87171;
 }
-/* line 32, ../scss/components/_event-card.scss */
+/* line 40, ../scss/components/_event-card.scss */
+.event-card--red:hover {
+  background-color: #dc2626;
+}
+/* line 45, ../scss/components/_event-card.scss */
 .event-card--orange {
   background-color: #f97316;
 }
-/* line 36, ../scss/components/_event-card.scss */
+/* line 49, ../scss/components/_event-card.scss */
 .event-card--orange button {
   background-color: #fb923c;
 }
-/* line 41, ../scss/components/_event-card.scss */
+/* line 53, ../scss/components/_event-card.scss */
+.event-card--orange:hover {
+  background-color: #ea580c;
+}
+/* line 58, ../scss/components/_event-card.scss */
 .event-card--blue {
   background-color: #3b82f6;
 }
-/* line 45, ../scss/components/_event-card.scss */
+/* line 62, ../scss/components/_event-card.scss */
 .event-card--blue button {
   background-color: #60a5fa;
 }
-/* line 50, ../scss/components/_event-card.scss */
+/* line 66, ../scss/components/_event-card.scss */
+.event-card--blue:hover {
+  background-color: #2563eb;
+}
+/* line 71, ../scss/components/_event-card.scss */
 .event-card--purple {
   background-color: #a855f7;
 }
-/* line 54, ../scss/components/_event-card.scss */
+/* line 75, ../scss/components/_event-card.scss */
 .event-card--purple button {
   background-color: #c084fc;
 }
-/* line 59, ../scss/components/_event-card.scss */
+/* line 79, ../scss/components/_event-card.scss */
+.event-card--purple:hover {
+  background-color: #9333ea;
+}
+/* line 84, ../scss/components/_event-card.scss */
 .event-card--pink {
   background-color: #ec4899;
 }
-/* line 63, ../scss/components/_event-card.scss */
+/* line 88, ../scss/components/_event-card.scss */
 .event-card--pink button {
   background-color: #f472b6;
 }
-/* line 69, ../scss/components/_event-card.scss */
+/* line 92, ../scss/components/_event-card.scss */
+.event-card--pink:hover {
+  background-color: #db2777;
+}
+/* line 97, ../scss/components/_event-card.scss */
 .event-card.not-active, .not-active.event-card--primary, .not-active.event-card--secondary, .not-active.event-card--red, .not-active.event-card--orange, .not-active.event-card--blue, .not-active.event-card--purple, .not-active.event-card--pink {
   color: #717171;
   background-color: #f5f5f5;
 }
-/* line 73, ../scss/components/_event-card.scss */
+/* line 101, ../scss/components/_event-card.scss */
 .event-card.not-active button, .not-active.event-card--primary button, .not-active.event-card--secondary button, .not-active.event-card--red button, .not-active.event-card--orange button, .not-active.event-card--blue button, .not-active.event-card--purple button, .not-active.event-card--pink button {
   background-color: #ebebeb;
 }
@@ -295,81 +323,82 @@ p {
 /* line 1, ../scss/components/_button.scss */
 .btn, .btn--primary, .btn--primary-outlined, .btn--white, .btn--white-outlined, .btn--gray, .btn--gray-outlined, .btn--danger {
   padding: .7em 1.5em;
+  text-align: center;
   border-radius: .4em;
   font-weight: 600;
   transition: transform .3s ease, background-color .3s ease;
   font-style: normal;
   cursor: pointer;
 }
-/* line 9, ../scss/components/_button.scss */
+/* line 10, ../scss/components/_button.scss */
 .btn--primary {
   background-color: #10b981;
   color: #FFFFFF;
 }
-/* line 14, ../scss/components/_button.scss */
+/* line 15, ../scss/components/_button.scss */
 .btn--primary-outlined {
   background-color: transparent;
   color: #10b981;
   border: 1px solid #10b981;
 }
-/* line 23, ../scss/components/_button.scss */
+/* line 24, ../scss/components/_button.scss */
 .btn--white {
   background-color: #FFFFFF;
   color: #10b981;
 }
-/* line 28, ../scss/components/_button.scss */
+/* line 29, ../scss/components/_button.scss */
 .btn--white-outlined {
   background-color: transparent;
   color: #FFFFFF;
   border: 1px solid #FFFFFF;
 }
-/* line 37, ../scss/components/_button.scss */
+/* line 38, ../scss/components/_button.scss */
 .btn--gray {
   background-color: #FFFFFF;
   color: #aeaeae;
 }
-/* line 42, ../scss/components/_button.scss */
+/* line 43, ../scss/components/_button.scss */
 .btn--gray-outlined {
   background-color: transparent;
   color: #717171;
   border: 1px solid #aeaeae;
 }
-/* line 53, ../scss/components/_button.scss */
+/* line 54, ../scss/components/_button.scss */
 .btn:hover, .btn--primary:hover, .btn--primary-outlined:hover, .btn--white:hover, .btn--white-outlined:hover, .btn--gray:hover, .btn--gray-outlined:hover, .btn--danger:hover {
   transform: scale(1.05);
 }
-/* line 57, ../scss/components/_button.scss */
+/* line 58, ../scss/components/_button.scss */
 .btn--icon, .btn--icon--primary, .btn--icon--danger, .btn--icon--blue {
   width: 2.5em;
   height: 2.5em;
   border-radius: 100%;
   transition: transform .3s ease, background-color .3s ease;
 }
-/* line 63, ../scss/components/_button.scss */
+/* line 64, ../scss/components/_button.scss */
 .btn--icon:hover, .btn--icon--primary:hover, .btn--icon--danger:hover, .btn--icon--blue:hover {
   transform: scale(1.05);
 }
-/* line 67, ../scss/components/_button.scss */
+/* line 68, ../scss/components/_button.scss */
 .btn--icon svg, .btn--icon--primary svg, .btn--icon--danger svg, .btn--icon--blue svg {
   margin-left: auto;
   margin-right: auto;
 }
-/* line 72, ../scss/components/_button.scss */
+/* line 73, ../scss/components/_button.scss */
 .btn--icon--primary {
   color: #FFFFFF;
   background-color: #10b981;
 }
-/* line 78, ../scss/components/_button.scss */
+/* line 79, ../scss/components/_button.scss */
 .btn--icon--danger {
   color: #ef4444;
   background-color: #fee2e2;
 }
-/* line 84, ../scss/components/_button.scss */
+/* line 85, ../scss/components/_button.scss */
 .btn--icon--blue {
   color: #3b82f6;
   background-color: #dbeafe;
 }
-/* line 92, ../scss/components/_button.scss */
+/* line 93, ../scss/components/_button.scss */
 .btn--danger {
   background-color: #ef4444;
   color: #FFFFFF;
@@ -483,8 +512,24 @@ p {
 }
 
 /* line 5, ../scss/views/_grades.scss */
+.grades-index__table th {
+  min-height: 2rem;
+}
+/* line 9, ../scss/views/_grades.scss */
 .grades-index__table th, .grades-index__table td {
   padding: 1rem 1.2rem;
+}
+/* line 15, ../scss/views/_grades.scss */
+.grades-index__table .activity-header__delete {
+  display: none;
+}
+/* line 20, ../scss/views/_grades.scss */
+.grades-index__table .activity-header:hover .activity-header__number {
+  display: none;
+}
+/* line 23, ../scss/views/_grades.scss */
+.grades-index__table .activity-header:hover .activity-header__delete {
+  display: block;
 }
 
 /*# sourceMappingURL=style.css.map */

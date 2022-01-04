@@ -21,7 +21,7 @@
 <nav>
     <ul>
         @foreach ($nav_links as $link)
-            <li class="inline-block">
+            <li class="md:inline-block">
                 <a href="{{ $link['route'] }}" class="tab--primary block {{ $link['isActive'] ? 'active' : '' }}">
                     {{ $link['name'] }}
                 </a>
