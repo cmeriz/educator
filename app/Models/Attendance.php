@@ -9,6 +9,8 @@ class Attendance extends Model
 {
     use HasFactory;
 
+    protected $guarded = ['id'];
+
     // Reverse Classday Relationship 1:n
     public function classday(){
         return $this->belongsTo('App\Models\Classday');

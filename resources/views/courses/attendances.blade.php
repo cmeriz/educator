@@ -13,6 +13,15 @@
             </x-button>
         </div>
 
+        @livewire('attendances.attendances-index', ['course' => $course])
+
     </div>
+
+    @livewire('classdays.classday-create', ['course_id' => $course->id])
+
+    <x-slot name="viewScripts">
+        <script defer src="{{ asset('js/default-alert.js') }}"></script>
+        <script defer src="{{ asset('js/model-delete-attempt.js') }}"></script>
+    </x-slot>
 
 </x-app-layout>

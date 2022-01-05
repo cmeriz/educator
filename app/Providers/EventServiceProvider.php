@@ -3,10 +3,12 @@
 namespace App\Providers;
 
 use App\Models\Activity;
+use App\Models\Classday;
 use App\Models\Course;
 use App\Models\Grade;
 use App\Models\Student;
 use App\Observers\ActivityObserver;
+use App\Observers\ClassdayObserver;
 use App\Observers\CourseObserver;
 use App\Observers\GradeObserver;
 use App\Observers\StudentObserver;
@@ -39,5 +41,6 @@ class EventServiceProvider extends ServiceProvider
         Course::observe(CourseObserver::class);
         Activity::observe(ActivityObserver::class);
         Student::observe(StudentObserver::class);
+        Classday::observe(ClassdayObserver::class);
     }
 }

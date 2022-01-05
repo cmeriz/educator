@@ -1,0 +1,54 @@
+.attendances-index{
+
+    &__table{
+
+        th{
+            min-height: 2rem;
+        }
+
+        th, td{
+            padding: 1rem 1.2rem;
+        }
+
+        .attendance-box{
+            color: $primary-color-800;
+
+            &__btn--attended, &__btn--not-attended{
+                border: 1px solid $primary-color-200;
+                padding: .5em;
+            }
+
+            &__btn--attended{
+                .uncheck{
+                    display: none;
+                    color: $red-color-500;
+                }
+
+                &:hover{
+                    .check{
+                        display: none;
+                    }
+                    .uncheck{
+                        display: block;
+                    }
+                }
+            }
+
+            &__btn--not-attended{
+                svg{
+                    opacity: 0;
+                }
+
+                &:hover{
+                    svg{
+                        opacity: .6;
+                    }
+                }
+
+            }
+
+        }
+
+    }
+
+}

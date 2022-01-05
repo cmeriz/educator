@@ -532,4 +532,43 @@ p {
   display: block;
 }
 
+/* line 5, ../scss/views/_attendances.scss */
+.attendances-index__table th {
+  min-height: 2rem;
+}
+/* line 9, ../scss/views/_attendances.scss */
+.attendances-index__table th, .attendances-index__table td {
+  padding: 1rem 1.2rem;
+}
+/* line 13, ../scss/views/_attendances.scss */
+.attendances-index__table .attendance-box {
+  color: #0a6f4d;
+}
+/* line 16, ../scss/views/_attendances.scss */
+.attendances-index__table .attendance-box__btn--attended, .attendances-index__table .attendance-box__btn--not-attended {
+  border: 1px solid #c3eee0;
+  padding: .5em;
+}
+/* line 22, ../scss/views/_attendances.scss */
+.attendances-index__table .attendance-box__btn--attended .uncheck {
+  display: none;
+  color: #ef4444;
+}
+/* line 28, ../scss/views/_attendances.scss */
+.attendances-index__table .attendance-box__btn--attended:hover .check {
+  display: none;
+}
+/* line 31, ../scss/views/_attendances.scss */
+.attendances-index__table .attendance-box__btn--attended:hover .uncheck {
+  display: block;
+}
+/* line 38, ../scss/views/_attendances.scss */
+.attendances-index__table .attendance-box__btn--not-attended svg {
+  opacity: 0;
+}
+/* line 43, ../scss/views/_attendances.scss */
+.attendances-index__table .attendance-box__btn--not-attended:hover svg {
+  opacity: .6;
+}
+
 /*# sourceMappingURL=style.css.map */

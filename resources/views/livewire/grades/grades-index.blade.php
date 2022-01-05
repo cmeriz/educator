@@ -1,6 +1,6 @@
 <div x-data="{ open: false }" class="grades-index {{ count($students) > 0 ? 'grid' : 'flex' }} flex-col gap-4 flex-1">
 
-    <div class="flex flex-col lg:flex-row items-center justify-between gap-4">
+    <div class="flex flex-col lg:flex-row items-center justify-between self-start gap-4">
 
         @if (count($students) > 0)
             <div class="flex flex-col lg:flex-row gap-4 w-full lg:w-auto">

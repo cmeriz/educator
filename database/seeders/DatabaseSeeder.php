@@ -24,5 +24,7 @@ class DatabaseSeeder extends Seeder
         $this->call(ActivitySeeder::class);
         $this->call(GradeSeeder::class);
         $this->call(AverageSeeder::class);
+        $this->call(ClassdaySeeder::class);
+        $this->call(AttendanceSeeder::class);
     }
 }
