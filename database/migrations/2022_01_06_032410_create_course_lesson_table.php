@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateLessonCourseTable extends Migration
+class CreateCourseLessonTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateLessonCourseTable extends Migration
      */
     public function up()
     {
-        Schema::create('lesson_course', function (Blueprint $table) {
+        Schema::create('course_lesson', function (Blueprint $table) {
             $table->id();
 
             // Foreign Fields
@@ -34,6 +34,6 @@ class CreateLessonCourseTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('lesson_course');
+        Schema::dropIfExists('course_lesson');
     }
 }

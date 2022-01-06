@@ -19,7 +19,6 @@ class CourseEdit extends Component
     protected $rules = [
         'name' => 'required|max:50',
         'color' => 'required',
-        'pensum_id' => 'required',
         'homeworks_weight' => 'required|numeric|min:0|max:100',
         'lessons_weight' => 'required|numeric|min:0|max:100',
         'exams_weight' => 'required|numeric|min:0|max:100',
@@ -31,7 +30,6 @@ class CourseEdit extends Component
         'name.required' => 'Este campo es obligatorio',
         'name.max' => 'Este campo no puede tener más de 50 caracteres',
         'color.required' => 'Este campo es obligatorio',
-        'pensum_id.required' => 'Este campo es obligatorio',
         'homeworks_weight.required' => 'Este campo es obligatorio',
         'homeworks_weight.numeric' => 'Este campo debe ser un número',
         'homeworks_weight.min' => 'El valor debe estar entre 0 y 100',
@@ -100,7 +98,7 @@ class CourseEdit extends Component
 
         $this->course->name = $this->name;
         $this->course->color = $this->color;
-        $this->course->pensum_id = $this->pensum_id;
+        $this->course->pensum_id = ($this->pensum_id != '') ? $this->pensum_id : null;
         $this->course->homeworks_weight = $this->homeworks_weight;
         $this->course->lessons_weight = $this->lessons_weight;
         $this->course->exams_weight = $this->exams_weight;

@@ -18,6 +18,8 @@
 
         <x-slot name="content">
 
+            {{ $pensum_id }}
+
             <x-jet-label value="Datos generales" class="font-bold mb-4 uppercase"/>
 
             <div class="mb-4">
@@ -48,8 +50,8 @@
             <div class="flex flex-col mb-8">
                 <x-jet-label value="Pensum del Curso:"/>               
 
-                <select wire:model="pensum_id" class="border-secondary-100 {{ $pensum_id ? 'text-secondary-500' : 'text-secondary-300' }} focus:border-secondary-100 bg-secondary-50 placeholder:text-secondary-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50 rounded-lg">
-                    <option value="null" selected disabled hidden>Selecciona un pensum</option>
+                <select wire:model="pensum_id" class="border-secondary-100 {{ is_null($pensum_id) ? 'text-secondary-300' : 'text-secondary-500' }} focus:border-secondary-100 bg-secondary-50 placeholder:text-secondary-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50 rounded-lg">
+                    <option value="">Ninguno</option>
                     @foreach ($pensums as $pensum)
                         <option value="{{ $pensum->id }}" class="text-secondary-500">{{ $pensum->name }}</option>
                     @endforeach

@@ -13,6 +13,12 @@
             </x-button>
         </div>
 
+        @livewire('pensums.pensum-progress', ['course' => $course])
+
     </div>
+
+    <x-slot name="viewScripts">
+        <script defer src="{{ asset('js/default-alert.js') }}"></script>
+    </x-slot>
 
 </x-app-layout>

@@ -24,6 +24,17 @@ class Course extends Model
 
     }
 
+    // Pensum Progress Computed Property
+    public function getProgressAttribute(){
+        $lessons_amount = count($this->pensum->lessons);
+        $lessons_completed = count($this->lessons);
+
+        $percentage = round(($lessons_completed * 100) / $lessons_amount, 0);
+
+        return $percentage;
+
+    }
+
     // Reverse User Relationship 1:n
     public function user(){
         return $this->belongsTo('App\Models\User');
@@ -52,6 +63,11 @@ class Course extends Model
     // Classdays Relationship 1:n
     public function classdays(){
         return $this->hasMany('App\Models\Classday');
+    }
+
+    // Lessons Relationship n:n
+    public function lessons(){
+        return $this->belongsToMany('App\Models\Lesson');
     }
 
 }

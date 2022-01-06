@@ -15,7 +15,9 @@
             @foreach ($lessons as $item)
                 <div class="flex items-center gap-6 bg-gray-50 rounded-lg p-3 font-semibold">
                     <div class="flex items-center">
-                        <span class="flex justify-center items-center rounded-lg bg-white h-12 w-12">{{ $loop->iteration }}</span>
+                        <span class="flex justify-center items-center rounded-lg bg-white h-12 w-12">
+                            {{ $loop->iteration }}
+                        </span>
                     </div>
                     <div class="flex items-center justify-between flex-1 gap-2">
                         

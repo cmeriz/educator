@@ -915,6 +915,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   align-items: center;
 }.items-stretch{
   align-items: stretch;
+}.justify-start{
+  justify-content: flex-start;
 }.justify-end{
   justify-content: flex-end;
 }.justify-center{
@@ -1024,9 +1026,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }.border-gray-400{
   --tw-border-opacity: 1;
   border-color: rgb(156 163 175 / var(--tw-border-opacity));
-}.border-red-100{
-  --tw-border-opacity: 1;
-  border-color: rgb(254 226 226 / var(--tw-border-opacity));
 }.border-b-secondary-100{
   --tw-border-opacity: 1;
   border-bottom-color: rgb(235 235 235 / var(--tw-border-opacity));
@@ -1081,15 +1080,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }.bg-primary-50{
   --tw-bg-opacity: 1;
   background-color: rgb(243 252 249 / var(--tw-bg-opacity));
-}.bg-red-50{
-  --tw-bg-opacity: 1;
-  background-color: rgb(254 242 242 / var(--tw-bg-opacity));
 }.bg-primary-200{
   --tw-bg-opacity: 1;
   background-color: rgb(195 238 224 / var(--tw-bg-opacity));
-}.bg-primary-300{
-  --tw-bg-opacity: 1;
-  background-color: rgb(159 227 205 / var(--tw-bg-opacity));
 }.bg-opacity-25{
   --tw-bg-opacity: 0.25;
 }.bg-cover{
@@ -1187,6 +1180,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-top: 6rem;
 }.pb-14{
   padding-bottom: 3.5rem;
+}.pr-6{
+  padding-right: 1.5rem;
 }.pb-8{
   padding-bottom: 2rem;
 }.pt-8{
@@ -1304,24 +1299,30 @@ Ensure the default browser behavior of the `hidden` attribute.
 }.text-blue-500{
   --tw-text-opacity: 1;
   color: rgb(59 130 246 / var(--tw-text-opacity));
+}.text-primary-500{
+  --tw-text-opacity: 1;
+  color: rgb(16 185 129 / var(--tw-text-opacity));
+}.text-secondary-200{
+  --tw-text-opacity: 1;
+  color: rgb(204 204 204 / var(--tw-text-opacity));
 }.text-primary-700{
   --tw-text-opacity: 1;
   color: rgb(12 139 97 / var(--tw-text-opacity));
+}.text-primary-800{
+  --tw-text-opacity: 1;
+  color: rgb(10 111 77 / var(--tw-text-opacity));
 }.text-gray-200{
   --tw-text-opacity: 1;
   color: rgb(229 231 235 / var(--tw-text-opacity));
 }.text-gray-300{
   --tw-text-opacity: 1;
   color: rgb(209 213 219 / var(--tw-text-opacity));
-}.text-primary-900{
-  --tw-text-opacity: 1;
-  color: rgb(8 91 63 / var(--tw-text-opacity));
-}.text-primary-800{
-  --tw-text-opacity: 1;
-  color: rgb(10 111 77 / var(--tw-text-opacity));
 }.underline{
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
+}.line-through{
+  -webkit-text-decoration-line: line-through;
+          text-decoration-line: line-through;
 }.antialiased{
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -1472,70 +1473,60 @@ Ensure the default browser behavior of the `hidden` attribute.
 }/* line 8, ../scss/components/_course-card.scss */.course-card--primary:hover {
   background-color: #9fe3cd;
   color: #0a6f4d;
-}/* line 13, ../scss/components/_course-card.scss */.course-card--primary .course-card__progressbar {
-  background-color: #e7f8f2;
-}/* line 17, ../scss/components/_course-card.scss */.course-card--primary .progress {
+}/* line 13, ../scss/components/_course-card.scss */.course-card--primary .progress {
   background-color: #0c8b61;
-}/* line 23, ../scss/components/_course-card.scss */.course-card--secondary {
+}/* line 19, ../scss/components/_course-card.scss */.course-card--secondary {
   background-color: #cccccc;
   color: #272727;
-}/* line 28, ../scss/components/_course-card.scss */.course-card--secondary:hover {
+}/* line 24, ../scss/components/_course-card.scss */.course-card--secondary:hover {
   background-color: #aeaeae;
   color: #1f1f1f;
-}/* line 33, ../scss/components/_course-card.scss */.course-card--secondary .course-card__progressbar {
-  background-color: #ebebeb;
-}/* line 37, ../scss/components/_course-card.scss */.course-card--secondary .progress {
+}/* line 29, ../scss/components/_course-card.scss */.course-card--secondary .progress {
   background-color: #272727;
-}/* line 43, ../scss/components/_course-card.scss */.course-card--red {
+}/* line 35, ../scss/components/_course-card.scss */.course-card--red {
   background-color: #fecaca;
   color: #b91c1c;
-}/* line 48, ../scss/components/_course-card.scss */.course-card--red:hover {
+}/* line 40, ../scss/components/_course-card.scss */.course-card--red:hover {
   background-color: #fca5a5;
   color: #991b1b;
-}/* line 53, ../scss/components/_course-card.scss */.course-card--red .course-card__progressbar {
-  background-color: #fee2e2;
-}/* line 57, ../scss/components/_course-card.scss */.course-card--red .progress {
+}/* line 45, ../scss/components/_course-card.scss */.course-card--red .progress {
   background-color: #b91c1c;
-}/* line 64, ../scss/components/_course-card.scss */.course-card--orange {
+}/* line 52, ../scss/components/_course-card.scss */.course-card--orange {
   background-color: #fed7aa;
   color: #c2410c;
-}/* line 69, ../scss/components/_course-card.scss */.course-card--orange:hover {
+}/* line 57, ../scss/components/_course-card.scss */.course-card--orange:hover {
   background-color: #fdba74;
   color: #9a3412;
-}/* line 74, ../scss/components/_course-card.scss */.course-card--orange .course-card__progressbar {
-  background-color: #ffedd5;
-}/* line 78, ../scss/components/_course-card.scss */.course-card--orange .progress {
+}/* line 62, ../scss/components/_course-card.scss */.course-card--orange .progress {
   background-color: #c2410c;
-}/* line 84, ../scss/components/_course-card.scss */.course-card--blue {
+}/* line 68, ../scss/components/_course-card.scss */.course-card--blue {
   background-color: #bfdbfe;
   color: #1d4ed8;
-}/* line 89, ../scss/components/_course-card.scss */.course-card--blue:hover {
+}/* line 73, ../scss/components/_course-card.scss */.course-card--blue:hover {
   background-color: #93c5fd;
   color: #1e40af;
-}/* line 94, ../scss/components/_course-card.scss */.course-card--blue .course-card__progressbar {
-  background-color: #dbeafe;
-}/* line 98, ../scss/components/_course-card.scss */.course-card--blue .progress {
+}/* line 78, ../scss/components/_course-card.scss */.course-card--blue .progress {
   background-color: #1d4ed8;
-}/* line 104, ../scss/components/_course-card.scss */.course-card--purple {
+}/* line 84, ../scss/components/_course-card.scss */.course-card--purple {
   background-color: #e9d5ff;
   color: #7e22ce;
-}/* line 109, ../scss/components/_course-card.scss */.course-card--purple:hover {
+}/* line 89, ../scss/components/_course-card.scss */.course-card--purple:hover {
   background-color: #d8b4fe;
   color: #6b21a8;
-}/* line 114, ../scss/components/_course-card.scss */.course-card--purple .course-card__progressbar {
-  background-color: #f3e8ff;
-}/* line 118, ../scss/components/_course-card.scss */.course-card--purple .progress {
+}/* line 94, ../scss/components/_course-card.scss */.course-card--purple .progress {
   background-color: #7e22ce;
-}/* line 124, ../scss/components/_course-card.scss */.course-card--pink {
+}/* line 100, ../scss/components/_course-card.scss */.course-card--pink {
   background-color: #fbcfe8;
   color: #be185d;
-}/* line 129, ../scss/components/_course-card.scss */.course-card--pink:hover {
+}/* line 105, ../scss/components/_course-card.scss */.course-card--pink:hover {
   background-color: #f9a8d4;
   color: #9d174d;
-}/* line 134, ../scss/components/_course-card.scss */.course-card--pink .course-card__progressbar {
-  background-color: #fce7f3;
-}/* line 138, ../scss/components/_course-card.scss */.course-card--pink .progress {
+}/* line 110, ../scss/components/_course-card.scss */.course-card--pink .progress {
   background-color: #be185d;
+}/* line 116, ../scss/components/_course-card.scss */.course-card__progressbar {
+  background-color: rgba(255, 255, 255, 0.7);
+}/* line 122, ../scss/components/_course-card.scss */.course-card__progressbar--disabled {
+  background-color: rgba(255, 255, 255, 0.3);
 }/* line 1, ../scss/components/_event-card.scss */.event-card, .event-card--primary, .event-card--secondary, .event-card--red, .event-card--orange, .event-card--blue, .event-card--purple, .event-card--pink {
   color: #FFFFFF;
 }/* line 5, ../scss/components/_event-card.scss */.event-card--primary {

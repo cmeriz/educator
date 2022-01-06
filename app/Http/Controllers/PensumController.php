@@ -13,6 +13,10 @@ class PensumController extends Controller
     }
 
     public function show(Pensum $pensum){
+
+        // Verify pensum ownership
+        $this->authorize('pensumOwner', $pensum);
+
         return view('pensums.show', compact('pensum'));
     }
 

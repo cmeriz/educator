@@ -12,14 +12,26 @@ class CourseController extends Controller
     }
 
     public function grades(Course $course){
+
+        // Verify course ownership
+        $this->authorize('courseOwner', $course);
+
         return view('courses.grades', compact('course'));
     }
 
     public function attendances(Course $course){
+
+        // Verify course ownership
+        $this->authorize('courseOwner', $course);
+
         return view('courses.attendances', compact('course'));
     }
 
     public function pensum(Course $course){
+
+        // Verify course ownership
+        $this->authorize('courseOwner', $course);
+        
         return view('courses.pensum', compact('course'));
     }
 

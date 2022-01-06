@@ -27,6 +27,11 @@ class CourseObserver
     public function updated(Course $course)
     {
         AverageController::updateGradeAvg($course);
+
+        if(!$course->pensum){
+            $course->lessons()->detach();
+        }
+
     }
 
     /**

@@ -14,13 +14,20 @@
         </div>
 
         <div class="flex flex-col mt-auto gap-3">
-            <div class="course-card__progressbar w-full h-2 rounded-full relative overflow-hidden transition-colors">
-                <div class="progress absolute top-0 left-0 h-2 transition-colors" style="width: 24%;"></div>
+            <div class="course-card__progressbar{{ !$course->pensum ? '--disabled' : '' }} w-full h-2 rounded-full relative overflow-hidden transition-colors">
+                @if ($course->pensum)
+                    <div class="progress absolute top-0 left-0 h-2 transition-colors" style="width: {{ $course->progress }}%;"></div>
+                @endif
             </div>
             <div class="course-card__progress text-sm flex justify-between items-center">
-                    24% completado
+                @if ($course->pensum)
+                    {{ $course->progress }}% completado
+                @else
+                    Pensum no asignado...
+                @endif
             </div>
         </div>
+        
     </a>
     
     @if ($controls)

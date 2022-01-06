@@ -10,10 +10,6 @@
             color: $primary-color-800;
         }
 
-        .course-card__progressbar{
-            background-color: $primary-color-100;
-        }
-
         .progress{
             background-color: $primary-color-700;
         }
@@ -30,10 +26,6 @@
             color: $secondary-color-800;
         }
 
-        .course-card__progressbar{
-            background-color: $secondary-color-100;
-        }
-
         .progress{
             background-color: $secondary-color-700;
         }
@@ -48,10 +40,6 @@
         &:hover{
             background-color: $red-color-300;
             color: $red-color-800;
-        }
-
-        .course-card__progressbar{
-            background-color: $red-color-100;
         }
 
         .progress{
@@ -71,10 +59,6 @@
             color: $orange-color-800;
         }
 
-        .course-card__progressbar{
-            background-color: $orange-color-100;
-        }
-
         .progress{
             background-color: $orange-color-700;
         }
@@ -89,10 +73,6 @@
         &:hover{
             background-color: $blue-color-300;
             color: $blue-color-800;
-        }
-
-        .course-card__progressbar{
-            background-color: $blue-color-100;
         }
 
         .progress{
@@ -111,10 +91,6 @@
             color: $purple-color-800;
         }
 
-        .course-card__progressbar{
-            background-color: $purple-color-100;
-        }
-
         .progress{
             background-color: $purple-color-700;
         }
@@ -131,14 +107,20 @@
             color: $pink-color-800;
         }
 
-        .course-card__progressbar{
-            background-color: $pink-color-100;
-        }
-
         .progress{
             background-color: $pink-color-700;
         }
 
+    }
+
+    &__progressbar{
+        background-color: rgba($white, .7);
+    }
+
+    
+
+    &__progressbar--disabled{
+        background-color: rgba($white, .3);
     }
 
 }
