@@ -37,6 +37,7 @@
             &__btn--not-attended{
                 svg{
                     opacity: 0;
+                    transition: opacity .15s ease;
                 }
 
                 &:hover{
@@ -47,6 +48,22 @@
 
             }
 
+        }
+
+        .classday-header{
+
+            &__delete{
+                display: none;
+            }
+
+            &:hover{
+                .classday-header__date{
+                    display: none;
+                }
+                .classday-header__delete{
+                    display: block;
+                }
+            }
         }
 
     }

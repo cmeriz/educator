@@ -156,7 +156,7 @@
                         @endif
 
                         @if ($type_filter == 'all')
-                            <th class="border-t border-primary-100 font-semibold bg-primary-50">
+                            <th class="border-t border-primary-100 font-bold bg-primary-200 text-primary-800">
                                 Promedio
                             </th>
                         @endif
@@ -238,7 +238,7 @@
                             @endphp
 
                             @if ($type_filter == 'all')
-                                <td class="text-center">
+                                <td class="text-center bg-primary-100 font-semibold text-base text-primary-800">
                                     {{ $average }}
                                 </td>
                             @endif
@@ -278,11 +278,11 @@
 
     @endif
 
-    {{-- @if ($students->hasPages())
+    @if ($students->hasPages())
         <div class="mt-auto">
             {{ $students->links() }}
         </div>
-    @endif --}}
+    @endif
 
     @livewire('students.student-create', ['course_id' => $course->id])
     @livewire('students.student-edit')

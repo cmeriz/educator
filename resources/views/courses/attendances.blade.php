@@ -17,6 +17,8 @@
 
     </div>
 
+    @livewire('students.student-create', ['course_id' => $course->id])
+    @livewire('students.student-edit')
     @livewire('classdays.classday-create', ['course_id' => $course->id])
 
     <x-slot name="viewScripts">

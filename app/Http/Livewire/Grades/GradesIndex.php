@@ -29,7 +29,7 @@ class GradesIndex extends Component
     ];
 
     protected $listeners = [
-        'render',
+        'students-table-refresh' => 'render',
         'deleteStudent',
         'deleteActivity',
     ];
@@ -57,8 +57,8 @@ class GradesIndex extends Component
                                      ->orWhere('lastname', 'LIKE', '%' . $this->search . '%');
                            })
                            ->orderBy('lastname')
-                           //->paginate(6);
-                           ->get();
+                           ->paginate(6);
+                           //->get();
                            
         return view('livewire.grades.grades-index', compact('students'));
     }

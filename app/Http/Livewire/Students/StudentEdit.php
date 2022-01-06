@@ -53,7 +53,7 @@ class StudentEdit extends Component
         $this->student = new Student();
         $this->reset(['firstname', 'lastname', 'open']);
         $this->emit('alert', 'success', '¡El estudiante fue actualizado exitosamente!');
-        $this->emitTo('grades.grades-index', 'render');
+        $this->emit('students-table-refresh');
 
     }
 

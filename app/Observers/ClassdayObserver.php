@@ -2,6 +2,7 @@
 
 namespace App\Observers;
 
+use App\Http\Controllers\AverageController;
 use App\Models\Attendance;
 use App\Models\Classday;
 use App\Models\Student;
@@ -16,9 +17,10 @@ class ClassdayObserver
      */
     public function created(Classday $classday)
     {
-
+        
         if(! \App::runningInConsole()){
             $students = Student::where('course_id', $classday->course->id)->get();
+            $course = $classday->course;
 
             foreach ($students as $student) {
                 Attendance::create([
@@ -27,8 +29,10 @@ class ClassdayObserver
                     'student_id' => $student->id,
                 ]);
             }
+
+            AverageController::updateAttendanceAvg($course);
+            
         }
-        
     }
 
     /**
@@ -39,7 +43,7 @@ class ClassdayObserver
      */
     public function updated(Classday $classday)
     {
-        //
+        
     }
 
     /**
@@ -50,7 +54,7 @@ class ClassdayObserver
      */
     public function deleted(Classday $classday)
     {
-        //
+        AverageController::updateAttendanceAvg($classday->course);
     }
 
     /**
@@ -74,4 +78,5 @@ class ClassdayObserver
     {
         //
     }
+
 }

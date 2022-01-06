@@ -41,10 +41,22 @@
                         </th>
 
                         @foreach ($classdays as $classday)
-                            <th class="border-t border-b border-primary-100 bg-primary-100">
-                                {{ $classday->formatted_date }}
+                            <th class="classday-header border-t border-b border-primary-100 bg-primary-100">
+                                <span class="classday-header__date h-6 w-16 flex justify-center items-center">{{ $classday->formatted_date }}</span>
+                                <x-button wire:click="$emit('modelDeleteAttempt', {{ $classday->id }}, 'deleteClassday', '¿Borrar clase?')" class="classday-header__delete w-16 text-red-500">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                      </svg>
+                                </x-button>
                             </th>
                         @endforeach
+
+                        <th class="border-t border-primary-100 font-bold bg-primary-200 text-primary-800">
+                            Promedio
+                        </th>
+
+                        <th class="bg-primary-50 border-t border-primary-100"></th>
+                        <th class="bg-primary-50 border-t border-r border-primary-100"></th>
 
                     </tr>
                 </thead>
@@ -80,6 +92,39 @@
                                     @endif
                                 </td>
                             @endforeach
+
+                            @php
+                                $average = $student->getAverageAttendance()->value;
+                            @endphp
+
+                            <td class="text-center bg-primary-100 font-semibold text-base text-primary-800">
+                                {{ intval($average) }}%
+                            </td>
+
+                            <td class="text-center">
+                                <x-badge color="{{ $average >= $student->course->min_attendance ? 'primary' : 'red' }}">
+                                    {{ $average >= $student->course->min_attendance ? 'Aprobado' : 'Reprobado' }}
+                                </x-badge>
+                            </td>
+
+                            <td>
+                                <div class="flex gap-2">
+                                    {{-- Edit Button --}}
+                                    <x-button wire:click="$emit('studentEdit', {{ $student->id }})" class="bg-blue-100 text-blue-500 hover:scale-105 transition-all p-2 rounded-lg self-end">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                                        </svg>
+                                    </x-button>
+
+                                    {{-- Delete Button --}}
+                                    <x-button wire:click="$emit('modelDeleteAttempt', {{ $student->id }}, 'deleteStudent', '¿Borrar estudiante?')" class="bg-red-100 text-red-500 hover:scale-105 transition-all p-2 rounded-lg self-end">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                        </svg>
+                                    </x-button>
+                                </div>
+                            </td>
+
                         </tr>
                     @endforeach
                 </tbody>
@@ -92,12 +137,6 @@
         <p>El curso está vacío... </p>
 
     @endif
-
-    {{-- @if ($students->hasPages())
-        <div class="mt-auto">
-            {{ $students->links() }}
-        </div>
-    @endif --}}
 
 </div>
 

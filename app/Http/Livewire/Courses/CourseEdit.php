@@ -2,8 +2,10 @@
 
 namespace App\Http\Livewire\Courses;
 
+use App\Http\Controllers\CourseController;
 use App\Models\Course;
 use App\Models\Pensum;
+use Illuminate\Validation\Validator;
 use Livewire\Component;
 
 class CourseEdit extends Component
@@ -82,7 +84,19 @@ class CourseEdit extends Component
 
     public function update(){
 
-        $this->validate();
+        $this->withValidator(function (Validator $validator) {
+            $validator->after(function ($validator) {
+                if (!CourseController::weightingsValidation
+                        (
+                            intval($this->homeworks_weight), 
+                            intval($this->lessons_weight), 
+                            intval($this->exams_weight)
+                        )
+                    ){
+                    $validator->errors()->add('weightings', 'La suma de los porcentajes debe ser 100');
+                }
+            });
+        })->validate();
 
         $this->course->name = $this->name;
         $this->course->color = $this->color;
@@ -104,4 +118,5 @@ class CourseEdit extends Component
         $this->emit('alert', 'success', '¡El curso fue actualizado exitosamente!');
 
     }
+
 }

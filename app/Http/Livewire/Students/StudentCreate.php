@@ -50,7 +50,7 @@ class StudentCreate extends Component
 
         $this->reset(['firstname', 'lastname', 'open']);
         $this->emit('alert', 'success', '¡El estudiante fue creado exitosamente!');
-        $this->emitTo('grades.grades-index', 'render');
+        $this->emit('students-table-refresh');
 
     }
 

@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Activity;
 use App\Models\ActivityType;
+use App\Models\Attendance;
 use App\Models\Average;
+use App\Models\Classday;
 use App\Models\Course;
 use App\Models\Student;
 use Illuminate\Http\Request;
@@ -34,15 +36,15 @@ class AverageController extends Controller
             $homeworks_average = $lessons_average = $exams_average = 0;
 
             if(count($homeworks) > 0){
-                $homeworks_average = AverageController::calcAverage($homeworks, $student, $course->homeworks_weight);
+                $homeworks_average = AverageController::calcActivitiesAverage($homeworks, $student, $course->homeworks_weight);
             }
             
             if(count($lessons) > 0){
-                $lessons_average = AverageController::calcAverage($lessons, $student, $course->lessons_weight);
+                $lessons_average = AverageController::calcActivitiesAverage($lessons, $student, $course->lessons_weight);
             }
             
             if(count($exams) > 0){
-                $exams_average = AverageController::calcAverage($exams, $student, $course->exams_weight);
+                $exams_average = AverageController::calcActivitiesAverage($exams, $student, $course->exams_weight);
             }
 
             $average = Average::where('student_id', $student->id)
@@ -56,7 +58,7 @@ class AverageController extends Controller
 
     }
 
-    private static function calcAverage($activities, $student, $weight){
+    private static function calcActivitiesAverage($activities, $student, $weight){
         
         // Init average
         $activities_average = 0;
@@ -74,6 +76,37 @@ class AverageController extends Controller
         $activities_average *= ($weight / 100);
 
         return $activities_average;
+    }
+
+    public static function updateAttendanceAvg($course = null, $student = null){
+
+        $students = [];
+
+        if(!$course){
+            $students = [$student];
+        }
+
+        if(!$student){
+            $students = Student::where('course_id', $course->id)->get();
+        }
+        
+        foreach ($students as $student) {
+            
+            $attendances_count = Attendance::where('student_id', $student->id)->count();
+            $attended_count = Attendance::where('student_id', $student->id)
+                                        ->where('attended', 1)
+                                        ->count();
+
+            $attendances_average = ($attended_count * 100) / $attendances_count;
+
+            $average = Average::where('student_id', $student->id)
+                                ->where('type', Average::TYPES[1])
+                                ->first();
+
+            $average->value = $attendances_average;
+            $average->save();  
+        }
+
     }
 
 }

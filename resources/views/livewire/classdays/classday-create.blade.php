@@ -12,6 +12,7 @@
                 <x-jet-input wire:model="date" type="date" class="w-full"/>
 
                 <x-jet-input-error for="date" />
+                <x-jet-input-error for="repeated" />
 
             </div>
         </x-slot>

@@ -1024,6 +1024,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }.border-gray-400{
   --tw-border-opacity: 1;
   border-color: rgb(156 163 175 / var(--tw-border-opacity));
+}.border-red-100{
+  --tw-border-opacity: 1;
+  border-color: rgb(254 226 226 / var(--tw-border-opacity));
 }.border-b-secondary-100{
   --tw-border-opacity: 1;
   border-bottom-color: rgb(235 235 235 / var(--tw-border-opacity));
@@ -1078,6 +1081,15 @@ Ensure the default browser behavior of the `hidden` attribute.
 }.bg-primary-50{
   --tw-bg-opacity: 1;
   background-color: rgb(243 252 249 / var(--tw-bg-opacity));
+}.bg-red-50{
+  --tw-bg-opacity: 1;
+  background-color: rgb(254 242 242 / var(--tw-bg-opacity));
+}.bg-primary-200{
+  --tw-bg-opacity: 1;
+  background-color: rgb(195 238 224 / var(--tw-bg-opacity));
+}.bg-primary-300{
+  --tw-bg-opacity: 1;
+  background-color: rgb(159 227 205 / var(--tw-bg-opacity));
 }.bg-opacity-25{
   --tw-bg-opacity: 0.25;
 }.bg-cover{
@@ -1301,6 +1313,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 }.text-gray-300{
   --tw-text-opacity: 1;
   color: rgb(209 213 219 / var(--tw-text-opacity));
+}.text-primary-900{
+  --tw-text-opacity: 1;
+  color: rgb(8 91 63 / var(--tw-text-opacity));
+}.text-primary-800{
+  --tw-text-opacity: 1;
+  color: rgb(10 111 77 / var(--tw-text-opacity));
 }.underline{
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
@@ -1712,8 +1730,15 @@ Ensure the default browser behavior of the `hidden` attribute.
   display: block;
 }/* line 38, ../scss/views/_attendances.scss */.attendances-index__table .attendance-box__btn--not-attended svg {
   opacity: 0;
-}/* line 43, ../scss/views/_attendances.scss */.attendances-index__table .attendance-box__btn--not-attended:hover svg {
+  transition: opacity .15s ease;
+}/* line 44, ../scss/views/_attendances.scss */.attendances-index__table .attendance-box__btn--not-attended:hover svg {
   opacity: .6;
+}/* line 55, ../scss/views/_attendances.scss */.attendances-index__table .classday-header__delete {
+  display: none;
+}/* line 60, ../scss/views/_attendances.scss */.attendances-index__table .classday-header:hover .classday-header__date {
+  display: none;
+}/* line 63, ../scss/views/_attendances.scss */.attendances-index__table .classday-header:hover .classday-header__delete {
+  display: block;
 }.placeholder\:text-secondary-300::-moz-placeholder{
   --tw-text-opacity: 1;
   color: rgb(174 174 174 / var(--tw-text-opacity));

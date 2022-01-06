@@ -3,6 +3,7 @@
 namespace App\Observers;
 
 use App\Http\Controllers\AverageController;
+use App\Models\Attendance;
 use App\Models\Average;
 use App\Models\Grade;
 use App\Models\Student;
@@ -26,9 +27,23 @@ class StudentObserver
                 ]);
             }
 
+            foreach ($student->course->classdays as $classday) {
+                Attendance::create([
+                    'attended' => false,
+                    'classday_id' => $classday->id,
+                    'student_id' => $student->id,
+                ]);
+            }
+
             Average::create([
                 'value' => 0,
-                'type' => 'grade',
+                'type' => Average::TYPES[0],
+                'student_id' => $student->id,
+            ]);
+
+            Average::create([
+                'value' => 0,
+                'type' => Average::TYPES[1],
                 'student_id' => $student->id,
             ]);
 

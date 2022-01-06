@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Classdays;
 
 use App\Models\Classday;
+use Illuminate\Validation\Validator;
 use Livewire\Component;
 
 class ClassdayCreate extends Component
@@ -37,7 +38,18 @@ class ClassdayCreate extends Component
 
     public function save(){
 
-        $this->validate();
+        $this->withValidator(function (Validator $validator) {
+            $validator->after(function ($validator) {
+
+                // Find classday with same date
+                $repeated = Classday::firstWhere('date', $this->date);
+
+                // Throwing error when classday found
+                if($repeated){
+                    $validator->errors()->add('repeated', 'Ya existe una clase en esa fecha');
+                }
+            });
+        })->validate();
 
         Classday::create([
             'date' => $this->date,
@@ -46,7 +58,7 @@ class ClassdayCreate extends Component
 
         $this->reset(['open', 'date']);
 
-        $this->emitTo('attendances.attendances-index', 'render');
+        $this->emit('students-table-refresh');
         $this->emit('alert', 'success', '¡La clase fue creada exitosamente!');
 
     }

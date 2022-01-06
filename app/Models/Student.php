@@ -50,6 +50,13 @@ class Student extends Model
         return $average;
     }
 
+    public function getAverageAttendance(){
+        $average = Average::where('student_id' , $this->id)
+                          ->where('type', Average::TYPES[1])
+                          ->first();
+        return $average;
+    }
+
     public function getOrderedStudentAttendances($student_id){
         $attendances = Attendance::where('attendances.student_id', $student_id)
                                  ->join('classdays', 'classdays.id', '=', 'attendances.classday_id')

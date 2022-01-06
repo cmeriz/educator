@@ -565,10 +565,23 @@ p {
 /* line 38, ../scss/views/_attendances.scss */
 .attendances-index__table .attendance-box__btn--not-attended svg {
   opacity: 0;
+  transition: opacity .15s ease;
 }
-/* line 43, ../scss/views/_attendances.scss */
+/* line 44, ../scss/views/_attendances.scss */
 .attendances-index__table .attendance-box__btn--not-attended:hover svg {
   opacity: .6;
+}
+/* line 55, ../scss/views/_attendances.scss */
+.attendances-index__table .classday-header__delete {
+  display: none;
+}
+/* line 60, ../scss/views/_attendances.scss */
+.attendances-index__table .classday-header:hover .classday-header__date {
+  display: none;
+}
+/* line 63, ../scss/views/_attendances.scss */
+.attendances-index__table .classday-header:hover .classday-header__delete {
+  display: block;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Courses;
 
+use App\Http\Controllers\CourseController;
 use App\Models\Course;
 use App\Models\Pensum;
 use Illuminate\Validation\Validator;
@@ -68,7 +69,7 @@ class CourseCreate extends Component
 
         $this->withValidator(function (Validator $validator) {
             $validator->after(function ($validator) {
-                if (!$this->weightingsValidation
+                if (!CourseController::weightingsValidation
                         (
                             intval($this->homeworks_weight), 
                             intval($this->lessons_weight), 
@@ -107,17 +108,6 @@ class CourseCreate extends Component
         $this->emitTo('courses.courses-index', 'render');
         $this->emit('alert', 'success', '¡El curso fue creado exitosamente!');
 
-    }
-
-    private static function weightingsValidation($weight1, $weight2, $weight3){
-
-        $result = false;
-
-        if(($weight1 + $weight2 + $weight3) == 100){
-            $result = true;
-        }
-
-        return $result;
     }
 
 }

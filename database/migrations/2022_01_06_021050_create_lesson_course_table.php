@@ -1,11 +1,10 @@
 <?php
 
-use App\Models\Average;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAveragesTable extends Migration
+class CreateLessonCourseTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,15 +13,15 @@ class CreateAveragesTable extends Migration
      */
     public function up()
     {
-        Schema::create('averages', function (Blueprint $table) {
+        Schema::create('lesson_course', function (Blueprint $table) {
             $table->id();
 
-            $table->decimal('value', 5, 2);
-            $table->enum('type', Average::TYPES)->default(Average::TYPES[0]);
-
             // Foreign Fields
-            $table->unsignedBigInteger('student_id');
-            $table->foreign('student_id')->references('id')->on('students')->onDelete('cascade');
+            $table->unsignedBigInteger('lesson_id');
+            $table->foreign('lesson_id')->references('id')->on('lessons')->onDelete('cascade');
+
+            $table->unsignedBigInteger('course_id');
+            $table->foreign('course_id')->references('id')->on('courses')->onDelete('cascade');
 
             $table->timestamps();
         });
@@ -35,6 +34,6 @@ class CreateAveragesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('averages');
+        Schema::dropIfExists('lesson_course');
     }
 }

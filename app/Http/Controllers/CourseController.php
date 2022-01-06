@@ -23,4 +23,16 @@ class CourseController extends Controller
         return view('courses.pensum', compact('course'));
     }
 
+    // Weightings Validation when Creating & Editing
+    public static function weightingsValidation($weight1, $weight2, $weight3){
+
+        $result = false;
+
+        if(($weight1 + $weight2 + $weight3) == 100){
+            $result = true;
+        }
+
+        return $result;
+    }
+
 }

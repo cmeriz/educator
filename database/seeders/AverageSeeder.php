@@ -37,5 +37,29 @@ class AverageSeeder extends Seeder
             'type' => Average::TYPES[0],
             'student_id' => 4,
         ]);
+
+        Average::create([
+            'value' => 0,
+            'type' => Average::TYPES[1],
+            'student_id' => 1,
+        ]);
+
+        Average::create([
+            'value' => 0,
+            'type' => Average::TYPES[1],
+            'student_id' => 2,
+        ]);
+
+        Average::create([
+            'value' => 0,
+            'type' => Average::TYPES[1],
+            'student_id' => 3,
+        ]);
+        
+        Average::create([
+            'value' => 0,
+            'type' => Average::TYPES[1],
+            'student_id' => 4,
+        ]);
     }
 }
