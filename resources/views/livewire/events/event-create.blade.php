@@ -1,4 +1,4 @@
-<div class="text-secondary-500 absolute right-8 top-8">
+<div class="text-secondary-500 absolute right-8 top-8 z-20">
 
     <x-button class="btn--icon--primary" wire:click="$set('open', true)">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">

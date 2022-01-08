@@ -32,13 +32,16 @@ class EventCreate extends Component
 
     public function render()
     {
+        // Getting al user's courses
         $courses = Course::where('user_id', auth()->user()->id)->get();
+        
         return view('livewire.events.event-create', compact('courses'));
     }
 
     public function save(){
         $this->validate();
 
+        // Creating new event
         Event::create([
             'day' => $this->day,
             'start' => $this->start,
@@ -47,6 +50,7 @@ class EventCreate extends Component
             'user_id' => auth()->user()->id,
         ]);
 
+        // Resetting component & showing results
         $this->reset(['open', 'course_id', 'day', 'start', 'end']);
         $this->emitTo('events.events-index', 'render');
         $this->emit('alert', 'success', '¡El evento fue creado exitosamente!');

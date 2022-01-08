@@ -17,11 +17,19 @@ class ClassdayObserver
      */
     public function created(Classday $classday)
     {
-        
+        // When not in console
         if(! \App::runningInConsole()){
-            $students = Student::where('course_id', $classday->course->id)->get();
-            $course = $classday->course;
 
+            // Getting course and students related to classday
+            $course = $classday->course;
+            $students = Student::where('course_id', $course->id)->get();
+            
+            // When no student is found, return
+            if(count($students) == 0){
+                return;
+            }
+            
+            // Creating attendance for all students in created classday 
             foreach ($students as $student) {
                 Attendance::create([
                     'attended' => false,
@@ -30,53 +38,16 @@ class ClassdayObserver
                 ]);
             }
 
+            // Updating student's attendance average
             AverageController::updateAttendanceAvg($course);
             
         }
     }
 
-    /**
-     * Handle the Classday "updated" event.
-     *
-     * @param  \App\Models\Classday  $classday
-     * @return void
-     */
-    public function updated(Classday $classday)
-    {
-        
-    }
-
-    /**
-     * Handle the Classday "deleted" event.
-     *
-     * @param  \App\Models\Classday  $classday
-     * @return void
-     */
     public function deleted(Classday $classday)
     {
+        // Updating course's students attendance average
         AverageController::updateAttendanceAvg($classday->course);
-    }
-
-    /**
-     * Handle the Classday "restored" event.
-     *
-     * @param  \App\Models\Classday  $classday
-     * @return void
-     */
-    public function restored(Classday $classday)
-    {
-        //
-    }
-
-    /**
-     * Handle the Classday "force deleted" event.
-     *
-     * @param  \App\Models\Classday  $classday
-     * @return void
-     */
-    public function forceDeleted(Classday $classday)
-    {
-        //
     }
 
 }

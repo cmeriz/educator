@@ -37,20 +37,30 @@ class StudentEdit extends Component
     }
 
     public function editing(Student $student){
-        $this->open = true;
+
+        // Verifiying if user is student's owner
+        $this->authorize('owner', $student->course);
+
+        // Setting component properties to edit student and opening modal
         $this->student = $student;
         $this->firstname = $this->student->firstname;
         $this->lastname = $this->student->lastname;
+        $this->open = true;
     }
 
     public function update(){
+
+        // Validating request
         $this->validate();
 
+        // Updating student
         $this->student->firstname = $this->firstname;
         $this->student->lastname = $this->lastname;
         $this->student->save();
 
         $this->student = new Student();
+
+        // Resetting component & showing results
         $this->reset(['firstname', 'lastname', 'open']);
         $this->emit('alert', 'success', '¡El estudiante fue actualizado exitosamente!');
         $this->emit('students-table-refresh');

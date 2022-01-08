@@ -1,4 +1,4 @@
-<div class="text-secondary-500">
+<div class="text-secondary-500 mr-0 ml-auto">
     <x-button class="btn--icon--primary" wire:click="$set('open', true)">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />

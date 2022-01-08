@@ -27,13 +27,16 @@ class PensumCreate extends Component
 
     public function save(){
 
+        // Validating request
         $this->validate();
 
+        // Creating new pensum
         Pensum::create([
             'name' => $this->name,
             'user_id' => auth()->user()->id,
         ]);
 
+        // Resetting component & showing results
         $this->reset(['name', 'open']);
         $this->emitTo('pensums.pensums-index', 'render');
         $this->emit('alert', 'success', '¡El pensum fue creado exitosamente!');

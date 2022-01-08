@@ -10,6 +10,7 @@
 // Layout
 @import 'layout/main';
 @import 'layout/guest';
+@import 'layout/navigation';
 
 // Components
 @import 'components/course-card';
@@ -20,6 +21,7 @@
 @import 'components/sample-color';
 @import 'components/tab';
 @import 'components/badge';
+@import 'components/loader';
 
 // Views
 @import 'views/events';

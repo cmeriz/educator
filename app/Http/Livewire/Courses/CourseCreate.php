@@ -58,6 +58,7 @@ class CourseCreate extends Component
 
     public function render()
     {
+        // Getting all user's pensums
         $pensums = Pensum::where('user_id', auth()->user()->id)->get();
 
         return view('livewire.courses.course-create', compact('pensums'));
@@ -67,6 +68,8 @@ class CourseCreate extends Component
 
         $this->withValidator(function (Validator $validator) {
             $validator->after(function ($validator) {
+
+                // Validating if weightings doesn't add up to 100
                 if (!CourseController::weightingsValidation
                         (
                             intval($this->homeworks_weight), 
@@ -79,6 +82,7 @@ class CourseCreate extends Component
             });
         })->validate();
 
+        // Creating new course
         Course::create([
             'name' => $this->name,
             'color' => $this->color,
@@ -91,24 +95,19 @@ class CourseCreate extends Component
             'min_attendance' => $this->min_attendance,
         ]);
 
+        // Resetting component & showing results
         $this->reset([
-            'open', 
-            'name', 
-            'color', 
-            'pensum_id', 
-            'homeworks_weight', 
-            'lessons_weight', 
-            'exams_weight', 
-            'min_grade',
-            'min_attendance',
+            'open', 'name', 'color', 'pensum_id', 
+            'homeworks_weight', 'lessons_weight', 'exams_weight', 
+            'min_grade', 'min_attendance',
         ]);
-
         $this->emitTo('courses.courses-index', 'render');
         $this->emit('alert', 'success', '¡El curso fue creado exitosamente!');
 
     }
 
     public function updatedPensumId(){ 
+        // Setting pensum_id value to null when user selects 'None' to prevent empty string in datebase
         if($this->pensum_id == ''){
             $this->pensum_id = null;
         }

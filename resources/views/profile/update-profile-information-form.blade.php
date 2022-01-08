@@ -1,10 +1,10 @@
 <x-jet-form-section submit="updateProfileInformation">
     <x-slot name="title">
-        {{ __('Profile Information') }}
+        Información de Perfil
     </x-slot>
 
     <x-slot name="description">
-        {{ __('Update your account\'s profile information and email address.') }}
+        Actualiza la información de tu cuenta y tu correo electrónico.
     </x-slot>
 
     <x-slot name="form">
@@ -24,7 +24,7 @@
                                     reader.readAsDataURL($refs.photo.files[0]);
                             " />
 
-                <x-jet-label for="photo" value="{{ __('Photo') }}" />
+                <x-jet-label for="photo" value="Foto de Perfil" />
 
                 <!-- Current Profile Photo -->
                 <div class="mt-2" x-show="! photoPreview">
@@ -38,14 +38,14 @@
                     </span>
                 </div>
 
-                <x-jet-secondary-button class="mt-2 mr-2" type="button" x-on:click.prevent="$refs.photo.click()">
-                    {{ __('Select A New Photo') }}
-                </x-jet-secondary-button>
+                <x-button class="btn--primary-outlined mt-2 mr-2" x-on:click.prevent="$refs.photo.click()">
+                    Actualizar foto
+                </x-button>
 
                 @if ($this->user->profile_photo_path)
-                    <x-jet-secondary-button type="button" class="mt-2" wire:click="deleteProfilePhoto">
-                        {{ __('Remove Photo') }}
-                    </x-jet-secondary-button>
+                    <x-button class="btn--danger mt-2" wire:click="deleteProfilePhoto">
+                        Remover foto
+                    </x-button>
                 @endif
 
                 <x-jet-input-error for="photo" class="mt-2" />
@@ -72,8 +72,9 @@
             {{ __('Saved.') }}
         </x-jet-action-message>
 
-        <x-jet-button wire:loading.attr="disabled" wire:target="photo">
-            {{ __('Save') }}
-        </x-jet-button>
+        <x-button class="btn--primary" wire:loading.attr="disabled" wire:target="photo">
+            Guardar
+        </x-button>
+        
     </x-slot>
 </x-jet-form-section>

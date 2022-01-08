@@ -1,4 +1,4 @@
-<div class="text-secondary-500">
+<div class="text-secondary-500 mr-0 ml-auto">
 
     <x-button class="btn--icon--primary" x-on:click="setTimeout(() => document.querySelector('#input-name').focus(), 400);" wire:click="$set('open', true)">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">

@@ -7,9 +7,13 @@ use App\Models\Course;
 use App\Models\Pensum;
 use Illuminate\Validation\Validator;
 use Livewire\Component;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 class CourseEdit extends Component
 {
+
+    use AuthorizesRequests;
+
     public $course, $name, $color, $pensum_id, 
            $homeworks_weight, $lessons_weight, $exams_weight, 
            $min_grade, $min_attendance;
@@ -62,12 +66,18 @@ class CourseEdit extends Component
 
     public function render()
     {
+        // Getting all user's pensums
         $pensums = Pensum::where('user_id', auth()->user()->id)->get();
 
         return view('livewire.courses.course-edit', compact('pensums'));
     }
 
     public function editing(Course $course){
+
+        // Verifiying if user is course's owner
+        $this->authorize('owner', $course);
+
+        // Setting component properties to edit course and opening modal
         $this->course = $course;
         $this->name = $this->course->name;
         $this->color = $this->course->color;
@@ -82,8 +92,14 @@ class CourseEdit extends Component
 
     public function update(){
 
+        // Verifiying if user is course's owner
+        $this->authorize('owner', $this->course);
+
+        // Validating request
         $this->withValidator(function (Validator $validator) {
             $validator->after(function ($validator) {
+
+                // Validating if weightings doesn't add up to 100
                 if (!CourseController::weightingsValidation
                         (
                             intval($this->homeworks_weight), 
@@ -96,6 +112,7 @@ class CourseEdit extends Component
             });
         })->validate();
 
+        // Updating course
         $this->course->name = $this->name;
         $this->course->color = $this->color;
         $this->course->pensum_id = ($this->pensum_id != '') ? $this->pensum_id : null;
@@ -104,9 +121,10 @@ class CourseEdit extends Component
         $this->course->exams_weight = $this->exams_weight;
         $this->course->min_grade = $this->min_grade;
         $this->course->min_attendance = $this->min_attendance;
-
+        
         $this->course->save();
 
+        // Resetting component & showing results
         $this->reset([
             'open', 'course', 'name', 'color', 'pensum_id',
             'homeworks_weight', 'lessons_weight', 'exams_weight',

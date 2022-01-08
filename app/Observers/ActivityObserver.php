@@ -10,24 +10,24 @@ use App\Models\Student;
 
 class ActivityObserver
 {
-    /**
-     * Handle the Activity "created" event.
-     *
-     * @param  \App\Models\Activity  $activity
-     * @return void
-     */
     public function created(Activity $activity)
     {
 
+        // When not in console
         if(! \App::runningInConsole()){
 
-            $course = Course::firstWhere('id', $activity->course_id);
-            $students = Student::where('course_id', $course->id)->get();
+            // Getting activity's course
+            $course = $activity->course;
+
+            // Getting all course's students
+            $students = $course->students;
     
+            // When no student is found, return
             if(count($students) == 0){
                 return;
             }
     
+            // Creating grade for all students in created activity
             foreach ($students as $student) {
                 
                 Grade::create([
@@ -38,52 +38,9 @@ class ActivityObserver
     
             }
 
+            // Updating grade average for all students
             AverageController::updateGradeAvg($course);
         }
 
-    }
-
-    /**
-     * Handle the Activity "updated" event.
-     *
-     * @param  \App\Models\Activity  $activity
-     * @return void
-     */
-    public function updated(Activity $activity)
-    {
-        //
-    }
-
-    /**
-     * Handle the Activity "deleted" event.
-     *
-     * @param  \App\Models\Activity  $activity
-     * @return void
-     */
-    public function deleted(Activity $activity)
-    {
-        //
-    }
-
-    /**
-     * Handle the Activity "restored" event.
-     *
-     * @param  \App\Models\Activity  $activity
-     * @return void
-     */
-    public function restored(Activity $activity)
-    {
-        //
-    }
-
-    /**
-     * Handle the Activity "force deleted" event.
-     *
-     * @param  \App\Models\Activity  $activity
-     * @return void
-     */
-    public function forceDeleted(Activity $activity)
-    {
-        //
     }
 }

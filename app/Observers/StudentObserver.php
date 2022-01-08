@@ -18,7 +18,10 @@ class StudentObserver
      */
     public function created(Student $student)
     {
+        // When not in console
         if(! \App::runningInConsole()){
+
+            // Creating grades in all activities for created student
             foreach ($student->course->activities as $activity) {
                 Grade::create([
                     'value' => 0,
@@ -27,6 +30,7 @@ class StudentObserver
                 ]);
             }
 
+            // Creating attendances in all classdays for created student
             foreach ($student->course->classdays as $classday) {
                 Attendance::create([
                     'attended' => false,
@@ -35,6 +39,7 @@ class StudentObserver
                 ]);
             }
 
+            // Creating grade and attendance average for created student
             Average::create([
                 'value' => 0,
                 'type' => Average::TYPES[0],
@@ -50,47 +55,4 @@ class StudentObserver
         }        
     }
 
-    /**
-     * Handle the Student "updated" event.
-     *
-     * @param  \App\Models\Student  $student
-     * @return void
-     */
-    public function updated(Student $student)
-    {
-        //
-    }
-
-    /**
-     * Handle the Student "deleted" event.
-     *
-     * @param  \App\Models\Student  $student
-     * @return void
-     */
-    public function deleted(Student $student)
-    {
-        //
-    }
-
-    /**
-     * Handle the Student "restored" event.
-     *
-     * @param  \App\Models\Student  $student
-     * @return void
-     */
-    public function restored(Student $student)
-    {
-        //
-    }
-
-    /**
-     * Handle the Student "force deleted" event.
-     *
-     * @param  \App\Models\Student  $student
-     * @return void
-     */
-    public function forceDeleted(Student $student)
-    {
-        //
-    }
 }

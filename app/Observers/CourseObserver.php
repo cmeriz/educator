@@ -7,63 +7,18 @@ use App\Models\Course;
 
 class CourseObserver
 {
-    /**
-     * Handle the Course "created" event.
-     *
-     * @param  \App\Models\Course  $course
-     * @return void
-     */
-    public function created(Course $course)
-    {
-        //
-    }
 
-    /**
-     * Handle the Course "updated" event.
-     *
-     * @param  \App\Models\Course  $course
-     * @return void
-     */
     public function updated(Course $course)
     {
+        // Updating course's students grade average
         AverageController::updateGradeAvg($course);
 
+        // Deleting courses/lessons intermediate table registers when new pensum is null
+        // Pensum progress will be resetted
         if(!$course->pensum){
             $course->lessons()->detach();
         }
 
     }
 
-    /**
-     * Handle the Course "deleted" event.
-     *
-     * @param  \App\Models\Course  $course
-     * @return void
-     */
-    public function deleted(Course $course)
-    {
-        //
-    }
-
-    /**
-     * Handle the Course "restored" event.
-     *
-     * @param  \App\Models\Course  $course
-     * @return void
-     */
-    public function restored(Course $course)
-    {
-        //
-    }
-
-    /**
-     * Handle the Course "force deleted" event.
-     *
-     * @param  \App\Models\Course  $course
-     * @return void
-     */
-    public function forceDeleted(Course $course)
-    {
-        //
-    }
 }

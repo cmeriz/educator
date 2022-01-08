@@ -10,7 +10,8 @@ class PensumPolicy
 {
     use HandlesAuthorization;
 
-    public function pensumOwner(User $user, Pensum $pensum){
+    public function owner(User $user, Pensum $pensum){
         return $user->id === $pensum->user_id;
     }
+
 }

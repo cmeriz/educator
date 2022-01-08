@@ -41,6 +41,7 @@ class GradesIndex extends Component
 
     public function render()
     {
+        // Getting all activities by type
         $this->homeworks = Activity::where('course_id', $this->course->id)
                 ->where('activity_type_id', ActivityType::HOMEWORK)
                 ->get();
@@ -51,6 +52,7 @@ class GradesIndex extends Component
                 ->where('activity_type_id', ActivityType::EXAM)
                 ->get();
         
+        // Getting all students in current course, filtered and ordered by lastname
         $students = Student::where('course_id', $this->course->id)
                            ->where(function($query){
                                $query->where('firstname', 'LIKE', '%' . $this->search . '%')
@@ -58,38 +60,44 @@ class GradesIndex extends Component
                            })
                            ->orderBy('lastname')
                            ->paginate(6);
-                           //->get();
                            
         return view('livewire.grades.grades-index', compact('students'));
     }
 
     public function edit(Grade $grade){
+        // Updating grade property to show editing form in view
         $this->grade = $grade;
     }
 
     public function update(){
+
+        // Validating request
         $this->validate();
+
+        // Updating grade
         $this->grade->save();
 
+        // Resetting component & showing results
         $this->grade = new Grade();
-
         $this->reset(['search', 'type_filter']);
-
         $this->emit('alert', 'success', '¡La calificación fue actualizada exitosamente!');
         $this->emitSelf('render');
     }
 
     public function updatingSearch(){
+        // If search is updated, refresh page to prevent missing results for valid searchings
         $this->resetPage();
     }
 
     public function createActivity($activity_type){
 
+        // Creating new activity
         Activity::create([
             'activity_type_id' => $activity_type,
             'course_id' => $this->course->id,
         ]);
 
+        // Resetting component & showing results
         $this->emit('alert', 'success', '¡La actividad fue creada exitosamente!');
         $this->emitSelf('render');
     }

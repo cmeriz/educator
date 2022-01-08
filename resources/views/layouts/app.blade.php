@@ -20,90 +20,79 @@
     
     <div class="md:container flex items-stretch w-full md:w-auto mx-auto">
         
+        {{-- Main Navigation --}}
         <div class="navigation-container hidden md:flex items-stretch z-10">
             @livewire('navigation-menu')
         </div>
 
-        <div class="main-container flex flex-col w-full md:rounded-lg">
+        {{-- Main Container --}}
+        <div class="main-container flex flex-col w-full md:rounded-lg card-shadow">
 
-            <header class="main-header flex flex-wrap justify-between items-center text-secondary-500 md:mb-8">
+            {{-- Header --}}
+            <header class="main-header flex flex-wrap md:flex-nowrap justify-between items-center text-secondary-500 md:mb-8">
 
-                <div class="flex justify-between py-2 px-4 md:p-0 bg-primary-500 md:bg-transparent w-full md:w-auto">
-                    <a class="logo-mobile block md:hidden text-white" href="{{ route('home') }}">
-                        <x-jet-application-mark/>
+                <div class="fixed top-0 md:relative flex items-center bg-white shadow-sm md:shadow-none  justify-end py-2 px-8 md:p-0 w-full md:w-56 z-30">
+                    <a class="logo-mobile absolute left-8 md:hidden text-white z-20" href="{{ route('home') }}">
+                        <x-jet-application-logo class="w-48" />
                     </a>
             
-                    <x-jet-dropdown align="right" width="48">
-                        <x-slot name="trigger">
-                            @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
-                                <button class="flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300 transition">
-                                    <img class="h-10 w-10 rounded-full object-cover" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
-                                </button>
-                            @else
-                                <span class="inline-flex rounded-md">
-                                    <button type="button" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition">
-                                        {{ Auth::user()->name }}
-
-                                        <svg class="ml-2 -mr-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                                        </svg>
-                                    </button>
-                                </span>
-                            @endif
-                        </x-slot>
-
-                        <x-slot name="content">
-
-                            <x-jet-dropdown-link href="{{ route('home') }}">
-                                Inicio
-                            </x-jet-dropdown-link>
-
-                            <x-jet-dropdown-link href="{{ route('home') }}">
-                                Cursos
-                            </x-jet-dropdown-link>
-
-                            <x-jet-dropdown-link href="{{ route('home') }}">
-                                Horarios
-                            </x-jet-dropdown-link>
-
-                            <x-jet-dropdown-link href="{{ route('home') }}">
-                                Pensums
-                            </x-jet-dropdown-link>
-
-                            <x-jet-dropdown-link href="{{ route('profile.show') }}">
-                                Mi perfil
-                            </x-jet-dropdown-link>
-
-                            @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
-                                <x-jet-dropdown-link href="{{ route('api-tokens.index') }}">
-                                    {{ __('API Tokens') }}
-                                </x-jet-dropdown-link>
-                            @endif
-
-                            <div class="border-t border-gray-100"></div>
-
-                            <!-- Authentication -->
-                            <form method="POST" action="{{ route('logout') }}">
-                                @csrf
-
-                                <x-jet-dropdown-link href="{{ route('logout') }}"
-                                        onclick="event.preventDefault();
-                                                this.closest('form').submit();">
-                                    Salir
-                                </x-jet-dropdown-link>
-                            </form>
-                        </x-slot>
-                    </x-jet-dropdown>
+                    <div x-data="{ open: false }" class="menu-mobile relative w-full">
+                        <div class="menu-mobile__trigger py-2 w-full">
+                            <button x-on:click="open = !open" x-on:click.away="open = false" class="flex mr-0 ml-auto text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300 transition">
+                                <img class="h-12 w-12 rounded-full object-cover" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
+                            </button>
+                        </div>
+                        <nav x-show="open" x-transition.scale.origin.top.right class="menu-mobile__dropdown absolute overflow-hidden left-0 right-0 top-full w-full bg-white rounded-lg shadow-lg z-10">
+                            <ul>
+                                <li>
+                                    <a href="{{ route('home') }}" class="block px-6 py-3 hover:bg-secondary-50">
+                                        Inicio
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('courses.index') }}" class="block px-6 py-3 hover:bg-secondary-50">
+                                        Cursos
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('events.index') }}" class="block px-6 py-3 hover:bg-secondary-50">
+                                        Horario
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('pensums.index') }}" class="block px-6 py-3 hover:bg-secondary-50">
+                                        Pensums
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('profile.show') }}" class="block px-6 py-3 hover:bg-secondary-50">
+                                        Mi cuenta
+                                    </a>
+                                </li>
+                                <li class="border-t border-secondary-50">
+                                    <form method="POST" action="{{ route('logout') }}">
+                                        @csrf
+                                        <a href="{{ route('logout') }}"
+                                           onclick="event.preventDefault();
+                                           this.closest('form').submit();" class="block px-6 py-3 hover:bg-secondary-50">
+                                           Salir
+                                        </a>
+                                    </form>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
                 </div>
 
                 @if (isset($header))
-                <h1 class="text-2xl w-full md:w-auto mx-8 md:mx-0 mt-12 md:mt-0 font-medium md:order-first">
+                <h1 class="text-2xl w-full md:w-auto mx-8 md:mx-0 mt-32 md:mt-0 font-medium md:order-first">
                     {{ $header }}
                 </h1>                
                 @endif
 
             </header>
             
+            {{-- Main Content --}}
             <main class="main-content grid flex-1">
                 {{ $slot }}
             </main>
@@ -112,6 +101,7 @@
 
     </div>
 
+    {{-- Scripts --}}
     @livewireScripts
 
     @isset($viewScripts)
@@ -120,50 +110,3 @@
 
 </body>
 </html>
-
-{{-- <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
-
-        <title>{{ config('app.name', 'Laravel') }}</title>
-
-        <!-- Fonts -->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
-
-        <!-- Styles -->
-        <link rel="stylesheet" href="{{ mix('css/app.css') }}">
-
-        @livewireStyles
-
-        <!-- Scripts -->
-        <script src="{{ mix('js/app.js') }}" defer></script>
-    </head>
-    <body class="font-sans antialiased">
-        <x-jet-banner />
-
-        <div class="min-h-screen bg-gray-100">
-            @livewire('navigation-menu')
-
-            <!-- Page Heading -->
-            @if (isset($header))
-                <header class="bg-white shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                        {{ $header }}
-                    </div>
-                </header>
-            @endif
-
-            <!-- Page Content -->
-            <main>
-                {{ $slot }}
-            </main>
-        </div>
-
-        @stack('modals')
-
-        @livewireScripts
-    </body>
-</html> --}}

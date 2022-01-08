@@ -25,6 +25,7 @@ class AttendancesIndex extends Component
 
     public function render()
     {
+        // Getting all students with filters applied and ordered by lastname
         $students = Student::where('course_id', $this->course->id)
                            ->where(function($query){
                                $query->where('firstname', 'LIKE', '%' . $this->search . '%')
@@ -33,6 +34,7 @@ class AttendancesIndex extends Component
                            ->orderBy('lastname')
                            ->get();
 
+        // Getting all classdays ordered by date
         $classdays = Classday::where('course_id', $this->course->id)
                              ->orderBy('date')
                              ->get();
@@ -40,11 +42,9 @@ class AttendancesIndex extends Component
         return view('livewire.attendances.attendances-index', compact('students', 'classdays'));
     }
 
-    public function updatingSearch(){
-        $this->resetPage();
-    }
-
     public function update(Attendance $attendance, $attended){
+        
+        // Updating attendance state
         $attendance->attended = $attended;
         $attendance->save();
 

@@ -14,7 +14,7 @@ class CourseController extends Controller
     public function grades(Course $course){
 
         // Verify course ownership
-        $this->authorize('courseOwner', $course);
+        $this->authorize('owner', $course);
 
         return view('courses.grades', compact('course'));
     }
@@ -22,7 +22,7 @@ class CourseController extends Controller
     public function attendances(Course $course){
 
         // Verify course ownership
-        $this->authorize('courseOwner', $course);
+        $this->authorize('owner', $course);
 
         return view('courses.attendances', compact('course'));
     }
@@ -30,7 +30,7 @@ class CourseController extends Controller
     public function pensum(Course $course){
 
         // Verify course ownership
-        $this->authorize('courseOwner', $course);
+        $this->authorize('owner', $course);
         
         return view('courses.pensum', compact('course'));
     }
@@ -38,8 +38,10 @@ class CourseController extends Controller
     // Weightings Validation when Creating & Editing
     public static function weightingsValidation($weight1, $weight2, $weight3){
 
+        // Flag result variable
         $result = false;
 
+        // When all weightings add up to 100 values are valid
         if(($weight1 + $weight2 + $weight3) == 100){
             $result = true;
         }

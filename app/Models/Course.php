@@ -29,6 +29,8 @@ class Course extends Model
         $lessons_amount = count($this->pensum->lessons);
         $lessons_completed = count($this->lessons);
 
+        if($lessons_completed === 0) return 0; 
+
         $percentage = round(($lessons_completed * 100) / $lessons_amount, 0);
 
         return $percentage;

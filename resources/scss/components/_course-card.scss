@@ -4,6 +4,7 @@
         //@extend .course-card;
         background-color: $primary-color-200;
         color: $primary-color-700;
+        background-image: linear-gradient(to right bottom, $primary-color-100, $primary-color-300);
 
         &:hover{
             background-color: $primary-color-300;
@@ -19,6 +20,7 @@
     &--secondary{
         //@extend .course-card;
         background-color: $secondary-color-200;
+        background-image: linear-gradient(to right bottom, $secondary-color-100, $secondary-color-300);
         color: $secondary-color-700;
 
         &:hover{
@@ -35,6 +37,7 @@
     &--red{
         //@extend .course-card;
         background-color: $red-color-200;
+        background-image: linear-gradient(to right bottom, $red-color-100, $red-color-300);
         color: $red-color-700;
 
         &:hover{
@@ -52,6 +55,7 @@
     &--orange{
         //@extend .course-card;
         background-color: $orange-color-200;
+        background-image: linear-gradient(to right bottom, $orange-color-100, $orange-color-300);
         color: $orange-color-700;
 
         &:hover{
@@ -68,6 +72,7 @@
     &--blue{
         //@extend .course-card;
         background-color: $blue-color-200;
+        background-image: linear-gradient(to right bottom, $blue-color-100, $blue-color-300);
         color: $blue-color-700;
 
         &:hover{
@@ -84,6 +89,7 @@
     &--purple{
         //@extend .course-card;
         background-color: $purple-color-200;
+        background-image: linear-gradient(to right bottom, $purple-color-100, $purple-color-300);
         color: $purple-color-700;
 
         &:hover{
@@ -100,6 +106,7 @@
     &--pink{
         //@extend .course-card;
         background-color: $pink-color-200;
+        background-image: linear-gradient(to right bottom, $pink-color-100, $pink-color-300);
         color: $pink-color-700;
 
         &:hover{

@@ -1,24 +1,36 @@
 <x-app-layout>
+
+    {{-- Header --}}
     <x-slot name="header">
         Curso: {{ $course->name }}
     </x-slot>
 
+    {{-- Content --}}
     <div class="course-grades flex flex-col gap-8 p-8 md:card-shadow w-full md:rounded-lg">
 
-        <div class="courses-grades__controls flex justify-between">
-            <x-courses-navigation course="{{ $course->id }}"/>
+        {{-- Navigation --}}
+        <x-courses-navigation course="{{ $course->id }}"/>
 
-            <x-button href="{{ route('courses.index') }}" tag="anchor" class="btn--primary-outlined">
-                Volver a cursos
+        {{-- Pensum Section --}}
+        @livewire('pensums.pensum-progress', ['course' => $course])
+
+        {{-- Buttons --}}
+        <div class="flex flex-col gap-4">
+            <x-button wire:click="$emit('modelDeleteAttempt', null, 'pensumRemove', '¿Remover pensum?')" class="btn--danger block md:hidden whitespace-nowrap">
+                Remover pensum
+            </x-button>  
+
+            <x-button href="{{ route('courses.index') }}" tag="anchor" class="btn--primary-outlined md:hidden md:order-none md:self-end">
+                    Volver a cursos
             </x-button>
         </div>
 
-        @livewire('pensums.pensum-progress', ['course' => $course])
-
     </div>
 
+    {{-- Scripts --}}
     <x-slot name="viewScripts">
         <script defer src="{{ asset('js/default-alert.js') }}"></script>
+        <script defer src="{{ asset('js/model-delete-attempt.js') }}"></script>
     </x-slot>
 
 </x-app-layout>

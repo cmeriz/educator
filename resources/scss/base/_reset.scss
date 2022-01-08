@@ -8,6 +8,7 @@ body{
 
     @include md-size{
         background-color: $primary-color-400;
+        background-image: linear-gradient(to right bottom, $primary-color-400, $primary-color-500);
     }
 
     

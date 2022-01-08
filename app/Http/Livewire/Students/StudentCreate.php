@@ -40,14 +40,17 @@ class StudentCreate extends Component
     }
 
     public function save(){
+        // Validating request
         $this->validate();
 
+        // Creating new student
         Student::create([
             'firstname' => $this->firstname,
             'lastname' => $this->lastname,
             'course_id' => $this->course_id,
         ]);
 
+        // Resetting component & showing results
         $this->reset(['firstname', 'lastname', 'open']);
         $this->emit('alert', 'success', '¡El estudiante fue creado exitosamente!');
         $this->emit('students-table-refresh');

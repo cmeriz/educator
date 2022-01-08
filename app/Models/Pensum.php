@@ -12,6 +12,14 @@ class Pensum extends Model
 
     use HasFactory;
 
+    public function getCoursesCountAttribute(){
+        return Course::where('pensum_id', $this->id)->count();
+    }
+
+    public function getLessonsCountAttribute(){
+        return Lesson::where('pensum_id', $this->id)->count();
+    }
+
     // Reverse User Relationship 1:n
     public function user(){
         return $this->belongsTo('App\Models\User');

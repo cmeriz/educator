@@ -1,4 +1,4 @@
-<div x-init class="text-secondary-500">
+<div x-init class="text-secondary-500 mr-0 ml-auto">
 
     <x-button id="open-modal" class="btn--icon--primary" 
         wire:click="$set('open', true)" 
@@ -17,8 +17,6 @@
         </x-slot>
 
         <x-slot name="content">
-
-            {{ $pensum_id }}
 
             <x-jet-label value="Datos generales" class="font-bold mb-4 uppercase"/>
 

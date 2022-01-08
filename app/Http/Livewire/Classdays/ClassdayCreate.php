@@ -38,26 +38,28 @@ class ClassdayCreate extends Component
 
     public function save(){
 
+        // Validating request
         $this->withValidator(function (Validator $validator) {
             $validator->after(function ($validator) {
 
-                // Find classday with same date
+                // Finding classday with same date
                 $repeated = Classday::firstWhere('date', $this->date);
 
-                // Throwing error when classday found
+                // Throwing error when classday repated is found
                 if($repeated){
                     $validator->errors()->add('repeated', 'Ya existe una clase en esa fecha');
                 }
             });
         })->validate();
 
+        // Creating new course
         Classday::create([
             'date' => $this->date,
             'course_id' => $this->course_id,
         ]);
 
+        // Resetting component & showing results
         $this->reset(['open', 'date']);
-
         $this->emit('students-table-refresh');
         $this->emit('alert', 'success', '¡La clase fue creada exitosamente!');
 

@@ -30,15 +30,17 @@ class LessonCreate extends Component
 
     public function save(){
 
+        // Validating request
         $this->validate();
 
+        // Creating new lesson
         Lesson::create([
             'title' => $this->title,
             'pensum_id' => $this->pensum,
         ]);
 
+        // Resetting component & showing results
         $this->reset(['title', 'open']);
-        
         $this->emitTo('lessons.lessons-index', 'render');
         $this->emit('alert', 'success', '¡La lección fue creada exitosamente!');
 

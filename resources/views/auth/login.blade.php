@@ -11,7 +11,7 @@
                 de clases para estar siempre al día. ¡Accede con una cuenta de prueba o regístrate!
             </p>
             <div class="flex gap-4 justify-center lg:justify-start flex-wrap">
-                <x-button tag="button" class="btn--white-outlined">
+                <x-button id="test-account" tag="button" class="btn--white-outlined">
                     Cuenta de prueba
                 </x-button>
                 <x-button tag="anchor" href="{{ route('register') }}" class="btn--white">
@@ -34,7 +34,7 @@
             </div>
         @endif
 
-        <form method="POST" action="{{ route('login') }}" class="text-left">
+        <form id="login-form" method="POST" action="{{ route('login') }}" class="text-left">
             @csrf
 
             <div>
@@ -78,4 +78,19 @@
             </a>
         </footer>
     </x-jet-authentication-card>
+
+    <script>
+
+        const btnTestAccount = document.querySelector('#test-account');
+        const inputEmail = document.querySelector('#email');
+        const inputPassword = document.querySelector('#password');
+        const form = document.querySelector('#login-form');
+
+        btnTestAccount.addEventListener('click', function(){
+            inputEmail.value = 'cmerizalde27@gmail.com';
+            inputPassword.value = '123456';    
+            form.submit();        
+        });
+    </script>
+
 </x-guest-layout>

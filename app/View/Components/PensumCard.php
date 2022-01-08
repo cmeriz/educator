@@ -10,7 +10,7 @@ use Illuminate\View\Component;
 class PensumCard extends Component
 {
 
-    public $pensum, $courses_count, $lessons_count, $class;
+    public $pensum, $class;
 
     /**
      * Create a new component instance.
@@ -20,8 +20,6 @@ class PensumCard extends Component
     public function __construct(Pensum $pensum, $class = '')
     {
         $this->pensum = $pensum;
-        $this->courses_count = Course::where('pensum_id', $this->pensum->id)->count();
-        $this->lessons_count = Lesson::where('pensum_id', $this->pensum->id)->count();
         $this->class = $class;
     }
 

@@ -10,6 +10,7 @@
     &--primary{
         @extend .btn;
         background-color: $primary-color-500;
+        background-image: linear-gradient(to right bottom, $primary-color-500, $primary-color-600);
         color: $white;
 
         &-outlined{
@@ -43,7 +44,7 @@
         &-outlined{
             @extend .btn;
             background-color: transparent;
-            color: $secondary-color-400;
+            color: $secondary-color-500;
             border: 1px solid $secondary-color-300;
         }
 
@@ -74,18 +75,21 @@
             @extend .btn--icon;
             color: $white;
             background-color: $primary-color-500;
+            background-image: linear-gradient(to right bottom, $primary-color-500, $primary-color-600);
         }
 
         &--danger{
             @extend .btn--icon;
             color: $red-color-500;
             background-color: $red-color-100;
+            background-image: linear-gradient(to right bottom, $red-color-500, $red-color-600);
         }
 
         &--blue{
             @extend .btn--icon;
             color: $blue-color-500;
             background-color: $blue-color-100;
+            background-image: linear-gradient(to right bottom, $blue-color-500, $blue-color-600);
         }
 
     }
@@ -93,6 +97,7 @@
     &--danger{
         @extend .btn;
         background-color: $red-color-500;
+        background-image: linear-gradient(to right bottom, $red-color-500, $red-color-600);
         color: $white;
     }
 

@@ -11,13 +11,13 @@ class EventsWelcome extends Component
 
     public function render()
     {
-
+        // Getting all user's events for current day
         $events = Event::where('user_id', auth()->user()->id)
                        ->where('day', $this->day)
-                       ->orderBy('day')
                        ->orderBy('start')
                        ->get();
 
         return view('livewire.events.events-welcome', compact('events'));
     }
+
 }

@@ -5,9 +5,12 @@ namespace App\Http\Livewire\Events;
 use App\Models\Course;
 use App\Models\Event;
 use Livewire\Component;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 class EventEdit extends Component
 {
+
+    use AuthorizesRequests;
 
     public $open = false;
     public $event, $course_id, $day, $start, $end; 
@@ -38,11 +41,18 @@ class EventEdit extends Component
 
     public function render()
     {
+        // Getting al user's courses
         $courses = Course::where('user_id', auth()->user()->id)->get();
+
         return view('livewire.events.event-edit', compact('courses'));
     }
 
     public function editing(Event $event){
+
+        // Verifying if user is event's owner
+        $this->authorize('owner', $event);
+
+        // Setting component properties to edit event and opening modal
         $this->event = $event;
         $this->course_id = $this->event->course_id;
         $this->day = $this->event->day;
@@ -53,6 +63,10 @@ class EventEdit extends Component
 
     public function update(){
 
+        // Verifying if user is event's owner
+        $this->authorize('owner', $this->event);
+
+        // Updating event
         $this->event->course_id = $this->course_id;
         $this->event->day = $this->day;
         $this->event->start = $this->start;
@@ -60,8 +74,8 @@ class EventEdit extends Component
 
         $this->event->save();
 
+        // Resetting component & showing results
         $this->reset(['open', 'event', 'course_id', 'day', 'start', 'end']);
-
         $this->emitTo('events.events-index', 'render');
         $this->emit('alert', 'success', '¡El evento fue actualizado exitosamente!');
 

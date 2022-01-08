@@ -1,10 +1,10 @@
 .event-card{
-
     color: $white;
 
     &--primary{
         @extend .event-card;
         background-color: $primary-color-500;
+        background-image: linear-gradient(to right bottom, $primary-color-400, $primary-color-600);
 
         button{
             background-color: $primary-color-400;
@@ -19,6 +19,7 @@
     &--secondary{
         @extend .event-card;
         background-color: $secondary-color-500;
+        background-image: linear-gradient(to right bottom, $secondary-color-400, $secondary-color-600);
 
         button{
             background-color: $secondary-color-400;
@@ -32,6 +33,7 @@
     &--red{
         @extend .event-card;
         background-color: $red-color-500;
+        background-image: linear-gradient(to right bottom, $red-color-400, $red-color-600);
 
         button{
             background-color: $red-color-400;
@@ -45,6 +47,7 @@
     &--orange{
         @extend .event-card;
         background-color: $orange-color-500;
+        background-image: linear-gradient(to right bottom, $orange-color-400, $orange-color-600);
 
         button{
             background-color: $orange-color-400;
@@ -58,6 +61,7 @@
     &--blue{
         @extend .event-card;
         background-color: $blue-color-500;
+        background-image: linear-gradient(to right bottom, $blue-color-400, $blue-color-600);
 
         button{
             background-color: $blue-color-400;
@@ -71,6 +75,7 @@
     &--purple{
         @extend .event-card;
         background-color: $purple-color-500;
+        background-image: linear-gradient(to right bottom, $purple-color-400, $purple-color-600);
 
         button{
             background-color: $purple-color-400;
@@ -84,6 +89,7 @@
     &--pink{
         @extend .event-card;
         background-color: $pink-color-500;
+        background-image: linear-gradient(to right bottom, $pink-color-400, $pink-color-600);
 
         button{
             background-color: $pink-color-400;
@@ -97,6 +103,7 @@
     &.not-active{
         color: $secondary-color-400;
         background-color: $secondary-color-50;
+        background-image: linear-gradient(to right bottom, $secondary-color-50, $secondary-color-50);
 
         button{
             background-color: $secondary-color-100;

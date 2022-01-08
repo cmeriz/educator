@@ -1,34 +1,35 @@
-<div x-data="{ open: false }" class="grades-index {{ count($students) > 0 ? 'grid' : 'flex' }} flex-col gap-4 flex-1">
+<div x-data="{ open: false }" class="grades-index {{ count($students) > 0 ? 'grid' : 'flex' }} flex-col gap-8 flex-1">
 
-    <div class="flex flex-col lg:flex-row items-center justify-between self-start gap-4">
+    {{-- Controls --}}
+    <div class="flex flex-col lg:flex-row items-center justify-between self-end gap-6 w-full">
 
-        @if (count($students) > 0)
+        {{-- Input search --}}
             <x-jet-input id="input-search" type="text" wire:model="search" class="input-search w-full lg:w-72" placeholder="Buscar estudiante..."/>
-        @endif
-            <div class="relative z-10 ml-auto mr-0 self-end lg:self-auto">
-                <button x-on:click="open = !open" x-on:click.away="open = false" class="p-2 text-secondary-500">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
-                    </svg>
+
+        {{-- Dropdown menu --}}
+        <div class="relative z-10 ml-auto mr-0 self-end lg:self-auto">
+            <button x-on:click="open = !open" x-on:click.away="open = false" class="p-2 text-secondary-500">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
+                </svg>
+            </button>
+            <div x-show="open" x-transition.opacity class="absolute top-full right-0 flex flex-col rounded-md ring-1 ring-black ring-opacity-5 bg-white shadow-lg">
+                <button wire:click="$emit('studentCreate', {{ $course->id }})" class="text-left whitespace-nowrap block px-6 py-3 leading-5 text-secondary-500 hover:bg-secondary-50 focus:outline-none focus:bg-secondary-50 transition">
+                    Añadir estudiante
                 </button>
-                <div x-show="open" x-transition.opacity class="absolute top-full right-0 flex flex-col rounded-md ring-1 ring-black ring-opacity-5 py-1 bg-white shadow-lg">
-                    <button wire:click="$emit('studentCreate', {{ $course->id }})" class="text-left whitespace-nowrap block px-4 py-2 leading-5 text-secondary-500 hover:bg-secondary-100 focus:outline-none focus:bg-secondary-100 transition">
-                        Añadir estudiante
+
+                @if (count($students) > 0)
+                    <button wire:click="$emit('createClassday')" class="text-left whitespace-nowrap block px-6 py-3 leading-5 text-secondary-500 hover:bg-secondary-50 focus:outline-none focus:bg-secondary-50 transition">
+                        Añadir clase
                     </button>
-
-                    @if (count($students) > 0)
-                        <button wire:click="$emit('createClassday')" class="text-left whitespace-nowrap block px-4 py-2 leading-5 text-secondary-500 hover:bg-secondary-100 focus:outline-none focus:bg-secondary-100 transition">
-                            Añadir clase
-                        </button>
-                    @endif
-                    
-                </div>
+                @endif
+                
             </div>
-
-
+        </div>
         
     </div>
 
+    {{-- Table --}}
     @if (count($students) > 0)
     
         <div class="overflow-x-scroll">
@@ -40,6 +41,7 @@
                             Nombre
                         </th>
 
+                        {{-- Classday dates --}}
                         @foreach ($classdays as $classday)
                             <th class="classday-header border-t border-b border-primary-100 bg-primary-100">
                                 <span class="classday-header__date h-6 w-16 flex justify-center items-center">{{ $classday->formatted_date }}</span>
@@ -63,15 +65,19 @@
                 <tbody class="text-sm">
                     @foreach ($students as $student)
                         <tr class="border-l border-r border-primary-100 {{ $loop->last ? 'border-b' : '' }}">
+
+                            {{-- Student name --}}
                             <td class="whitespace-nowrap sm:sticky sm:left-0 bg-white text-secondary-500">
                                 {{ $student->fullname }}
                             </td>
 
                             @php
+                                /* Getting student attendances ordered by date */
                                 $attendances = null;
                                 $attendances = $student->getOrderedStudentAttendances($student->id);
                             @endphp
 
+                            {{-- Attendances --}}
                             @foreach ($attendances as $attendance)
                                 <td class="attendance-box bg-primary-50 text-center">
                                     @if ($attendance->attended)
@@ -94,19 +100,23 @@
                             @endforeach
 
                             @php
+                                /* Getting student's attendance average */
                                 $average = $student->getAverageAttendance()->value;
                             @endphp
 
+                            {{-- Attendance Average --}}
                             <td class="text-center bg-primary-100 font-semibold text-base text-primary-800">
                                 {{ intval($average) }}%
                             </td>
 
+                            {{-- Status --}}
                             <td class="text-center">
                                 <x-badge color="{{ $average >= $student->course->min_attendance ? 'primary' : 'red' }}">
                                     {{ $average >= $student->course->min_attendance ? 'Aprobado' : 'Reprobado' }}
                                 </x-badge>
                             </td>
 
+                            {{-- Actions --}}
                             <td>
                                 <div class="flex gap-2">
                                     {{-- Edit Button --}}
@@ -132,9 +142,19 @@
 
         </div>
 
-    @else
+    @elseif (count($students) === 0 && $search)
 
-        <p>El curso está vacío... </p>
+        <p class="self-start">No hay estudiantes que coincidan con la búsqueda</p>
+
+    @elseif(count($students) === 0 && !$search)
+
+        {{-- No students --}}
+        <div class="flex flex-col md:flex-row md:items-center justify-around gap-4 w-full text-secondary-500">
+            <p class="text-2xl font-medium mb-6">
+                Este curso no tiene estudiantes. ¡Añadelos!
+            </p>
+            <img class="mx-auto md:m-0 w-full sm:w-4/5 md:w-80 lg:w-96" src="{{ asset('img/no-students.svg') }}" alt="No students">
+        </div>
 
     @endif
 

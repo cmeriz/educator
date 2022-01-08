@@ -11,6 +11,21 @@
     &--primary{
         @extend .tab;
         
+        span{
+            display: none;
+
+            @include ml-size{
+                display: initial;
+            }
+
+        }
+
+        svg{
+            @include ml-size{
+                display: none;
+            }
+        }
+
         &.active{
             background-color: $primary-color-100;
             color: $primary-color-700;
@@ -25,6 +40,8 @@
             color: $primary-color-700;
             transform: scale(1.05);
         }
+
+        
 
     }
 

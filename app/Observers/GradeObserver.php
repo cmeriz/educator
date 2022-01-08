@@ -10,34 +10,16 @@ use App\Models\Grade;
 
 class GradeObserver
 {
-
-    public function created(Grade $grade)
-    {
-        //
-    }
-
+    
     public function updated(Grade $grade)
     {
+        // Getting course and student related to grade
         $course = $grade->student->course;
         $student = $grade->student;
 
+        // Updating student's grade average
         AverageController::updateGradeAvg($course, $student); 
 
-    }
-
-    public function deleted(Grade $grade)
-    {
-        //
-    }
-
-    public function restored(Grade $grade)
-    {
-        //
-    }
-
-    public function forceDeleted(Grade $grade)
-    {
-        //
     }
 
 }
