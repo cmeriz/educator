@@ -17,7 +17,8 @@ mix.js('resources/js/app.js', 'public/js')
         require('tailwindcss'),
     ])
     .js('resources/js/default-alert.js', 'public/js')
-    .js('resources/js/model-delete-attempt.js', 'public/js');
+    .js('resources/js/model-delete-attempt.js', 'public/js')
+    .js('resources/js/lw-input-events.js', 'public/js');
 
 if (mix.inProduction()) {
     mix.version();

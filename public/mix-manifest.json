@@ -2,5 +2,6 @@
     "/js/app.js": "/js/app.js",
     "/js/default-alert.js": "/js/default-alert.js",
     "/js/model-delete-attempt.js": "/js/model-delete-attempt.js",
+    "/js/lw-input-events.js": "/js/lw-input-events.js",
     "/css/app.css": "/css/app.css"
 }
