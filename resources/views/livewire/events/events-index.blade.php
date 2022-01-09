@@ -10,6 +10,11 @@
     <x-loader/>
 
     {{-- Create button --}}
+    <x-button class="btn--icon--primary absolute right-8 top-8 z-20" wire:click="$emit('eventCreate')">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+        </svg>
+    </x-button>
     @livewire('events.event-create', [], key('event-create'))
 
     {{-- Events Grid --}}

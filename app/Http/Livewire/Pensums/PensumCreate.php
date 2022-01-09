@@ -20,9 +20,17 @@ class PensumCreate extends Component
         'name.max' => 'Este campo no puede tener más de 50 caracteres',
     ];
 
+    protected $listeners = [
+        'pensumCreate' => 'openModal',
+    ];
+
     public function render()
     {
         return view('livewire.pensums.pensum-create');
+    }
+
+    public function openModal(){
+        $this->open = true;
     }
 
     public function save(){

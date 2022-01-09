@@ -30,12 +30,20 @@ class EventCreate extends Component
         'course_id.required' => 'Este campo es obligatorio',
     ];
 
+    protected $listeners = [
+        'eventCreate' => 'openModal',
+    ];
+
     public function render()
     {
         // Getting al user's courses
         $courses = Course::where('user_id', auth()->user()->id)->get();
         
         return view('livewire.events.event-create', compact('courses'));
+    }
+
+    public function openModal(){
+        $this->open = true;
     }
 
     public function save(){

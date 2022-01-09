@@ -39,7 +39,7 @@ class StudentSeeder extends Seeder
         ]);
 
         Student::create([
-            'firstname' => 'Victor Alexis',
+            'firstname' => 'Rosa María',
             'lastname' => 'Barrero Beltrán',
             'course_id' => 3
         ]);
@@ -51,7 +51,7 @@ class StudentSeeder extends Seeder
         ]);
 
         Student::create([
-            'firstname' => 'Juan Carlos',
+            'firstname' => 'Laura Nerea',
             'lastname' => 'Vega Mellado',
             'course_id' => 3
         ]);
@@ -63,7 +63,7 @@ class StudentSeeder extends Seeder
         ]);
 
         Student::create([
-            'firstname' => 'Pedro Miguel',
+            'firstname' => 'Leticia Dolores',
             'lastname' => 'Cerezo Giraldo',
             'course_id' => 4
         ]);
@@ -75,7 +75,7 @@ class StudentSeeder extends Seeder
         ]);
 
         Student::create([
-            'firstname' => 'José Jesús',
+            'firstname' => 'Inés Jacinta',
             'lastname' => 'Alves Ríos',
             'course_id' => 4
         ]);
@@ -87,7 +87,7 @@ class StudentSeeder extends Seeder
         ]);
 
         Student::create([
-            'firstname' => 'Felipe Paulino',
+            'firstname' => 'Eva Teresa',
             'lastname' => 'Salazar Corrales',
             'course_id' => 5
         ]);
@@ -99,7 +99,7 @@ class StudentSeeder extends Seeder
         ]);
 
         Student::create([
-            'firstname' => 'Juan Ignacio',
+            'firstname' => 'Ariana Azucena',
             'lastname' => 'Elvira Carrera',
             'course_id' => 5
         ]);
@@ -111,7 +111,7 @@ class StudentSeeder extends Seeder
         ]);
 
         Student::create([
-            'firstname' => 'Gustavo Adolfo',
+            'firstname' => 'Lorena Victoria',
             'lastname' => 'Collado Moya',
             'course_id' => 6
         ]);
@@ -123,7 +123,7 @@ class StudentSeeder extends Seeder
         ]);
 
         Student::create([
-            'firstname' => 'Mariano Alberto',
+            'firstname' => 'Noelia Aurora',
             'lastname' => 'Brito Valera',
             'course_id' => 6
         ]);

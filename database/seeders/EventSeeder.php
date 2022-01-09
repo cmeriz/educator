@@ -128,56 +128,56 @@ class EventSeeder extends Seeder
 
         Event::create([
             'day' => 'monday',
-            'start' => '08:00:00',
-            'end' => '09:00:00',
+            'start' => '09:00:00',
+            'end' => '10:00:00',
             'user_id' => 2,
             'course_id' => 6,
         ]);
 
         Event::create([
             'day' => 'tuesday',
-            'start' => '08:00:00',
-            'end' => '09:00:00',
+            'start' => '09:00:00',
+            'end' => '10:00:00',
             'user_id' => 2,
             'course_id' => 3,
         ]);
         
         Event::create([
             'day' => 'wednesday',
-            'start' => '08:00:00',
-            'end' => '09:00:00',
+            'start' => '09:00:00',
+            'end' => '10:00:00',
             'user_id' => 2,
             'course_id' => 4,
         ]);
 
         Event::create([
             'day' => 'thursday',
-            'start' => '08:00:00',
-            'end' => '09:00:00',
+            'start' => '09:00:00',
+            'end' => '10:00:00',
             'user_id' => 2,
             'course_id' => 5,
         ]);
 
         Event::create([
             'day' => 'friday',
-            'start' => '08:00:00',
-            'end' => '09:00:00',
+            'start' => '09:00:00',
+            'end' => '10:00:00',
             'user_id' => 2,
             'course_id' => 6,
         ]);
 
         Event::create([
             'day' => 'saturday',
-            'start' => '08:00:00',
-            'end' => '09:00:00',
+            'start' => '09:00:00',
+            'end' => '10:00:00',
             'user_id' => 2,
             'course_id' => 3,
         ]);
 
         Event::create([
             'day' => 'sunday',
-            'start' => '08:00:00',
-            'end' => '09:00:00',
+            'start' => '09:00:00',
+            'end' => '10:00:00',
             'user_id' => 2,
             'course_id' => 4,
         ]);

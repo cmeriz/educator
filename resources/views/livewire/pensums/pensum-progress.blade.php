@@ -20,7 +20,7 @@
 
             <div class="flex gap-4 items-center justify-between {{ $completed ? 'bg-primary-100' : 'bg-gray-50' }}  rounded-lg p-4 pr-6 font-semibold">
                 <div class="flex gap-6 items-center {{ $completed ? 'text-primary-500' : 'text-secondary-500' }}">
-                    <span class="flex justify-center items-center self-start sm:self-center rounded-lg bg-white sm:h-12 sm:w-12">
+                    <span class="flex justify-center items-center self-start sm:self-center rounded-lg sm:bg-white sm:h-12 sm:w-12">
                         {{ $loop->iteration }}
                     </span>
                     <h3 class="{{ $completed ? 'line-through' : '' }}">{{ $lesson->title }}</h3>

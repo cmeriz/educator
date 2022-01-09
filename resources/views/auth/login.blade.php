@@ -63,7 +63,7 @@
                 @endif
 
                 <div class="flex flex-col md:flex-row gap-4 justify-end w-full lg:w-auto">
-                    <x-button tag="button" onclick="testLogin()" class="btn--primary-outlined lg:hidden whitespace-nowrap">
+                    <x-button tag="button" type="button" onclick="testLogin()" class="btn--primary-outlined lg:hidden whitespace-nowrap">
                         Cuenta de prueba
                     </x-button>
 
@@ -71,13 +71,11 @@
                         Acceder
                     </x-button>
                 </div>
-                
-
             </div>
             
         </form>
         <footer class="mt-14 text-right">
-            &copy{{ date('Y') }} eDUCATOR. Desarrollador por 
+            &copy{{ date('Y') }} eDUCATOR. Desarrollado por 
             <a class="text-blue-600 underline" href="https://cmeriz.com/" target="_blank" rel="noopener">
                 @cmeriz
             </a>
@@ -91,7 +89,7 @@
             const inputPassword = document.querySelector('#password');
             const form = document.querySelector('#login-form');
             inputEmail.value = 'john_doe@mail.com';
-            inputPassword.value = 'educator.tester2022';    
+            inputPassword.value = 'O2:Y|MNBKy4k';    
             form.submit();       
         }        
 

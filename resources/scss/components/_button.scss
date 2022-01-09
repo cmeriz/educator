@@ -12,6 +12,10 @@
         background-color: $primary-color-500;
         background-image: linear-gradient(to right bottom, $primary-color-500, $primary-color-600);
         color: $white;
+        
+        &:focus{
+            outline: 3px solid $primary-color-300;
+        }
 
         &-outlined{
             @extend .btn;
@@ -27,6 +31,10 @@
         background-color: $white;
         color: $primary-color-500;
 
+        &:focus{
+            outline: 3px solid rgba($white, $alpha: .5);
+        }
+
         &-outlined{
             @extend .btn;
             background-color: transparent;
@@ -40,6 +48,10 @@
         @extend .btn;
         background-color: $white;
         color: $secondary-color-300;
+
+        &:focus{
+            outline: 3px solid $secondary-color-300;
+        }
 
         &-outlined{
             @extend .btn;
@@ -76,6 +88,10 @@
             color: $white;
             background-color: $primary-color-500;
             background-image: linear-gradient(to right bottom, $primary-color-500, $primary-color-600);
+
+            &:focus{
+                outline: 3px solid $primary-color-300;
+            }
         }
 
         &--danger{
@@ -83,6 +99,10 @@
             color: $red-color-500;
             background-color: $red-color-100;
             background-image: linear-gradient(to right bottom, $red-color-500, $red-color-600);
+
+            &:focus{
+                outline: 3px solid $red-color-300;
+            }
         }
 
         &--blue{
@@ -90,6 +110,10 @@
             color: $blue-color-500;
             background-color: $blue-color-100;
             background-image: linear-gradient(to right bottom, $blue-color-500, $blue-color-600);
+
+            &:focus{
+                outline: 3px solid $blue-color-300;
+            }
         }
 
     }
@@ -99,6 +123,10 @@
         background-color: $red-color-500;
         background-image: linear-gradient(to right bottom, $red-color-500, $red-color-600);
         color: $white;
+
+        &:focus{
+            outline: 3px solid $red-color-300;
+        }
     }
 
 }

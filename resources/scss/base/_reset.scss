@@ -1,6 +1,7 @@
 html{
     font-size: 1rem;
     font-family: $primary-font;
+    min-height: 100vh;
 }
 
 body{
@@ -9,6 +10,7 @@ body{
     @include md-size{
         background-color: $primary-color-400;
         background-image: linear-gradient(to right bottom, $primary-color-400, $primary-color-500);
+        background-size: cover;
     }
 
     

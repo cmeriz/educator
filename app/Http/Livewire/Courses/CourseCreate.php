@@ -56,6 +56,10 @@ class CourseCreate extends Component
         'min_attendance.max' => 'El valor debe estar entre 0 y 100',
     ];
 
+    protected $listeners = [
+        'courseCreate' => 'openModal',
+    ];
+
     public function render()
     {
         // Getting all user's pensums
@@ -104,6 +108,10 @@ class CourseCreate extends Component
         $this->emitTo('courses.courses-index', 'render');
         $this->emit('alert', 'success', '¡El curso fue creado exitosamente!');
 
+    }
+
+    public function openModal(){
+        $this->open = true;
     }
 
     public function updatedPensumId(){ 

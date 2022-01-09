@@ -39,13 +39,12 @@
             </x-slot>
 
             <x-slot name="footer">
-                <x-jet-secondary-button wire:click="$toggle('confirmingUserDeletion')" wire:loading.attr="disabled">
+                <x-button class="btn--primary-outlined ml-2" wire:click="$toggle('confirmingUserDeletion')" wire:loading.attr="disabled">
                     Cancelar
-                </x-jet-secondary-button>
-
-                <x-jet-danger-button class="ml-2" wire:click="deleteUser" wire:loading.attr="disabled">
+                </x-button>
+                <x-button class="btn--danger ml-2" wire:click="deleteUser" wire:loading.attr="disabled">
                     Eliminar cuenta
-                </x-jet-danger-button>
+                </x-button>
             </x-slot>
         </x-jet-dialog-modal>
     </x-slot>

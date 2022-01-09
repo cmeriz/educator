@@ -1,14 +1,4 @@
-<div x-init class="text-secondary-500 mr-0 ml-auto">
-
-    <x-button id="open-modal" class="btn--icon--primary" 
-        wire:click="$set('open', true)" 
-        x-on:click="
-            setTimeout(() => document.querySelector('#input-name').focus(), 400);
-    ">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
-        </svg>
-    </x-button>
+<div x-init class="text-secondary-500 mr-0 ml-auto z-40">
 
     <x-jet-dialog-modal @keyup.enter="document.querySelector('#submit-button').click()" wire:model="open">
 

@@ -1,4 +1,4 @@
-<div class="text-secondary-500 absolute right-8 top-8">
+<div class="text-secondary-500 absolute right-8 top-8 z-40">
 
     <x-jet-dialog-modal wire:model="open">
 

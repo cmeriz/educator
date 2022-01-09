@@ -12,6 +12,7 @@
     @livewireStyles
 
     <title>{{ $title ?? 'eDUCATOR' }}</title>    
+    <link rel="icon" type="image/x-icon" href="{{ asset('img/favicon.png') }}">
 
     <!-- Scripts -->
     <script src="{{ mix('js/app.js') }}" defer></script>
@@ -28,7 +29,7 @@
         </div>
 
         {{-- Main Container --}}
-        <div class="main-container flex flex-col w-full md:rounded-lg card-shadow">
+        <div class="main-container flex flex-col w-full md:rounded-lg">
 
             {{-- Header --}}
             <header class="main-header flex flex-wrap md:flex-nowrap justify-between items-center text-secondary-500 md:mb-8">

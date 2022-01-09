@@ -19,6 +19,10 @@ class LessonCreate extends Component
         'title.max' => 'Este campo no puede tener más de 50 caracteres',
     ];
 
+    protected $listeners = [
+        'lessonCreate' => 'openModal',
+    ];
+
     public function mount($pensum){
         $this->pensum = $pensum;
     }
@@ -26,6 +30,10 @@ class LessonCreate extends Component
     public function render()
     {
         return view('livewire.lessons.lesson-create');
+    }
+
+    public function openModal(){
+        $this->open = true;
     }
 
     public function save(){

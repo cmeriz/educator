@@ -1,4 +1,4 @@
-<div>
+<div class="z-40">
     <x-jet-dialog-modal wire:model="open">
 
         <x-slot name="title">
