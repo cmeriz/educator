@@ -2307,6 +2307,8 @@ Ensure the default browser behavior of the `hidden` attribute.
     grid-column: span 1 / span 1;
   }.lg\:ml-auto{
     margin-left: auto;
+  }.lg\:hidden{
+    display: none;
   }.lg\:w-96{
     width: 24rem;
   }.lg\:w-auto{

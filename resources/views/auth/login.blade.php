@@ -54,7 +54,7 @@
                 </label>
             </div>
 
-            <div class="flex flex-col justify-end gap-4 mt-4">
+            <div class="flex flex-col lg:flex-row items-center justify-end gap-4 mt-4">
                 
                 @if (Route::has('password.request'))
                     <a class="underline text-sm text-blue-600 hover:text-blue-900 mb-6 md:mb-0 w-full" href="{{ route('password.request') }}">
@@ -62,8 +62,8 @@
                     </a>
                 @endif
 
-                <div class="flex flex-col md:flex-row gap-4 justify-end">
-                    <x-button tag="button" onclick="testLogin()" class="btn--primary-outlined whitespace-nowrap">
+                <div class="flex flex-col md:flex-row gap-4 justify-end w-full lg:w-auto">
+                    <x-button tag="button" onclick="testLogin()" class="btn--primary-outlined lg:hidden whitespace-nowrap">
                         Cuenta de prueba
                     </x-button>
 
