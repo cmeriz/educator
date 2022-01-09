@@ -1,5 +1,7 @@
 Livewire.on('select', (el) => {
-    document.querySelector(el).select(); 
+    const input = document.querySelector(el);
+    input.select(); 
+    input.focus();
 });
 
 Livewire.on('focus', (el) => {
