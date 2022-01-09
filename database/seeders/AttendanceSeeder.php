@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 use App\Models\Attendance;
+use App\Models\Classday;
+use App\Models\Student;
 use Illuminate\Database\Seeder;
 
 class AttendanceSeeder extends Seeder
@@ -15,53 +17,22 @@ class AttendanceSeeder extends Seeder
     public function run()
     {
         
-        Attendance::create([
-            'attended' => 1,
-            'classday_id' => 1,
-            'student_id' => 1,
-        ]);
+        $students = Student::orderBy('id', 'asc')->get();
 
-        Attendance::create([
-            'attended' => 1,
-            'classday_id' => 1,
-            'student_id' => 2,
-        ]);
-        
-        Attendance::create([
-            'attended' => 0,
-            'classday_id' => 1,
-            'student_id' => 3,
-        ]);
+        foreach ($students as $student) {
 
-        Attendance::create([
-            'attended' => 0,
-            'classday_id' => 1,
-            'student_id' => 4,
-        ]);
+            $classdays = Classday::orderBy('id', 'asc')
+                                 ->where('course_id', $student->course_id)
+                                 ->get();
 
-        Attendance::create([
-            'attended' => 1,
-            'classday_id' => 2,
-            'student_id' => 1,
-        ]);
-
-        Attendance::create([
-            'attended' => 1,
-            'classday_id' => 2,
-            'student_id' => 2,
-        ]);
-        
-        Attendance::create([
-            'attended' => 0,
-            'classday_id' => 2,
-            'student_id' => 3,
-        ]);
-
-        Attendance::create([
-            'attended' => 0,
-            'classday_id' => 2,
-            'student_id' => 4,
-        ]);
+            foreach ($classdays as $classday) {
+                Attendance::create([
+                    'attended' => false,
+                    'classday_id' => $classday->id,
+                    'student_id' => $student->id,
+                ]);
+            }
+        }
 
     }
 }

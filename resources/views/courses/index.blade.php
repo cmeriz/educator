@@ -1,5 +1,10 @@
 <x-app-layout>
 
+    {{-- Title --}}
+    <x-slot name="title">
+        eDUCATOR - Cursos
+    </x-slot>
+
     {{-- Header --}}
     <x-slot name="header">
         Mis Cursos

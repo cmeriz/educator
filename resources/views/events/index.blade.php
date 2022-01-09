@@ -1,5 +1,10 @@
 <x-app-layout>
 
+    {{-- Title --}}
+    <x-slot name="title">
+        eDUCATOR - Horario
+    </x-slot>
+
     {{-- Header --}}
     <x-slot name="header">
         Mi Horario

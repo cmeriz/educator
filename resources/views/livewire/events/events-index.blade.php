@@ -15,7 +15,7 @@
     {{-- Events Grid --}}
     @if ($eventsByDay != [])
 
-        <div class="grid overflow-scroll pb-8 max-h-[28rem]">        
+        <div class="grid overflow-scroll pb-8 max-h-[32rem]">        
             <table>
                 <thead>
                     <tr class="sticky z-10 top-0 bg-white shadow-sm">

@@ -1,4 +1,11 @@
 <x-app-layout>
+
+    {{-- Title --}}
+    <x-slot name="title">
+        eDUCATOR - Inicio
+    </x-slot>
+
+    {{-- Header --}}
     <x-slot name="header">
         {{ 'Bienvenido, ' . explode(' ', Auth::user()->name)[0] }}
     </x-slot>

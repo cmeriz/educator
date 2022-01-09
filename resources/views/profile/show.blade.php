@@ -1,4 +1,10 @@
 <x-app-layout>
+
+    {{-- Title --}}
+    <x-slot name="title">
+        eDUCATOR - Mi cuenta
+    </x-slot>
+
     <x-slot name="header">
         {{ __('Mi Perfil') }}
     </x-slot>

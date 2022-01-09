@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Activity;
+use App\Models\Course;
 use Illuminate\Database\Seeder;
 
 class ActivitySeeder extends Seeder
@@ -14,34 +15,23 @@ class ActivitySeeder extends Seeder
      */
     public function run()
     {
-        Activity::create([
-            'activity_type_id' => 1,
-            'course_id' => 1,
-        ]);
 
-        Activity::create([
-            'activity_type_id' => 1,
-            'course_id' => 1,
-        ]);
+        $courses = Course::orderBy('id', 'asc')->get();
 
-        Activity::create([
-            'activity_type_id' => 2,
-            'course_id' => 1,
-        ]);
+        foreach ($courses as $course) {
+            for ( $i = 1; $i <= 3 ; $i++ ) { 
+
+                Activity::create([
+                    'activity_type_id' => $i,
+                    'course_id' => $course->id,
+                ]);
+                Activity::create([
+                    'activity_type_id' => $i,
+                    'course_id' => $course->id,
+                ]);
+                
+            }
+        }
         
-        Activity::create([
-            'activity_type_id' => 2,
-            'course_id' => 1,
-        ]);
-
-        Activity::create([
-            'activity_type_id' => 3,
-            'course_id' => 1,
-        ]);
-        
-        Activity::create([
-            'activity_type_id' => 3,
-            'course_id' => 1,
-        ]);
     }
 }

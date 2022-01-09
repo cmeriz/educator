@@ -11,6 +11,8 @@
     
     @livewireStyles
 
+    <title>{{ $title ?? 'eDUCATOR' }}</title>    
+
     <!-- Scripts -->
     <script src="{{ mix('js/app.js') }}" defer></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -33,7 +35,7 @@
 
                 <div class="fixed top-0 md:relative flex items-center bg-white shadow-sm md:shadow-none  justify-end py-2 px-8 md:p-0 w-full md:w-56 z-30">
                     <a class="logo-mobile absolute left-8 md:hidden text-white z-20" href="{{ route('home') }}">
-                        <x-jet-application-logo class="w-48" />
+                        <x-jet-application-logo class="w-36" />
                     </a>
             
                     <div x-data="{ open: false }" class="menu-mobile relative w-full">

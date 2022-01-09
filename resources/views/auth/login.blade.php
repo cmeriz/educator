@@ -87,10 +87,11 @@
         const form = document.querySelector('#login-form');
 
         btnTestAccount.addEventListener('click', function(){
-            inputEmail.value = 'cmerizalde27@gmail.com';
-            inputPassword.value = '123456';    
+            inputEmail.value = 'john_doe@mail.com';
+            inputPassword.value = 'educator.tester2022';    
             form.submit();        
         });
+
     </script>
 
 </x-guest-layout>

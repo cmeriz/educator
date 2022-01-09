@@ -1,5 +1,10 @@
 <x-app-layout>
 
+    {{-- Title --}}
+    <x-slot name="title">
+        eDUCATOR - Pensums
+    </x-slot>
+
     {{-- Header --}}
     <x-slot name="header">
         Mis Pensums

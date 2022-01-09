@@ -1,5 +1,10 @@
 <x-app-layout>
 
+    {{-- Title --}}
+    <x-slot name="title">
+        eDUCATOR - Curso: {{ $course->name }} - Asistencias
+    </x-slot>
+
     {{-- Header --}}
     <x-slot name="header">
         Curso: {{ $course->name }}

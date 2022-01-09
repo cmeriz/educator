@@ -828,8 +828,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 5rem;
 }.h-2{
   height: 0.5rem;
-}.max-h-\[28rem\]{
-  max-height: 28rem;
+}.max-h-\[32rem\]{
+  max-height: 32rem;
 }.min-h-screen{
   min-height: 100vh;
 }.w-5{
@@ -866,6 +866,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 75%;
 }.w-3\/5{
   width: 60%;
+}.w-36{
+  width: 9rem;
+}.w-32{
+  width: 8rem;
 }.min-w-0{
   min-width: 0px;
 }.max-w-screen-xl{

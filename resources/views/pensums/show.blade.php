@@ -1,5 +1,10 @@
 <x-app-layout>   
 
+    {{-- Title --}}
+    <x-slot name="title">
+        eDUCATOR - Pensum: {{ $pensum->name }}
+    </x-slot>
+
     {{-- Header --}}
     <x-slot name="header">
         Pensum: {{ $pensum->name }}

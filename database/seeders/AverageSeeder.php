@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Average;
+use App\Models\Student;
 use Illuminate\Database\Seeder;
 
 class AverageSeeder extends Seeder
@@ -14,52 +15,23 @@ class AverageSeeder extends Seeder
      */
     public function run()
     {
-        Average::create([
-            'value' => 0,
-            'type' => Average::TYPES[0],
-            'student_id' => 1,
-        ]);
+        $students = Student::orderBy('id', 'asc')->get();
 
-        Average::create([
-            'value' => 0,
-            'type' => Average::TYPES[0],
-            'student_id' => 2,
-        ]);
+        foreach ($students as $student) {
+            
+            Average::create([
+                'value' => 0,
+                'type' => 'grade',
+                'student_id' => $student->id,
+            ]);
 
-        Average::create([
-            'value' => 0,
-            'type' => Average::TYPES[0],
-            'student_id' => 3,
-        ]);
-        
-        Average::create([
-            'value' => 0,
-            'type' => Average::TYPES[0],
-            'student_id' => 4,
-        ]);
+            Average::create([
+                'value' => 0,
+                'type' => 'attendance',
+                'student_id' => $student->id,
+            ]);
 
-        Average::create([
-            'value' => 0,
-            'type' => Average::TYPES[1],
-            'student_id' => 1,
-        ]);
+        }
 
-        Average::create([
-            'value' => 0,
-            'type' => Average::TYPES[1],
-            'student_id' => 2,
-        ]);
-
-        Average::create([
-            'value' => 0,
-            'type' => Average::TYPES[1],
-            'student_id' => 3,
-        ]);
-        
-        Average::create([
-            'value' => 0,
-            'type' => Average::TYPES[1],
-            'student_id' => 4,
-        ]);
     }
 }
