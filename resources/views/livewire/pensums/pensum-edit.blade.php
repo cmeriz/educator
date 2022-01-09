@@ -9,7 +9,7 @@
         <x-slot name="content">
             <div class="mb-4">
                 <x-jet-label value="Nombre:"/>
-                <x-jet-input id="input-edit-name" wire:model="name" @keyup.enter="document.querySelector('#button-edit-submit').click()" type="text" class="w-full" placeholder="Nombre del pensum"/>
+                <x-jet-input id="edit-input-name" wire:model="name" wire:keydown.enter="update" type="text" class="w-full" placeholder="Nombre del pensum"/>
 
                 <x-jet-input-error for="name" />
 

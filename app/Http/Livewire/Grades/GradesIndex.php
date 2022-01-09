@@ -67,6 +67,11 @@ class GradesIndex extends Component
     public function edit(Grade $grade){
         // Updating grade property to show editing form in view
         $this->grade = $grade;
+        $this->emit('select', '#input-grade');
+    }
+
+    public function cancelEdit(){
+        $this->grade = New Grade();
     }
 
     public function update(){

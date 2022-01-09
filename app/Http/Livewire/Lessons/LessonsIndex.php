@@ -46,6 +46,7 @@ class LessonsIndex extends Component
 
         // Setting lesson property to show editing form in view
         $this->lesson = $lesson;
+        $this->emit('focus', '#input-lesson');
     }
 
     public function cancelEdit(){

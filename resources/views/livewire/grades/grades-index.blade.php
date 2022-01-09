@@ -65,7 +65,7 @@
         {{-- Table --}}
         <div class="overflow-x-scroll mt-4 relative">
         
-            <x-loader/>
+            <x-loader wire:target="update"/>
 
             <table class="grades-index__table">
                 <thead class="text-primary-700 text-xs uppercase">
@@ -179,7 +179,7 @@
                         <th class="border-t border-r border-primary-100 bg-primary-50"></th>
                     </tr>
                 </thead>
-                <tbody class="text-sm">
+                <tbody class="text-sm" x-on:click.away="$wire.cancelEdit">
                     @foreach ($students as $student)
                         <tr class="border-l border-r border-primary-100 {{ $loop->last ? 'border-b' : '' }}">
                             
@@ -198,7 +198,7 @@
 
                                         @if ($grade->id == $currentGrade->id)
                                             <form wire:submit.prevent="update">
-                                                <input id="input-grade" wire:model="grade.value" step="0.1" type="number" class="w-20 text-sm border-secondary-100 text-secondary-500 focus:border-secondary-100 bg-white placeholder:text-secondary-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50 rounded-lg">
+                                                <input id="input-grade" wire:keydown.escape="cancelEdit" wire:model="grade.value" step="0.1" type="number" class="w-20 text-sm border-secondary-100 text-secondary-500 focus:border-secondary-100 bg-white placeholder:text-secondary-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50 rounded-lg">
                                             </form>
                                         @else
                                             <button wire:click="edit({{ $currentGrade }})">
@@ -219,7 +219,7 @@
 
                                         @if ($grade->id == $currentGrade->id)
                                             <form wire:submit.prevent="update">
-                                                <input id="input-grade" wire:model="grade.value" step="0.1" type="number" class="w-20 text-sm border-secondary-100 text-secondary-500 focus:border-secondary-100 bg-white placeholder:text-secondary-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50 rounded-lg">
+                                                <input id="input-grade" wire:keydown.escape="cancelEdit" wire:model="grade.value" step="0.1" type="number" class="w-20 text-sm border-secondary-100 text-secondary-500 focus:border-secondary-100 bg-white placeholder:text-secondary-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50 rounded-lg">
                                             </form>
                                         @else
                                             <button wire:click="edit({{ $currentGrade }})">
@@ -240,7 +240,7 @@
 
                                         @if ($grade->id == $currentGrade->id)
                                             <form wire:submit.prevent="update">
-                                                <input id="input-grade" wire:model="grade.value" step="0.1" type="number" class="w-20 text-sm border-secondary-100 text-secondary-500 focus:border-secondary-100 bg-white placeholder:text-secondary-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50 rounded-lg">
+                                                <input id="input-grade" wire:keydown.escape="cancelEdit" wire:model="grade.value" step="0.1" type="number" class="w-20 text-sm border-secondary-100 text-secondary-500 focus:border-secondary-100 bg-white placeholder:text-secondary-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50 rounded-lg">
                                             </form>
                                         @else
                                             <button wire:click="edit({{ $currentGrade }})">
@@ -319,5 +319,4 @@
         </div>
 
     @endif    
-
 </div>

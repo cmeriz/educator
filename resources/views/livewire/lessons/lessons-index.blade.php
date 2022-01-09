@@ -33,9 +33,9 @@
                         
                         @if ($item->id == $lesson->id)
                             {{-- Edit form --}}
-                            <form wire:submit.prevent="update" class="flex flex-col w-full">
+                            <form wire:submit.prevent="update" x-on:click.away="$wire.cancelEdit" class="flex flex-col w-full">
                                 <div class="flex flex-1 gap-4">
-                                <input wire:model="lesson.title" placeholder="Título de la lección" autofocus type="text" class="border-secondary-100 text-secondary-500 focus:border-secondary-100 bg-white placeholder:text-secondary-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50 rounded-lg w-full">
+                                <input id="input-lesson" wire:keydown.escape="cancelEdit" wire:model="lesson.title" placeholder="Título de la lección" type="text" class="border-secondary-100 text-secondary-500 focus:border-secondary-100 bg-white placeholder:text-secondary-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50 rounded-lg w-full">
                                     <div class="flex gap-4">
                                         <i wire:click="cancelEdit" class="btn--gray-outlined">Cancelar</i>
                                         <x-button type="submit" class="btn--primary">Actualizar</x-button>

@@ -10,7 +10,7 @@
 
             <div class="flex flex-col mb-4">
                 <x-jet-label value="Curso:"/>
-                <select wire:model="course_id" class="border-secondary-100 {{ $course_id ? 'text-secondary-500' : 'text-secondary-300' }} focus:border-secondary-100 bg-secondary-50 placeholder:text-secondary-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50 rounded-lg">
+                <select id="edit-input-course" wire:model="course_id" class="border-secondary-100 {{ $course_id ? 'text-secondary-500' : 'text-secondary-300' }} focus:border-secondary-100 bg-secondary-50 placeholder:text-secondary-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50 rounded-lg">
                     <option value="null" selected disabled hidden>Selecciona un curso</option>
                     @foreach ($courses as $course)
                         <option value="{{ $course->id }}" class="text-secondary-500">{{ $course->name }}</option>

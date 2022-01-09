@@ -24,14 +24,16 @@
                     color: $red-color-500;
                 }
 
-                &:hover{
-                    .check{
-                        display: none;
+                @include md-size{
+                    &:hover{
+                        .check{
+                            display: none;
+                        }
+                        .uncheck{
+                            display: block;
+                        }
                     }
-                    .uncheck{
-                        display: block;
-                    }
-                }
+                }                
             }
 
             &__btn--not-attended{
