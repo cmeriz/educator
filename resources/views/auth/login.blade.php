@@ -11,7 +11,7 @@
                 de clases para estar siempre al día. ¡Accede con una cuenta de prueba o regístrate!
             </p>
             <div class="flex gap-4 justify-center lg:justify-start flex-wrap">
-                <x-button id="test-account" tag="button" class="btn--white-outlined">
+                <x-button tag="button" onclick="testLogin()" class="btn--white-outlined">
                     Cuenta de prueba
                 </x-button>
                 <x-button tag="anchor" href="{{ route('register') }}" class="btn--white">
@@ -54,20 +54,25 @@
                 </label>
             </div>
 
-            <div class="flex flex-col xs:flex-row items-end xs:items-center justify-end mt-4">
+            <div class="flex flex-col justify-end gap-4 mt-4">
+                
                 @if (Route::has('password.request'))
-                    <a class="underline text-sm text-blue-600 hover:text-blue-900 mr-6 mb-6 xs:mb-0" href="{{ route('password.request') }}">
+                    <a class="underline text-sm text-blue-600 hover:text-blue-900 mb-6 md:mb-0 w-full" href="{{ route('password.request') }}">
                         ¿Olvidaste tu contraseña?
                     </a>
                 @endif
 
-                <x-button tag="button" type="submit" class="btn--primary w-full xs:w-auto">
-                    Acceder
-                </x-button>
+                <div class="flex flex-col md:flex-row gap-4 justify-end">
+                    <x-button tag="button" onclick="testLogin()" class="btn--primary-outlined whitespace-nowrap">
+                        Cuenta de prueba
+                    </x-button>
 
-                {{-- <x-jet-button class="ml-4">
-                    {{ __('Log in') }}
-                </x-jet-button> --}}
+                    <x-button tag="button" type="submit" class="btn--primary w-full xs:w-auto">
+                        Acceder
+                    </x-button>
+                </div>
+                
+
             </div>
             
         </form>
@@ -81,16 +86,14 @@
 
     <script>
 
-        const btnTestAccount = document.querySelector('#test-account');
-        const inputEmail = document.querySelector('#email');
-        const inputPassword = document.querySelector('#password');
-        const form = document.querySelector('#login-form');
-
-        btnTestAccount.addEventListener('click', function(){
+        function testLogin(){
+            const inputEmail = document.querySelector('#email');
+            const inputPassword = document.querySelector('#password');
+            const form = document.querySelector('#login-form');
             inputEmail.value = 'john_doe@mail.com';
             inputPassword.value = 'educator.tester2022';    
-            form.submit();        
-        });
+            form.submit();       
+        }        
 
     </script>
 
