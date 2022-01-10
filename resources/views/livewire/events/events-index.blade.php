@@ -1,7 +1,10 @@
 <div
     @if ($eventsByDay != [])
         x-init="document.getElementById(`${day}-label`).scrollIntoView({ block: 'start', });" 
-        x-data="{day: (new Date().toLocaleDateString('en-US', {weekday: 'long'})).toLowerCase()}"
+        x-data="{
+                    day: (new Date().toLocaleDateString('en-US', {weekday: 'long'})).toLowerCase(),
+                    inputNameCreate: document.querySelector('#create-input-course'),
+                }"
     @endif
 
     class="events-index relative grid flex-col text-secondary-500 gap-8 p-8 md:card-shadow w-full md:rounded-lg"
@@ -10,7 +13,7 @@
     <x-loader/>
 
     {{-- Create button --}}
-    <x-button class="btn--icon--primary absolute right-8 top-8 z-20" wire:click="$emit('eventCreate')" x-on:click="setTimeout(function(){document.querySelector('#create-input-course').focus();}, 500);">
+    <x-button class="btn--icon--primary absolute right-8 top-8 z-20" wire:click="$emit('eventCreate')" x-on:click="setTimeout( () => inputNameCreate.focus(), 500 );">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
         </svg>

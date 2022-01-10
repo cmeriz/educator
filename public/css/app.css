@@ -701,6 +701,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   z-index: 30;
 }.z-20{
   z-index: 20;
+}.order-first{
+  order: -9999;
 }.col-span-6{
   grid-column: span 6 / span 6;
 }.col-span-2{
@@ -2060,7 +2062,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }@media (min-width: 20rem){.xxs\:block{
     display: block;
   }
-}@media (min-width: 30rem){.xs\:mb-0{
+}@media (min-width: 30rem){.xs\:order-none{
+    order: 0;
+  }.xs\:mb-0{
     margin-bottom: 0px;
   }.xs\:w-auto{
     width: auto;
@@ -2074,6 +2078,8 @@ Ensure the default browser behavior of the `hidden` attribute.
     position: sticky;
   }.sm\:left-0{
     left: 0px;
+  }.sm\:order-none{
+    order: 0;
   }.sm\:col-span-4{
     grid-column: span 4 / span 4;
   }.sm\:col-span-3{
@@ -2152,12 +2158,16 @@ Ensure the default browser behavior of the `hidden` attribute.
     --tw-scale-x: 1;
     --tw-scale-y: 1;
     transform: var(--tw-transform);
+  }.sm\:flex-row{
+    flex-direction: row;
   }.sm\:items-start{
     align-items: flex-start;
   }.sm\:items-center{
     align-items: center;
   }.sm\:justify-start{
     justify-content: flex-start;
+  }.sm\:justify-end{
+    justify-content: flex-end;
   }.sm\:justify-center{
     justify-content: center;
   }.sm\:justify-between{

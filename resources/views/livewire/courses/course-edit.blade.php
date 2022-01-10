@@ -111,7 +111,7 @@
                 <x-button tag="button" class="btn--primary-outlined" wire:click="$set('open', false)">
                     Cancelar
                 </x-button>
-                <x-button id="submit-button" tag="button" class="btn--primary" wire:click="update" >
+                <x-button id="submit-button" tag="button" class="btn--primary order-first xs:order-none" wire:click="update" >
                     Actualizar curso
                 </x-button>
             </div>

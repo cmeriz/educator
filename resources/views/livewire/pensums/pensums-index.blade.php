@@ -1,11 +1,11 @@
-<div x-init class="pensums-index flex flex-col gap-8 p-8 md:card-shadow w-full md:rounded-lg">
+<div x-data="{ inputNameCreate: document.querySelector('#create-input-name') }" class="pensums-index flex flex-col gap-8 p-8 md:card-shadow w-full md:rounded-lg">
 
     {{-- Controls --}}
     <div class="pensums-index__controls flex justify-between">
 
         <x-jet-input type="text" wire:model="search" class="input-search w-9/12 md:w-2/4" placeholder="Buscar pensum..."/>
 
-        <x-button class="btn--icon--primary" wire:click="$emit('pensumCreate')" x-on:click="setTimeout(function(){document.querySelector('#create-input-name').focus();}, 500);">
+        <x-button class="btn--icon--primary" wire:click="$emit('pensumCreate')" x-on:click="setTimeout( () => inputNameCreate.focus(), 500 );">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
             </svg>

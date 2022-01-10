@@ -1,4 +1,4 @@
-<div class="lessons-index flex flex-col gap-8 p-8 md:card-shadow w-full text-secondary-500 md:rounded-lg">
+<div x-data="{ inputName: document.querySelector('#input-title') }" class="lessons-index flex flex-col gap-8 p-8 md:card-shadow w-full text-secondary-500 md:rounded-lg">
     
     {{-- Controls --}}
     <div class="flex flex-row items-center justify-between">
@@ -9,7 +9,7 @@
             <x-button tag="anchor" href="{{ route('pensums.index') }}" class="btn--primary-outlined hidden md:block">
                 Volver a pensums
             </x-button>
-            <x-button class="btn--icon--primary" wire:click="$emit('lessonCreate')">
+            <x-button class="btn--icon--primary" wire:click="$emit('lessonCreate')" x-on:click="setTimeout(() => inputName.focus(), 500)" >
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
                 </svg>
@@ -34,11 +34,11 @@
                         @if ($item->id == $lesson->id)
                             {{-- Edit form --}}
                             <form wire:submit.prevent="update" x-on:click.away="$wire.cancelEdit" class="flex flex-col w-full">
-                                <div class="flex flex-1 gap-4">
-                                <input id="input-lesson" wire:keydown.escape="cancelEdit" wire:model="lesson.title" placeholder="Título de la lección" type="text" class="border-secondary-100 text-secondary-500 focus:border-secondary-100 bg-white placeholder:text-secondary-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50 rounded-lg w-full">
-                                    <div class="flex gap-4">
-                                        <i wire:click="cancelEdit" class="btn--gray-outlined">Cancelar</i>
-                                        <x-button type="submit" class="btn--primary">Actualizar</x-button>
+                                <div class="flex flex-col lg:flex-row flex-1 gap-4">
+                                    <input id="input-lesson" wire:keydown.escape="cancelEdit" wire:model="lesson.title" placeholder="Título de la lección" type="text" class="border-secondary-100 text-secondary-500 focus:border-secondary-100 bg-white placeholder:text-secondary-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50 rounded-lg w-full">
+                                    <div class="flex flex-col sm:flex-row sm:justify-end gap-4">
+                                        <x-button type="button" wire:click="cancelEdit" class="btn--gray-outlined block">Cancelar</x-button>
+                                        <x-button type="submit" class="btn--primary block order-first sm:order-none">Actualizar</x-button>
                                     </div>
                                 </div>
                                 <x-jet-input-error for="lesson.title" class="mt-2" />

@@ -21,7 +21,7 @@
                 <x-button tag="button" class="btn--primary-outlined" wire:click="$set('open', false)">
                     Cancelar
                 </x-button>
-                <x-button id="button-edit-submit" tag="button" class="btn--primary" wire:click="update" >
+                <x-button id="button-edit-submit" tag="button" class="btn--primary order-first xs:order-none" wire:click="update" >
                     Actualizar pensum
                 </x-button>
             </div>

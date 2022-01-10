@@ -22,7 +22,7 @@
                 <x-button tag="button" class="btn--primary-outlined" wire:click="$set('open', false)">
                     Cancelar
                 </x-button>
-                <x-button id="button-submit" tag="button" class="btn--primary" wire:click="save" >
+                <x-button id="button-submit" tag="button" class="btn--primary order-first xs:order-none" wire:click="save" >
                     Crear clase
                 </x-button>
             </div>

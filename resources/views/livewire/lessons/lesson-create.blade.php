@@ -9,7 +9,7 @@
         <x-slot name="content">
             <div class="mb-4">
                 <x-jet-label value="Título:"/>
-                <x-jet-input wire:model="title" type="text" class="w-full" placeholder="Título de la lección"/>
+                <x-jet-input id="input-title" wire:model="title" type="text" class="w-full" placeholder="Título de la lección"/>
 
                 <x-jet-input-error for="title" />
 
@@ -21,7 +21,7 @@
                 <x-button tag="button" class="btn--primary-outlined" wire:click="$set('open', false)">
                     Cancelar
                 </x-button>
-                <x-button tag="button" class="btn--primary" wire:click="save" >
+                <x-button tag="button" class="btn--primary order-first xs:order-none" wire:click="save" >
                     Crear lección
                 </x-button>
             </div>

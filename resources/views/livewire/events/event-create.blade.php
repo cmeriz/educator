@@ -53,11 +53,11 @@
         </x-slot>
 
         <x-slot name="footer">
-            <div class="flex justify-end gap-4">
+            <div class="flex flex-col xs:flex-row justify-end gap-4">
                 <x-button tag="button" class="btn--primary-outlined" wire:click="$set('open', false)">
                     Cancelar
                 </x-button>
-                <x-button id="submit-button" tag="button" class="btn--primary" wire:click="save">
+                <x-button id="submit-button" tag="button" class="btn--primary order-first xs:order-none" wire:click="save">
                     Crear evento
                 </x-button>
             </div>

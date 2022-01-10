@@ -1,4 +1,4 @@
-<div x-data="{ open: false }" class="grades-index {{ count($students) > 0 ? 'grid' : 'flex' }} flex-col gap-4">
+<div x-data="{ open: false, inputNameCreate: document.querySelector('#create-input-name') }" class="grades-index {{ count($students) > 0 ? 'grid' : 'flex' }} flex-col gap-4">
 
     {{-- Controls --}}
     <div class="flex flex-col lg:flex-row items-center justify-between self-start gap-6 w-full">
@@ -38,7 +38,7 @@
                 </svg>
             </button>
             <div x-show="open" x-transition.opacity class="absolute top-full right-0 flex flex-col text-base rounded-md ring-1 ring-black ring-opacity-5 bg-white shadow-lg">
-                <button wire:click="$emit('studentCreate', {{ $course->id }})" x-on:click="setTimeout(() => document.querySelector('#create-input-name').focus(), 500)" class="text-left whitespace-nowrap block px-6 py-3 leading-5 text-secondary-500 hover:bg-secondary-50 focus:outline-none focus:bg-secondary-50 transition">
+                <button wire:click="$emit('studentCreate', {{ $course->id }})" x-on:click="setTimeout( () => inputNameCreate.focus(), 500 )" class="text-left whitespace-nowrap block px-6 py-3 leading-5 text-secondary-500 hover:bg-secondary-50 focus:outline-none focus:bg-secondary-50 transition">
                     Añadir estudiante
                 </button>
 
