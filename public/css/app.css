@@ -2099,8 +2099,14 @@ Ensure the default browser behavior of the `hidden` attribute.
     margin-left: 2.5rem;
   }.sm\:ml-6{
     margin-left: 1.5rem;
+  }.sm\:ml-auto{
+    margin-left: auto;
+  }.sm\:mr-0{
+    margin-right: 0px;
   }.sm\:block{
     display: block;
+  }.sm\:inline-block{
+    display: inline-block;
   }.sm\:flex{
     display: flex;
   }.sm\:hidden{
@@ -2241,8 +2247,14 @@ Ensure the default browser behavior of the `hidden` attribute.
     margin-bottom: 2rem;
   }.md\:mb-0{
     margin-bottom: 0px;
+  }.md\:ml-auto{
+    margin-left: auto;
+  }.md\:mr-0{
+    margin-right: 0px;
   }.md\:block{
     display: block;
+  }.md\:inline-block{
+    display: inline-block;
   }.md\:flex{
     display: flex;
   }.md\:grid{

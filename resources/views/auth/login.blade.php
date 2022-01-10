@@ -63,12 +63,11 @@
                 @endif
 
                 <div class="flex flex-col md:flex-row gap-4 justify-end w-full lg:w-auto">
-                    <x-button tag="button" type="button" onclick="testLogin()" class="btn--primary-outlined lg:hidden whitespace-nowrap">
-                        Cuenta de prueba
-                    </x-button>
-
                     <x-button tag="button" type="submit" class="btn--primary w-full xs:w-auto">
                         Acceder
+                    </x-button>
+                    <x-button tag="button" type="button" onclick="testLogin()" class="btn--primary-outlined lg:hidden whitespace-nowrap">
+                        Cuenta de prueba
                     </x-button>
                 </div>
             </div>

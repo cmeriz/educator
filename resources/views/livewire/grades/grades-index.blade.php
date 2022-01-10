@@ -38,7 +38,7 @@
                 </svg>
             </button>
             <div x-show="open" x-transition.opacity class="absolute top-full right-0 flex flex-col text-base rounded-md ring-1 ring-black ring-opacity-5 bg-white shadow-lg">
-                <button wire:click="$emit('studentCreate', {{ $course->id }})" class="text-left whitespace-nowrap block px-6 py-3 leading-5 text-secondary-500 hover:bg-secondary-50 focus:outline-none focus:bg-secondary-50 transition">
+                <button wire:click="$emit('studentCreate', {{ $course->id }})" x-on:click="setTimeout(() => document.querySelector('#create-input-name').focus(), 500)" class="text-left whitespace-nowrap block px-6 py-3 leading-5 text-secondary-500 hover:bg-secondary-50 focus:outline-none focus:bg-secondary-50 transition">
                     Añadir estudiante
                 </button>
 
@@ -273,7 +273,7 @@
                             <td>
                                 <div class="flex gap-2">
                                     {{-- Edit Button --}}
-                                    <x-button wire:click="$emit('studentEdit', {{ $student->id }})" class="bg-blue-100 text-blue-500 hover:scale-105 transition-all p-2 rounded-lg self-end">
+                                    <x-button wire:click="$emit('studentEdit', {{ $student->id }})" x-on:click="setTimeout( () => document.querySelector('#edit-input-name').focus(), 500)" class="bg-blue-100 text-blue-500 hover:scale-105 transition-all p-2 rounded-lg self-end">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
                                         </svg>

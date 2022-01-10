@@ -4,9 +4,12 @@ namespace App\Http\Livewire\Students;
 
 use App\Models\Student;
 use Livewire\Component;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 class StudentEdit extends Component
 {
+
+    use AuthorizesRequests;
 
     public $open = false;
     public $firstname, $lastname, $student;

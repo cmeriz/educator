@@ -5,8 +5,8 @@ var __webpack_exports__ = {};
   \*****************************************/
 Livewire.on('select', function (el) {
   var input = document.querySelector(el);
-  input.select();
   input.focus();
+  input.select();
 });
 Livewire.on('focus', function (el) {
   document.querySelector(el).focus();

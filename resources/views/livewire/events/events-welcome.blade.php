@@ -19,7 +19,7 @@
     </div>
 
     {{-- Schedule Button --}}
-    <x-button tag="anchor" href="{{ route('events.index') }}" class="btn--primary inline-block ml-auto mr-0">
+    <x-button tag="anchor" href="{{ route('events.index') }}" class="btn--primary block sm:inline-block sm:ml-auto sm:mr-0">
         Ver horario
     </x-button>
 </div>

@@ -9,7 +9,7 @@
         <x-slot name="content">
             <div class="mb-4">
                 <x-jet-label value="Nombres:"/>
-                <x-jet-input wire:model="firstname" type="text" class="w-full" placeholder="Nombres del estudiante"/>
+                <x-jet-input id="edit-input-name" wire:model="firstname" type="text" class="w-full" placeholder="Nombres del estudiante"/>
 
                 <x-jet-input-error for="firstname" />
             </div>

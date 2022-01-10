@@ -32,7 +32,7 @@
             </div>
             
             {{-- Courses button --}}
-            <x-button tag="anchor" href="{{ route('courses.index') }}" class="btn--primary inline-block ml-auto mr-0">Ver cursos</x-button>
+            <x-button tag="anchor" href="{{ route('courses.index') }}" class="btn--primary block sm:inline-block sm:ml-auto sm:mr-0">Ver cursos</x-button>
         </div>
         
         {{-- My classes --}}
