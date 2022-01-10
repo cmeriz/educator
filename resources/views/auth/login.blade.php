@@ -73,12 +73,14 @@
             </div>
             
         </form>
+
         <footer class="mt-14 text-right">
             &copy{{ date('Y') }} eDUCATOR. Desarrollado por 
             <a class="text-blue-600 underline" href="https://cmeriz.com/" target="_blank" rel="noopener">
                 @cmeriz
             </a>
         </footer>
+        
     </x-jet-authentication-card>
 
     <script>
