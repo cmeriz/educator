@@ -17,10 +17,10 @@
             <h3 class="font-bold text-2xl">
                 Mis cursos
             </h3>
-            <div class="grid grid-cols-2 gap-8">
+            <div class="grid grid grid-cols-6 gap-8">
                 @forelse ($courses as $course)
                     {{-- Course --}}
-                    <x-course-card :course="$course" class="col-span-2 md:col-span-1 ml:col-span-2 xl:col-span-1" />
+                    <x-course-card :course="$course" class="col-span-6 sm:col-span-3 ml:col-span-6 xl:col-span-3" />
                 @empty
 
                     {{-- No courses --}}

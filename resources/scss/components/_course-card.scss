@@ -6,9 +6,10 @@
         color: $primary-color-700;
         background-image: linear-gradient(to right bottom, $primary-color-100, $primary-color-300);
 
-        &:hover{
-            background-color: $primary-color-300;
-            color: $primary-color-800;
+        &:active{
+            background-color: $primary-color-400;
+            background-image: linear-gradient(to right bottom, $primary-color-200, $primary-color-400);
+            color: $secondary-color-800;
         }
 
         .progress{
@@ -23,8 +24,9 @@
         background-image: linear-gradient(to right bottom, $secondary-color-100, $secondary-color-300);
         color: $secondary-color-700;
 
-        &:hover{
-            background-color: $secondary-color-300;
+        &:active{
+            background-color: $secondary-color-400;
+            background-image: linear-gradient(to right bottom, $secondary-color-200, $secondary-color-400);
             color: $secondary-color-800;
         }
 
@@ -40,8 +42,9 @@
         background-image: linear-gradient(to right bottom, $red-color-100, $red-color-300);
         color: $red-color-700;
 
-        &:hover{
-            background-color: $red-color-300;
+        &:active{
+            background-color: $red-color-400;
+            background-image: linear-gradient(to right bottom, $red-color-200, $red-color-400);
             color: $red-color-800;
         }
 
@@ -58,8 +61,9 @@
         background-image: linear-gradient(to right bottom, $orange-color-100, $orange-color-300);
         color: $orange-color-700;
 
-        &:hover{
-            background-color: $orange-color-300;
+        &:active{
+            background-color: $orange-color-400;
+            background-image: linear-gradient(to right bottom, $orange-color-200, $orange-color-400);
             color: $orange-color-800;
         }
 
@@ -75,8 +79,9 @@
         background-image: linear-gradient(to right bottom, $blue-color-100, $blue-color-300);
         color: $blue-color-700;
 
-        &:hover{
-            background-color: $blue-color-300;
+        &:active{
+            background-color: $blue-color-400;
+            background-image: linear-gradient(to right bottom, $blue-color-200, $blue-color-400);
             color: $blue-color-800;
         }
 
@@ -92,8 +97,9 @@
         background-image: linear-gradient(to right bottom, $purple-color-100, $purple-color-300);
         color: $purple-color-700;
 
-        &:hover{
-            background-color: $purple-color-300;
+        &:active{
+            background-color: $purple-color-400;
+            background-image: linear-gradient(to right bottom, $purple-color-200, $purple-color-400);
             color: $purple-color-800;
         }
 
@@ -109,8 +115,9 @@
         background-image: linear-gradient(to right bottom, $pink-color-100, $pink-color-300);
         color: $pink-color-700;
 
-        &:hover{
-            background-color: $pink-color-300;
+        &:active{
+            background-color: $pink-color-400;
+            background-image: linear-gradient(to right bottom, $pink-color-200, $pink-color-400);
             color: $pink-color-800;
         }
 

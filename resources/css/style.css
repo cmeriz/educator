@@ -29,6 +29,11 @@ p {
   line-height: 2em;
 }
 
+/* line 23, ../scss/base/_reset.scss */
+a, button {
+  -webkit-tap-highlight-color: transparent;
+}
+
 /* line 1, ../scss/layout/_main.scss */
 .main-container {
   margin-left: auto;
@@ -110,109 +115,116 @@ p {
   background-image: linear-gradient(to right bottom, #e7f8f2, #9fe3cd);
 }
 /* line 9, ../scss/components/_course-card.scss */
-.course-card--primary:hover {
-  background-color: #9fe3cd;
-  color: #0a6f4d;
+.course-card--primary:active {
+  background-color: #58cea7;
+  background-image: linear-gradient(to right bottom, #c3eee0, #58cea7);
+  color: #1f1f1f;
 }
-/* line 14, ../scss/components/_course-card.scss */
+/* line 15, ../scss/components/_course-card.scss */
 .course-card--primary .progress {
   background-color: #0c8b61;
 }
-/* line 20, ../scss/components/_course-card.scss */
+/* line 21, ../scss/components/_course-card.scss */
 .course-card--secondary {
   background-color: #cccccc;
   background-image: linear-gradient(to right bottom, #ebebeb, #aeaeae);
   color: #272727;
 }
-/* line 26, ../scss/components/_course-card.scss */
-.course-card--secondary:hover {
-  background-color: #aeaeae;
+/* line 27, ../scss/components/_course-card.scss */
+.course-card--secondary:active {
+  background-color: #717171;
+  background-image: linear-gradient(to right bottom, #cccccc, #717171);
   color: #1f1f1f;
 }
-/* line 31, ../scss/components/_course-card.scss */
+/* line 33, ../scss/components/_course-card.scss */
 .course-card--secondary .progress {
   background-color: #272727;
 }
-/* line 37, ../scss/components/_course-card.scss */
+/* line 39, ../scss/components/_course-card.scss */
 .course-card--red {
   background-color: #fecaca;
   background-image: linear-gradient(to right bottom, #fee2e2, #fca5a5);
   color: #b91c1c;
 }
-/* line 43, ../scss/components/_course-card.scss */
-.course-card--red:hover {
-  background-color: #fca5a5;
+/* line 45, ../scss/components/_course-card.scss */
+.course-card--red:active {
+  background-color: #f87171;
+  background-image: linear-gradient(to right bottom, #fecaca, #f87171);
   color: #991b1b;
 }
-/* line 48, ../scss/components/_course-card.scss */
+/* line 51, ../scss/components/_course-card.scss */
 .course-card--red .progress {
   background-color: #b91c1c;
 }
-/* line 55, ../scss/components/_course-card.scss */
+/* line 58, ../scss/components/_course-card.scss */
 .course-card--orange {
   background-color: #fed7aa;
   background-image: linear-gradient(to right bottom, #ffedd5, #fdba74);
   color: #c2410c;
 }
-/* line 61, ../scss/components/_course-card.scss */
-.course-card--orange:hover {
-  background-color: #fdba74;
+/* line 64, ../scss/components/_course-card.scss */
+.course-card--orange:active {
+  background-color: #fb923c;
+  background-image: linear-gradient(to right bottom, #fed7aa, #fb923c);
   color: #9a3412;
 }
-/* line 66, ../scss/components/_course-card.scss */
+/* line 70, ../scss/components/_course-card.scss */
 .course-card--orange .progress {
   background-color: #c2410c;
 }
-/* line 72, ../scss/components/_course-card.scss */
+/* line 76, ../scss/components/_course-card.scss */
 .course-card--blue {
   background-color: #bfdbfe;
   background-image: linear-gradient(to right bottom, #dbeafe, #93c5fd);
   color: #1d4ed8;
 }
-/* line 78, ../scss/components/_course-card.scss */
-.course-card--blue:hover {
-  background-color: #93c5fd;
+/* line 82, ../scss/components/_course-card.scss */
+.course-card--blue:active {
+  background-color: #60a5fa;
+  background-image: linear-gradient(to right bottom, #bfdbfe, #60a5fa);
   color: #1e40af;
 }
-/* line 83, ../scss/components/_course-card.scss */
+/* line 88, ../scss/components/_course-card.scss */
 .course-card--blue .progress {
   background-color: #1d4ed8;
 }
-/* line 89, ../scss/components/_course-card.scss */
+/* line 94, ../scss/components/_course-card.scss */
 .course-card--purple {
   background-color: #e9d5ff;
   background-image: linear-gradient(to right bottom, #f3e8ff, #d8b4fe);
   color: #7e22ce;
 }
-/* line 95, ../scss/components/_course-card.scss */
-.course-card--purple:hover {
-  background-color: #d8b4fe;
+/* line 100, ../scss/components/_course-card.scss */
+.course-card--purple:active {
+  background-color: #c084fc;
+  background-image: linear-gradient(to right bottom, #e9d5ff, #c084fc);
   color: #6b21a8;
 }
-/* line 100, ../scss/components/_course-card.scss */
+/* line 106, ../scss/components/_course-card.scss */
 .course-card--purple .progress {
   background-color: #7e22ce;
 }
-/* line 106, ../scss/components/_course-card.scss */
+/* line 112, ../scss/components/_course-card.scss */
 .course-card--pink {
   background-color: #fbcfe8;
   background-image: linear-gradient(to right bottom, #fce7f3, #f9a8d4);
   color: #be185d;
 }
-/* line 112, ../scss/components/_course-card.scss */
-.course-card--pink:hover {
-  background-color: #f9a8d4;
+/* line 118, ../scss/components/_course-card.scss */
+.course-card--pink:active {
+  background-color: #f472b6;
+  background-image: linear-gradient(to right bottom, #fbcfe8, #f472b6);
   color: #9d174d;
 }
-/* line 117, ../scss/components/_course-card.scss */
+/* line 124, ../scss/components/_course-card.scss */
 .course-card--pink .progress {
   background-color: #be185d;
 }
-/* line 123, ../scss/components/_course-card.scss */
+/* line 130, ../scss/components/_course-card.scss */
 .course-card__progressbar {
   background-color: rgba(255, 255, 255, 0.7);
 }
-/* line 129, ../scss/components/_course-card.scss */
+/* line 136, ../scss/components/_course-card.scss */
 .course-card__progressbar--disabled {
   background-color: rgba(255, 255, 255, 0.3);
 }
@@ -231,94 +243,101 @@ p {
   background-color: #58cea7;
 }
 /* line 13, ../scss/components/_event-card.scss */
-.event-card--primary:hover {
+.event-card--primary:active {
   background-color: #0ea774;
+  background-image: linear-gradient(to right bottom, #10b981, #0c8b61);
 }
-/* line 19, ../scss/components/_event-card.scss */
+/* line 20, ../scss/components/_event-card.scss */
 .event-card--secondary {
   background-color: #343434;
   background-image: linear-gradient(to right bottom, #717171, #2f2f2f);
 }
-/* line 24, ../scss/components/_event-card.scss */
+/* line 25, ../scss/components/_event-card.scss */
 .event-card--secondary button {
   background-color: #717171;
 }
-/* line 28, ../scss/components/_event-card.scss */
-.event-card--secondary:hover {
+/* line 29, ../scss/components/_event-card.scss */
+.event-card--secondary:active {
   background-color: #2f2f2f;
+  background-image: linear-gradient(to right bottom, #343434, #272727);
 }
-/* line 33, ../scss/components/_event-card.scss */
+/* line 35, ../scss/components/_event-card.scss */
 .event-card--red {
   background-color: #ef4444;
   background-image: linear-gradient(to right bottom, #f87171, #dc2626);
 }
-/* line 38, ../scss/components/_event-card.scss */
+/* line 40, ../scss/components/_event-card.scss */
 .event-card--red button {
   background-color: #f87171;
 }
-/* line 42, ../scss/components/_event-card.scss */
-.event-card--red:hover {
+/* line 44, ../scss/components/_event-card.scss */
+.event-card--red:active {
   background-color: #dc2626;
+  background-image: linear-gradient(to right bottom, #ef4444, #b91c1c);
 }
-/* line 47, ../scss/components/_event-card.scss */
+/* line 50, ../scss/components/_event-card.scss */
 .event-card--orange {
   background-color: #f97316;
   background-image: linear-gradient(to right bottom, #fb923c, #ea580c);
 }
-/* line 52, ../scss/components/_event-card.scss */
+/* line 55, ../scss/components/_event-card.scss */
 .event-card--orange button {
   background-color: #fb923c;
 }
-/* line 56, ../scss/components/_event-card.scss */
-.event-card--orange:hover {
+/* line 59, ../scss/components/_event-card.scss */
+.event-card--orange:active {
   background-color: #ea580c;
+  background-image: linear-gradient(to right bottom, #f97316, #c2410c);
 }
-/* line 61, ../scss/components/_event-card.scss */
+/* line 65, ../scss/components/_event-card.scss */
 .event-card--blue {
   background-color: #3b82f6;
   background-image: linear-gradient(to right bottom, #60a5fa, #2563eb);
 }
-/* line 66, ../scss/components/_event-card.scss */
+/* line 70, ../scss/components/_event-card.scss */
 .event-card--blue button {
   background-color: #60a5fa;
 }
-/* line 70, ../scss/components/_event-card.scss */
-.event-card--blue:hover {
+/* line 74, ../scss/components/_event-card.scss */
+.event-card--blue:active {
   background-color: #2563eb;
+  background-image: linear-gradient(to right bottom, #3b82f6, #1d4ed8);
 }
-/* line 75, ../scss/components/_event-card.scss */
+/* line 80, ../scss/components/_event-card.scss */
 .event-card--purple {
   background-color: #a855f7;
   background-image: linear-gradient(to right bottom, #c084fc, #9333ea);
 }
-/* line 80, ../scss/components/_event-card.scss */
+/* line 85, ../scss/components/_event-card.scss */
 .event-card--purple button {
   background-color: #c084fc;
 }
-/* line 84, ../scss/components/_event-card.scss */
-.event-card--purple:hover {
-  background-color: #9333ea;
-}
 /* line 89, ../scss/components/_event-card.scss */
+.event-card--purple:active {
+  background-color: #9333ea;
+  background-image: linear-gradient(to right bottom, #a855f7, #7e22ce);
+}
+/* line 95, ../scss/components/_event-card.scss */
 .event-card--pink {
   background-color: #ec4899;
   background-image: linear-gradient(to right bottom, #f472b6, #db2777);
 }
-/* line 94, ../scss/components/_event-card.scss */
+/* line 100, ../scss/components/_event-card.scss */
 .event-card--pink button {
   background-color: #f472b6;
 }
-/* line 98, ../scss/components/_event-card.scss */
-.event-card--pink:hover {
+/* line 104, ../scss/components/_event-card.scss */
+.event-card--pink:active {
   background-color: #db2777;
+  background-image: linear-gradient(to right bottom, #ec4899, #be185d);
 }
-/* line 103, ../scss/components/_event-card.scss */
+/* line 110, ../scss/components/_event-card.scss */
 .event-card.not-active, .not-active.event-card--primary, .not-active.event-card--secondary, .not-active.event-card--red, .not-active.event-card--orange, .not-active.event-card--blue, .not-active.event-card--purple, .not-active.event-card--pink {
   color: #717171;
   background-color: #f5f5f5;
   background-image: linear-gradient(to right bottom, #f5f5f5, #f5f5f5);
 }
-/* line 108, ../scss/components/_event-card.scss */
+/* line 115, ../scss/components/_event-card.scss */
 .event-card.not-active button, .not-active.event-card--primary button, .not-active.event-card--secondary button, .not-active.event-card--red button, .not-active.event-card--orange button, .not-active.event-card--blue button, .not-active.event-card--purple button, .not-active.event-card--pink button {
   background-color: #ebebeb;
 }
@@ -341,101 +360,105 @@ p {
 }
 /* line 16, ../scss/components/_button.scss */
 .btn--primary:focus {
+  background-color: #0ea774;
+  background-image: linear-gradient(to right bottom, #0ea774, #0c8b61);
   outline: 3px solid #9fe3cd;
 }
-/* line 20, ../scss/components/_button.scss */
+/* line 22, ../scss/components/_button.scss */
 .btn--primary-outlined {
   background-color: transparent;
   color: #10b981;
   border: 1px solid #10b981;
 }
-/* line 29, ../scss/components/_button.scss */
+/* line 31, ../scss/components/_button.scss */
 .btn--white {
   background-color: #FFFFFF;
   color: #10b981;
 }
-/* line 34, ../scss/components/_button.scss */
+/* line 36, ../scss/components/_button.scss */
 .btn--white:focus {
   outline: 3px solid rgba(255, 255, 255, 0.5);
 }
-/* line 38, ../scss/components/_button.scss */
+/* line 40, ../scss/components/_button.scss */
 .btn--white-outlined {
   background-color: transparent;
   color: #FFFFFF;
   border: 1px solid #FFFFFF;
 }
-/* line 47, ../scss/components/_button.scss */
+/* line 49, ../scss/components/_button.scss */
 .btn--gray {
   background-color: #FFFFFF;
   color: #aeaeae;
 }
-/* line 52, ../scss/components/_button.scss */
+/* line 54, ../scss/components/_button.scss */
 .btn--gray:focus {
   outline: 3px solid #aeaeae;
 }
-/* line 56, ../scss/components/_button.scss */
+/* line 58, ../scss/components/_button.scss */
 .btn--gray-outlined {
   background-color: transparent;
   color: #343434;
   border: 1px solid #aeaeae;
 }
-/* line 67, ../scss/components/_button.scss */
+/* line 69, ../scss/components/_button.scss */
 .btn:hover, .btn--primary:hover, .btn--primary-outlined:hover, .btn--white:hover, .btn--white-outlined:hover, .btn--gray:hover, .btn--gray-outlined:hover, .btn--danger:hover {
   transform: scale(1.05);
 }
-/* line 71, ../scss/components/_button.scss */
+/* line 73, ../scss/components/_button.scss */
 .btn--icon, .btn--icon--primary, .btn--icon--danger, .btn--icon--blue {
   width: 2.5em;
   height: 2.5em;
   border-radius: 100%;
   transition: transform .3s ease, background-color .3s ease;
 }
-/* line 77, ../scss/components/_button.scss */
+/* line 79, ../scss/components/_button.scss */
 .btn--icon:hover, .btn--icon--primary:hover, .btn--icon--danger:hover, .btn--icon--blue:hover {
   transform: scale(1.05);
 }
-/* line 81, ../scss/components/_button.scss */
+/* line 83, ../scss/components/_button.scss */
 .btn--icon svg, .btn--icon--primary svg, .btn--icon--danger svg, .btn--icon--blue svg {
   margin-left: auto;
   margin-right: auto;
 }
-/* line 86, ../scss/components/_button.scss */
+/* line 88, ../scss/components/_button.scss */
 .btn--icon--primary {
   color: #FFFFFF;
   background-color: #10b981;
   background-image: linear-gradient(to right bottom, #10b981, #0ea774);
 }
-/* line 92, ../scss/components/_button.scss */
+/* line 94, ../scss/components/_button.scss */
 .btn--icon--primary:focus {
+  background-color: #0ea774;
+  background-image: linear-gradient(to right bottom, #0ea774, #0c8b61);
   outline: 3px solid #9fe3cd;
 }
-/* line 97, ../scss/components/_button.scss */
+/* line 101, ../scss/components/_button.scss */
 .btn--icon--danger {
   color: #ef4444;
   background-color: #fee2e2;
   background-image: linear-gradient(to right bottom, #ef4444, #dc2626);
 }
-/* line 103, ../scss/components/_button.scss */
+/* line 107, ../scss/components/_button.scss */
 .btn--icon--danger:focus {
   outline: 3px solid #fca5a5;
 }
-/* line 108, ../scss/components/_button.scss */
+/* line 112, ../scss/components/_button.scss */
 .btn--icon--blue {
   color: #3b82f6;
   background-color: #dbeafe;
   background-image: linear-gradient(to right bottom, #3b82f6, #2563eb);
 }
-/* line 114, ../scss/components/_button.scss */
+/* line 118, ../scss/components/_button.scss */
 .btn--icon--blue:focus {
   outline: 3px solid #93c5fd;
 }
-/* line 121, ../scss/components/_button.scss */
+/* line 125, ../scss/components/_button.scss */
 .btn--danger {
   background-color: #ef4444;
   background-image: linear-gradient(to right bottom, #ef4444, #dc2626);
   color: #FFFFFF;
 }
-/* line 127, ../scss/components/_button.scss */
+/* line 131, ../scss/components/_button.scss */
 .btn--danger:focus {
   outline: 3px solid #fca5a5;
 }

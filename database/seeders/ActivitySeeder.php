@@ -29,6 +29,10 @@ class ActivitySeeder extends Seeder
                     'activity_type_id' => $i,
                     'course_id' => $course->id,
                 ]);
+                Activity::create([
+                    'activity_type_id' => $i,
+                    'course_id' => $course->id,
+                ]);
                 
             }
         }

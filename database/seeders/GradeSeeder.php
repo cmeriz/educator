@@ -26,7 +26,7 @@ class GradeSeeder extends Seeder
 
             foreach ($activities as $activity) {
                 Grade::create([
-                    'value' => 0,
+                    'value' => rand(0, 10),
                     'activity_id' => $activity->id,
                     'student_id' => $student->id,
                 ]);

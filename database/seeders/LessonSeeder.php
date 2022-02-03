@@ -45,17 +45,27 @@ class LessonSeeder extends Seeder
         ]);
 
         Lesson::create([
-            'title' => 'Estructuras de Datos',
+            'title' => 'Tipos de datos',
             'pensum_id' => 3,
         ]);
 
         Lesson::create([
-            'title' => 'Listas Enlazadas',
+            'title' => 'Estructuras estáticas',
             'pensum_id' => 3,
         ]);
 
         Lesson::create([
-            'title' => 'Algoritmos de Búsqueda',
+            'title' => 'Operaciones con Arreglos',
+            'pensum_id' => 3,
+        ]);
+
+        Lesson::create([
+            'title' => 'Matriz poco densa',
+            'pensum_id' => 3,
+        ]);
+
+        Lesson::create([
+            'title' => 'Listas, Pilas y Colas',
             'pensum_id' => 3,
         ]);
 

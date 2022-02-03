@@ -19,3 +19,7 @@ body{
 p{
     line-height: 2em;
 }
+
+a, button{
+    -webkit-tap-highlight-color: transparent;
+}

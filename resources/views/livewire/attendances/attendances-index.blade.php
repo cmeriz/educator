@@ -31,13 +31,13 @@
 
     {{-- Table --}}
     @if (count($students) > 0)
-    
+
         <div class="overflow-x-scroll">
                 
             <table class="attendances-index__table">
                 <thead class="text-primary-700 text-xs uppercase">
                     <tr>
-                        <th class="sm:sticky sm:left-0 bg-primary-50 text-left font-semibold border-t border-l border-primary-100">
+                        <th class="sticky left-0 bg-primary-50 text-left font-semibold border-t border-l border-primary-100">
                             Nombre
                         </th>
 
@@ -67,8 +67,10 @@
                         <tr class="border-l border-r border-primary-100 {{ $loop->last ? 'border-b' : '' }}">
 
                             {{-- Student name --}}
-                            <td class="whitespace-nowrap sm:sticky sm:left-0 bg-white text-secondary-500">
-                                {{ $student->fullname }}
+                            <td class="whitespace-nowrap sticky left-0 bg-white text-secondary-500">
+                                <span class="block truncate w-32 sm:w-auto">
+                                        {{ $student->fullname }}
+                                </span>
                             </td>
 
                             @php

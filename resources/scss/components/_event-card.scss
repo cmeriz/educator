@@ -10,8 +10,9 @@
             background-color: $primary-color-400;
         }
 
-        &:hover{
+        &:active{
             background-color: $primary-color-600;
+            background-image: linear-gradient(to right bottom, $primary-color-500, $primary-color-700);
         }
 
     }
@@ -25,8 +26,9 @@
             background-color: $secondary-color-400;
         }
 
-        &:hover{
+        &:active{
             background-color: $secondary-color-600;
+            background-image: linear-gradient(to right bottom, $secondary-color-500, $secondary-color-700);
         }
     }
 
@@ -39,8 +41,9 @@
             background-color: $red-color-400;
         }
 
-        &:hover{
+        &:active{
             background-color: $red-color-600;
+            background-image: linear-gradient(to right bottom, $red-color-500, $red-color-700);
         }
     }
 
@@ -53,8 +56,9 @@
             background-color: $orange-color-400;
         }
 
-        &:hover{
+        &:active{
             background-color: $orange-color-600;
+            background-image: linear-gradient(to right bottom, $orange-color-500, $orange-color-700);
         }
     }
 
@@ -67,8 +71,9 @@
             background-color: $blue-color-400;
         }
 
-        &:hover{
+        &:active{
             background-color: $blue-color-600;
+            background-image: linear-gradient(to right bottom, $blue-color-500, $blue-color-700);
         }
     }
 
@@ -81,8 +86,9 @@
             background-color: $purple-color-400;
         }
 
-        &:hover{
+        &:active{
             background-color: $purple-color-600;
+            background-image: linear-gradient(to right bottom, $purple-color-500, $purple-color-700);
         }
     }
 
@@ -95,8 +101,9 @@
             background-color: $pink-color-400;
         }
 
-        &:hover{
+        &:active{
             background-color: $pink-color-600;
+            background-image: linear-gradient(to right bottom, $pink-color-500, $pink-color-700);
         }
     }
 
